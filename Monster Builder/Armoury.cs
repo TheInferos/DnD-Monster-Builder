@@ -1,4 +1,6 @@
-﻿using System.Text.Json;
+﻿using System.Runtime.InteropServices;
+using System.Text.Json;
+using System.Xml.Linq;
 
 
 namespace Monster_Builder
@@ -32,18 +34,44 @@ namespace Monster_Builder
                 Console.WriteLine("Armours not loaded. Load armours first.");
                 return;
             }
-
+            string message = "";
             foreach (var armour in armours)
             {
-                Console.WriteLine($"Name: {armour.Value.Name}");
-                Console.WriteLine($"AC: {armour.Value.AC}");
-                Console.WriteLine($"Cost: {armour.Value.Cost}");
-                Console.WriteLine($"Weight: {armour.Value.Weight}");
-                Console.WriteLine($"Strength: {armour.Value.Strength}");
-                Console.WriteLine($"Stealth: {armour.Value.Stealth}");
-                Console.WriteLine($"Type: {armour.Value.Type}");
-                Console.WriteLine();
+                message += $@"
+                    Armour: {armour.Key}
+                    AC: {armour.Value.AC}
+                    Type: {armour.Value.Type}
+                    Cost: {armour.Value.Cost}
+                    Weight: {armour.Value.Weight}
+                    Strength Requirement: {armour.Value.Strength}
+                    Stealth: {armour.Value.Stealth}";
+                message += "\n";
+
             }
+            Console.WriteLine(message.Replace("\t", "").Replace("    ", ""));
+        }
+        public void PrintWeaponDetails()
+        {
+            if (weapons == null)
+            {
+                Console.WriteLine("Weapons not loaded. Load weapons first.");
+                return;
+            }
+            string message = "";
+            foreach (var weapon in weapons)
+            {
+                message += $@"
+                    Weapon: {weapon.Key}
+                    Type: {weapon.Value.Type}
+                    Damage: {weapon.Value.Damage}
+                    Properties: {string.Join(", ", weapon.Value.Properties)}
+                    Cost: {weapon.Value.Cost}
+                    Weight: {weapon.Value.Weight}
+                    Martial: {weapon.Value.Martial}
+                    Ranged: {weapon.Value.Ranged}";
+                message += "\n";
+            }
+            Console.WriteLine(message.Replace("\t", "").Replace("    ", ""));
         }
     }
 

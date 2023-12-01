@@ -94,6 +94,7 @@ namespace Monster_Builder
             PrintDetails(monster);
             manager = GetArmoury();
             manager.PrintArmourDetails();
+            manager.PrintWeaponDetails();
         }
 
         static void PrintDetails(Monster monster)
