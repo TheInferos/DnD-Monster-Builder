@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Creator;
 using System;
+using System.Threading;
 
 public class Monster
 {
@@ -52,44 +53,61 @@ namespace Creator
 {
     public class userDefinedMonsters
     {
-        public static void Creation()
+        public static Monster Creation()
         {
             Console.WriteLine("What is the name of your Monster?");
             string name = Console.ReadLine();
             Console.WriteLine("Thank you, and what CR should we plan for this to be?");
             float cr = float.Parse(s: Console.ReadLine());
             Monster monster = new Monster(name, cr);
-            Console.WriteLine($"Thank you. I have made the new monster:\n{monster.Name}\nChallenger Rating {monster.CR}");
+            return monster;
         }
     }
     public class systemDefinedMonsters
     {
-        public static void Creation()
+        public static Monster Creation()
         {
-            Console.WriteLine("Test");
             Monster Guard = new Monster("Guard", 3);
-            Console.WriteLine(Guard.Name);
+            return Guard;
         }
     }
 
+    
 }
 
 
-namespace Execution
+namespace Monster_Builder
 {
     class runProgram
     {
-        static void Main2()
+        static void Main()
         {
             int mode = 0;
+            Monster monster;
+            ArmouryManager manager;
             if(mode == 1)
             {
-                userDefinedMonsters.Creation();
+                monster = userDefinedMonsters.Creation();
             }
             else
             {
-                systemDefinedMonsters.Creation();
+                monster = systemDefinedMonsters.Creation();
             }
+            PrintDetails(monster);
+            manager = GetArmoury();
+            manager.PrintArmourDetails();
+        }
+
+        static void PrintDetails(Monster monster)
+        {
+            Console.WriteLine($"Thank you. I have made the new monster:\n{monster.Name}\nChallenger Rating {monster.CR}\n");
+        }
+
+        static ArmouryManager GetArmoury() 
+        {
+            ArmouryManager manager = new ArmouryManager();
+            
+            return manager;
         }
 
     }
