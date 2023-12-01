@@ -15,7 +15,11 @@ namespace Monster_Builder
     public class ArmouryManager
     {
         public Dictionary<string, Armour> armours;
-
+        public ArmouryManager()
+        {
+            LoadArmoursFromFile("Armour.json");
+            //manager.PrintArmourDetails();
+        }
         public void LoadArmoursFromFile(string filePath)
         {
             string jsonData = File.ReadAllText(filePath);
@@ -54,14 +58,6 @@ namespace Monster_Builder
         public string Stealth { get; set; }
         public string Type { get; set; }
     }
-}
 
-public class Program
-{
-    static void Main()
-    {
-        ArmouryManager manager = new ArmouryManager();
-        manager.LoadArmoursFromFile("Armour.json");
-        //manager.PrintArmourDetails();
-    }
+    
 }
