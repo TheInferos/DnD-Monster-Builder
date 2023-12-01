@@ -79,7 +79,7 @@ namespace Execution
 {
     class runProgram
     {
-        static void Main()
+        static void Main2()
         {
             int mode = 0;
             if(mode == 1)
