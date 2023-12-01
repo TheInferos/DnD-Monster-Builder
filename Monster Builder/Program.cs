@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using Creator;
 using System;
 
 public class Monster
@@ -11,14 +12,48 @@ public class Monster
         CR = cr;
     }
 }
-class Builder
+
+
+namespace Creator
 {
-    static void Main()
+    public class userDefinedMonsters
     {
-        Console.WriteLine("Test");
-        Monster Guard = new Monster("Guard", 3);
-        Console.WriteLine(Guard.Name);
+        public static void Creation()
+        {
+            Console.WriteLine("Test");
+            Monster Guard = new Monster("Guard", 3);
+            Console.WriteLine(Guard.Name);
+        }
+    }
+    public class systemDefinedMonsters
+    {
+        public static void Creation()
+        {
+            Console.WriteLine("Test");
+            Monster Guard = new Monster("Guard", 3);
+            Console.WriteLine(Guard.Name);
+        }
     }
 
 }
 
+
+namespace Execution
+{
+    class runProgram
+    {
+        static void Main()
+        {
+            int mode = 0;
+            if(mode == 1)
+            {
+                userDefinedMonsters.Creation();
+            }
+            else
+            {
+                systemDefinedMonsters.Creation();
+            }
+        }
+
+    }
+}
