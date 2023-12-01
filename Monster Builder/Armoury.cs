@@ -1,29 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text.Json;
-using Monster_Builder;
+﻿using System.Text.Json;
+
 
 namespace Monster_Builder
 {
     public class ArmouryManager
     {
         public Dictionary<string, Armour> armours;
+        public Dictionary<string, Weapon> weapons;
         public ArmouryManager()
         {
-            LoadArmoursFromFile("Armour.json");
+            LoadArmoursFromFile("Armours.json");
+            LoadWeaponsFromFile("Weapons.json");
             //manager.PrintArmourDetails();
         }
         public void LoadArmoursFromFile(string filePath)
         {
             string jsonData = File.ReadAllText(filePath);
             armours = JsonSerializer.Deserialize<Dictionary<string, Armour>>(jsonData);
+        }
+
+        public void LoadWeaponsFromFile(string filePath)
+        {
+            string jsonData = File.ReadAllText(filePath);
+            weapons = JsonSerializer.Deserialize<Dictionary<string, Weapon>>(jsonData);
         }
 
         public void PrintArmourDetails()
@@ -36,7 +35,7 @@ namespace Monster_Builder
 
             foreach (var armour in armours)
             {
-                Console.WriteLine($"Name: {armour.Key}");
+                Console.WriteLine($"Name: {armour.Value.Name}");
                 Console.WriteLine($"AC: {armour.Value.AC}");
                 Console.WriteLine($"Cost: {armour.Value.Cost}");
                 Console.WriteLine($"Weight: {armour.Value.Weight}");
@@ -50,14 +49,26 @@ namespace Monster_Builder
 
     public class Armour
     {
-        public int AC { get; set; }
         public string Name { get; set; }
+        public int AC { get; set; }
         public int? Cost { get; set; }
         public int? Weight { get; set; }
         public int? Strength { get; set; }
-        public string Stealth { get; set; }
-        public string Type { get; set; }
+        public string? Stealth { get; set; }
+        public string? Type { get; set; }
+
     }
 
-    
+    public class Weapon
+    {
+        public string Name { get; set; }
+        public string Type { get; set; }
+        public string Damage { get; set; }
+        public string[] Properties { get; set; }
+        public bool Martial { get; set; }
+        public bool Ranged { get; set; }
+        public int Cost { get; set; }
+        public int Weight { get; set; }
+    }
+
 }

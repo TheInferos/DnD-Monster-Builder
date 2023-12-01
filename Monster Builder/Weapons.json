@@ -1,0 +1,102 @@
+{
+  "Longsword": {
+    "Name": "Longsword",
+    "Type": "Melee",
+    "Damage": "1d8 slashing",
+    "Properties": [ "Versatile (1d10)" ],
+    "Martial": true,
+    "Ranged": false,
+    "Cost": 1500,
+    "Weight": 3
+  },
+  "Shortbow": {
+    "Name": "Shortbow",
+    "Type": "Ranged",
+    "Damage": "1d6 piercing",
+    "Properties": [ "Ammunition (range 80/320)", "Two-handed" ],
+    "Martial": true,
+    "Ranged": true,
+    "Cost": 2500,
+    "Weight": 2
+  },
+  "Dagger": {
+    "Name": "Dagger",
+    "Type": "Melee",
+    "Damage": "1d4 piercing",
+    "Properties": [ "Finesse", "Light", "Thrown (range 20/60)" ],
+    "Martial": false,
+    "Ranged": true,
+    "Cost": 20,
+    "Weight": 1
+  },
+  "Warhammer": {
+    "Name": "Warhammer",
+    "Type": "Melee",
+    "Damage": "1d8 bludgeoning",
+    "Properties": [ "Versatile (1d10)" ],
+    "Martial": true,
+    "Ranged": false,
+    "Cost": 1500,
+    "Weight": 2
+  },
+  "Light Crossbow": {
+    "Name": "Light Crossbow",
+    "Type": "Ranged",
+    "Damage": "1d8 piercing",
+    "Properties": [ "Ammunition (range 80/320)", "Loading", "Two-handed" ],
+    "Martial": true,
+    "Ranged": true,
+    "Cost": 2500,
+    "Weight": 5
+  },
+  "Greatsword": {
+    "Name": "Greatsword",
+    "Type": "Melee",
+    "Damage": "2d6 slashing",
+    "Properties": [ "Heavy", "Two-handed" ],
+    "Martial": true,
+    "Ranged": false,
+    "Cost": 5000,
+    "Weight": 6
+  },
+  "Handaxe": {
+    "Name": "Handaxe",
+    "Type": "Melee",
+    "Damage": "1d6 slashing",
+    "Properties": [ "Light", "Thrown (range 20/60)" ],
+    "Martial": false,
+    "Ranged": true,
+    "Cost": 50,
+    "Weight": 2
+  },
+  "Sling": {
+    "Name": "Sling",
+    "Type": "Ranged",
+    "Damage": "1d4 bludgeoning",
+    "Properties": [ "Ammunition (range 30/120)" ],
+    "Martial": false,
+    "Ranged": true,
+    "Cost": 1,
+    "Weight": 0
+  },
+  "Mace": {
+    "Name": "Mace",
+    "Type": "Melee",
+    "Damage": "1d6 bludgeoning",
+    "Properties": [],
+    "Martial": true,
+    "Ranged": false,
+    "Cost": 500,
+    "Weight": 4
+  },
+  "Quarterstaff": {
+    "Name": "Quarterstaff",
+    "Type": "Melee",
+    "Damage": "1d6 bludgeoning",
+    "Properties": [ "Versatile (1d8)" ],
+    "Martial": false,
+    "Ranged": false,
+    "Cost": 2,
+    "Weight": 4
+  }
+}
