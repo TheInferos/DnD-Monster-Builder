@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Monster Builder/.vs
+/.vs
+/Monster Builder/bin/Debug/net8.0
+/Monster Builder/obj
