@@ -1,13 +1,13 @@
 # DnD-Monster-Builder
 
-##Primary aim: 
+## Primary aim: 
 
 Learning c# in a fun way
 
-##Secondary aim: 
+## Secondary aim: 
 
 Make something i can use 
 
-##Teriary aim: 
+## Teriary aim: 
 
 Give to others to use if they think they can make use of it
