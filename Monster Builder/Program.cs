@@ -1,7 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Creator;
-using System;
-using System.Threading;
 
 public class Monster
 {
@@ -19,17 +17,17 @@ public class Monster
     }
 }
 
-    public class Statline
-    {
-        public int Strength { get; set; }
-        public int Dexterity { get; set; }
-        public int Consitution { get; set; }
-        public int Intelligence { get; set; }
-        public int Wisdom { get; set; }
-        public int Charisma { get; set; }
-        public int Health { get; set; }
-        public int AC { get; set; }
-        public Dictionary<int, int>  HD { get; set; }
+public class Statline
+{
+    public int Strength { get; set; }
+    public int Dexterity { get; set; }
+    public int Consitution { get; set; }
+    public int Intelligence { get; set; }
+    public int Wisdom { get; set; }
+    public int Charisma { get; set; }
+    public int Health { get; set; }
+    public int AC { get; set; }
+    public Dictionary<int, int> HD { get; set; }
     public Statline()
     {
         Strength = 10;
@@ -72,7 +70,7 @@ namespace Creator
         }
     }
 
-    
+
 }
 
 
@@ -85,7 +83,7 @@ namespace Monster_Builder
             int mode = 0;
             Monster monster;
             ArmouryManager manager;
-            if(mode == 1)
+            if (mode == 1)
             {
                 monster = userDefinedMonsters.Creation();
             }
@@ -103,12 +101,13 @@ namespace Monster_Builder
             Console.WriteLine($"Thank you. I have made the new monster:\n{monster.Name}\nChallenger Rating {monster.CR}\n");
         }
 
-        static ArmouryManager GetArmoury() 
+        static ArmouryManager GetArmoury()
         {
             ArmouryManager manager = new ArmouryManager();
-            
+
             return manager;
         }
 
     }
 }
+
