@@ -14,6 +14,7 @@ public class Monster
         Name = name;
         CR = cr;
         Stats = new Statline();
+        Size = "Medium";
     }
 }
 
