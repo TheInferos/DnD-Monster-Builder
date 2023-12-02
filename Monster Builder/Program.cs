@@ -8,7 +8,7 @@ namespace Monster_Builder
         {
             int mode = 0;
             Monster monster = BuildMonsterBase(mode);
-            ArmouryManager manager  = GetArmoury();
+            ArmouryManager manager = GetArmoury();
             PrintValues(monster, manager);
         }
 
@@ -16,7 +16,7 @@ namespace Monster_Builder
         {
             if (mode == 1)
             {
-               return userDefinedMonsters.Creation();
+                return userDefinedMonsters.Creation();
             }
             else
             {
@@ -30,7 +30,7 @@ namespace Monster_Builder
 
             return manager;
         }
-        static void PrintValues (Monster monster,ArmouryManager manager)
+        static void PrintValues(Monster monster, ArmouryManager manager)
         {
             monster.PrintDetails();
             manager.PrintArmourDetails();
