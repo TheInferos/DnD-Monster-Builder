@@ -2,7 +2,11 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/Monster Builder/.vs
 /.vs
-/Monster Builder/bin/Debug/net8.0
-/Monster Builder/obj
+/bin
+/obj
+/Monster Builder Web API.http
+
+/WeatherForecast.cs
+/Controllers/WeatherForecastController.cs
+/Controllers/ValuesController.cs
