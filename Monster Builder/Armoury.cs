@@ -1,7 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using System.Text.Json;
-using System.Xml.Linq;
-
+﻿using System.Text.Json;
 
 namespace Monster_Builder
 {
@@ -82,7 +79,7 @@ namespace Monster_Builder
         public int? Cost { get; set; }
         public int? Weight { get; set; }
         public int? Strength { get; set; }
-        public string? Stealth { get; set; }
+        public bool? Stealth { get; set; }
         public string? Type { get; set; }
 
     }
