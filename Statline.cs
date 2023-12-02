@@ -1,4 +1,6 @@
-﻿namespace Monster_Builder
+﻿using System.IO;
+
+namespace Monster_Builder
 {
     public class Statline
     {
@@ -38,5 +40,37 @@
             AC = ac;
             HD = hd;
         }
+        public void GenerateStatsFromPriority(string priority, Monster monster)
+        {
+            int loopCount = 1;
+            int addedStats = 0;
+            string[] PriorityStrings = priority.Split(" ");
+            List<int> PriorityList = new List<int>();
+            string[] StatLookup;
+            foreach (var prioritySring in PriorityStrings)
+            {
+                int parsedValue;
+                bool parseSuccess = int.TryParse(prioritySring, out parsedValue);
+
+                if (parseSuccess)
+                {
+                    PriorityList.Add(parsedValue);
+                }
+
+            }
+            while (monster.Statpool < addedStats)
+            {
+                foreach(int Priority in PriorityList)
+                {
+                    
+                    if (loopCount > (int)Priority )
+                    {
+
+                    }
+                }
+
+            }
+        }
     }
+
 }
