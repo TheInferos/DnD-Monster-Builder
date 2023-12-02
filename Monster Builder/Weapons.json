@@ -98,5 +98,175 @@
     "Ranged": false,
     "Cost": 2,
     "Weight": 4
+  },
+  "Rapier": {
+    "Name": "Rapier",
+    "Type": "Melee",
+    "Damage": "1d8 piercing",
+    "Properties": [ "Finesse" ],
+    "Martial": false,
+    "Ranged": false,
+    "Cost": 2500,
+    "Weight": 2
+  },
+  "Javelin": {
+    "Name": "Javelin",
+    "Type": "Melee",
+    "Damage": "1d6 piercing",
+    "Properties": [ "Thrown (range 30/120)" ],
+    "Martial": false,
+    "Ranged": true,
+    "Cost": 50,
+    "Weight": 2
+  },
+  "Battleaxe": {
+    "Name": "Battleaxe",
+    "Type": "Melee",
+    "Damage": "1d8 slashing",
+    "Properties": [ "Versatile (1d10)" ],
+    "Martial": true,
+    "Ranged": false,
+    "Cost": 1000,
+    "Weight": 4
+  },
+  "Heavy Crossbow": {
+    "Name": "Heavy Crossbow",
+    "Type": "Ranged",
+    "Damage": "1d10 piercing",
+    "Properties": [ "Ammunition (range 100/400)", "Loading", "Two-handed" ],
+    "Martial": true,
+    "Ranged": true,
+    "Cost": 5000,
+    "Weight": 18
+  },
+  "Scimitar": {
+    "Name": "Scimitar",
+    "Type": "Melee",
+    "Damage": "1d6 slashing",
+    "Properties": [ "Finesse", "Light" ],
+    "Martial": false,
+    "Ranged": false,
+    "Cost": 2500,
+    "Weight": 3
+  },
+  "Pike": {
+    "Name": "Pike",
+    "Type": "Melee",
+    "Damage": "1d10 piercing",
+    "Properties": [ "Heavy", "Reach", "Two-handed" ],
+    "Martial": true,
+    "Ranged": false,
+    "Cost": 500,
+    "Weight": 18
+  },
+  "Trident": {
+    "Name": "Trident",
+    "Type": "Melee",
+    "Damage": "1d6 piercing",
+    "Properties": [ "Thrown (range 20/60)", "Versatile (1d8)" ],
+    "Martial": true,
+    "Ranged": true,
+    "Cost": 500,
+    "Weight": 4
+  },
+  "Whip": {
+    "Name": "Whip",
+    "Type": "Melee",
+    "Damage": "1d4 slashing",
+    "Properties": [ "Finesse", "Reach" ],
+    "Martial": false,
+    "Ranged": false,
+    "Cost": 200,
+    "Weight": 3
+  },
+  "Club": {
+    "Name": "Club",
+    "Type": "Melee",
+    "Damage": "1d4 bludgeoning",
+    "Properties": [ "Light" ],
+    "Martial": false,
+    "Ranged": false,
+    "Cost": 10,
+    "Weight": 2
+  },
+  "Morningstar": {
+    "Name": "Morningstar",
+    "Type": "Melee",
+    "Damage": "1d8 piercing",
+    "Properties": [],
+    "Martial": true,
+    "Ranged": false,
+    "Cost": 1500,
+    "Weight": 4
+  },
+  "Spear": {
+    "Name": "Spear",
+    "Type": "Melee",
+    "Damage": "1d6 piercing",
+    "Properties": [ "Thrown (range 20/60)", "Versatile (1d8)" ],
+    "Martial": true,
+    "Ranged": true,
+    "Cost": 100,
+    "Weight": 3
+  },
+  "Glaive": {
+    "Name": "Glaive",
+    "Type": "Melee",
+    "Damage": "1d10 slashing",
+    "Properties": [ "Heavy", "Reach", "Two-handed" ],
+    "Martial": true,
+    "Ranged": false,
+    "Cost": 2000,
+    "Weight": 6
+  },
+  "Halberd": {
+    "Name": "Halberd",
+    "Type": "Melee",
+    "Damage": "1d10 slashing",
+    "Properties": [ "Heavy", "Reach", "Two-handed" ],
+    "Martial": true,
+    "Ranged": false,
+    "Cost": 2000,
+    "Weight": 6
+  },
+  "Blowgun": {
+    "Name": "Blowgun",
+    "Type": "Ranged",
+    "Damage": "1 piercing",
+    "Properties": [ "Ammunition (range 25/100)", "Loading" ],
+    "Martial": false,
+    "Ranged": true,
+    "Cost": 1000,
+    "Weight": 1
+  },
+  "Net": {
+    "Name": "Net",
+    "Type": "Ranged",
+    "Damage": "Special",
+    "Properties": [ "Special", "Thrown (range 5/15)" ],
+    "Martial": false,
+    "Ranged": true,
+    "Cost": 100,
+    "Weight": 3
+  },
+  "Heavy Flail": {
+    "Name": "Heavy Flail",
+    "Type": "Melee",
+    "Damage": "2d8 bludgeoning",
+    "Properties": [ "Heavy", "Two-handed" ],
+    "Martial": true,
+    "Ranged": false,
+    "Cost": 7500,
+    "Weight": 10
+  },
+  "Hand Crossbow": {
+    "Name": "Hand Crossbow",
+    "Type": "Ranged",
+    "Damage": "1d6 piercing",
+    "Properties": [ "Ammunition (range 30/120)", "Light", "Loading" ],
+    "Martial": true,
+    "Ranged": true,
+    "Cost": 7500,
+    "Weight": 3
   }
 }
