@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monster Builder", "Monster Builder.csproj", "{C6246FDE-6BFE-4556-B957-E02151D6E314}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monster Builder Web API", "Monster Builder Web API.csproj", "{581998A5-574A-47D5-9215-F046FF1FE2F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C6246FDE-6BFE-4556-B957-E02151D6E314}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C6246FDE-6BFE-4556-B957-E02151D6E314}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C6246FDE-6BFE-4556-B957-E02151D6E314}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C6246FDE-6BFE-4556-B957-E02151D6E314}.Release|Any CPU.Build.0 = Release|Any CPU
+		{581998A5-574A-47D5-9215-F046FF1FE2F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{581998A5-574A-47D5-9215-F046FF1FE2F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{581998A5-574A-47D5-9215-F046FF1FE2F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{581998A5-574A-47D5-9215-F046FF1FE2F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D41CB1B9-C88D-4512-8F6C-D6475D9534FD}
+		SolutionGuid = {7F829A45-04E0-44AF-A05D-3FF75EEC8249}
 	EndGlobalSection
 EndGlobal

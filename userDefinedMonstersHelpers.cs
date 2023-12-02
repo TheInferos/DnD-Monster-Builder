@@ -2,7 +2,7 @@
 
 internal static class userDefinedMonstersHelpers
 {
-    public static Monster Creation(UI ui)
+    public static Monster Creation()
     {
         Console.WriteLine("What is the name of your Monster?");
         string name = Console.ReadLine();

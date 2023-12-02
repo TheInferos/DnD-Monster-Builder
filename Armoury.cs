@@ -71,29 +71,4 @@ namespace Monster_Builder
             Console.WriteLine(message.Replace("\t", "").Replace("    ", ""));
         }
     }
-
-    public class Armour
-    {
-        public string Name { get; set; }
-        public int AC { get; set; }
-        public int? Cost { get; set; }
-        public int? Weight { get; set; }
-        public int? Strength { get; set; }
-        public bool? Stealth { get; set; }
-        public string? Type { get; set; }
-
-    }
-
-    public class Weapon
-    {
-        public string Name { get; set; }
-        public string Type { get; set; }
-        public string Damage { get; set; }
-        public string[] Properties { get; set; }
-        public bool Martial { get; set; }
-        public bool Ranged { get; set; }
-        public int Cost { get; set; }
-        public int Weight { get; set; }
-    }
-
 }
