@@ -6,17 +6,18 @@ namespace Monster_Builder
     {
         static void Main()
         {
-            int mode = 0;
-            Monster monster = BuildMonsterBase(mode);
+            UI ui = new UI();
+            int mode = 1;
+            Monster monster = BuildMonsterBase(mode, ui);
             ArmouryManager manager = GetArmoury();
-            PrintValues(monster, manager);
+            ui.PrintValues(monster, manager);
         }
 
-        static Monster BuildMonsterBase(int mode)
+        static Monster BuildMonsterBase(int mode, UI ui)
         {
             if (mode == 1)
             {
-                return userDefinedMonsters.Creation();
+                return userDefinedMonsters.Creation(ui);
             }
             else
             {
@@ -30,7 +31,22 @@ namespace Monster_Builder
 
             return manager;
         }
-        static void PrintValues(Monster monster, ArmouryManager manager)
+        
+        
+    }
+    public class UI
+    {
+        public string GetUserInput(string input)
+        {
+            Console.WriteLine(input);
+            return Console.ReadLine();
+        }
+
+        public void WriteToUI(string message) 
+        {
+            Console.WriteLine(message);
+        }
+        public void PrintValues(Monster monster, ArmouryManager manager)
         {
             monster.PrintDetails();
             manager.PrintArmourDetails();
