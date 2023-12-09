@@ -12,7 +12,15 @@ namespace Monster_Builder_Web_API.Controllers
         public ActionResult<string> GetSystemMonster()
         {
             Monster Guard = new Monster("Guard", 3);
-            return Guard.PrintDetails();
+            return Guard.toString();
+        }
+
+        [HttpPost("giveWeapon")]
+        public ActionResult<string> AddWeapon(string weapon)
+        {
+            Monster Guard = new Monster("Guard", 3);
+            Guard.addWeapon(new Weapon("Dagger"));
+            return Guard.toString();
         }
 
         //// GET api/monsters/{id}
