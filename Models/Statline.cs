@@ -28,7 +28,7 @@ namespace Statlines
             { 0, 0 }
         };
         }
-        public Statline(int strength, int dexterity, int consitution, int intelligence, int wisdom, int charisma, int health, int ac, Dictionary<int, int> hd)
+        public Statline(int strength, int dexterity, int consitution, int intelligence, int wisdom, int charisma, int ac, Dictionary<int, int> hd)
         {
             Strength = strength;
             Dexterity = dexterity;
@@ -36,9 +36,19 @@ namespace Statlines
             Intelligence = intelligence;
             Wisdom = wisdom;
             Charisma = charisma;
-            Health = health;
             AC = ac;
             HD = hd;
+            CalculateHeath();
+        }
+
+        public void CalculateHeath()
+        {
+            Health = 0;
+            foreach (var kvp in HD)
+            {
+                Health += kvp.Value * kvp.Key;
+            }
+            
         }
 
         public void changeStats(int strength, int dexterity, int consitution, int intelligence, int wisdom, int charisma)
