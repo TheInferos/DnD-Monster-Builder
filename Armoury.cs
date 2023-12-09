@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using Monster_Builder_Web_API.Models;
 
 namespace Monster_Builder
 {
