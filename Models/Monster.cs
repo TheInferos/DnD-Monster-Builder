@@ -1,4 +1,6 @@
-﻿namespace Monster_Builder
+﻿using Monster_Builder;
+
+namespace Monster_Builder_Web_API.Models
 {
     public class Monster
     {
@@ -6,6 +8,8 @@
         public float CR { get; set; }
         public string Size { get; set; }
         public string Type { get; set; }
+
+        public Weapon[] Weapons { get; set; }
 
         public Statline Stats { get; set; }
 
@@ -18,11 +22,13 @@
             Size = "Medium";
             Type = "Humanoid";
             Statpool = (int) (8+2 * CR);
+            Weapons = new Weapon[];
         }
         public string PrintDetails()
         {
             return $"{Name}\nChallenger Rating {CR}\n";
         }
+
 
     }
 
