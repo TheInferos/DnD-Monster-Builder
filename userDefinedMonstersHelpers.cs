@@ -1,5 +1,4 @@
-﻿using Monster_Builder_Web_API.Models;
-using Monster_Builder;
+﻿using Monster_Builder;
 
 internal  class userDefinedMonstersHelpers
 {

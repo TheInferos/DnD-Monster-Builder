@@ -1,7 +1,7 @@
 ﻿using Armours;
 using Microsoft.AspNetCore.Mvc;
 using Monster_Builder;
-using Monster_Builder_Web_API.Models;
+using Statlines;
 
 namespace Monster_Builder_Web_API.Controllers
 {
@@ -13,7 +13,7 @@ namespace Monster_Builder_Web_API.Controllers
         public ActionResult<string> GetSystemMonster()
         {
             Monster Guard = new Monster("Guard", 3);
-            return Guard.toString();
+            return Guard.ToString();
         }
 
         [HttpPost("giveWeapon")]
@@ -21,7 +21,7 @@ namespace Monster_Builder_Web_API.Controllers
         {
             Monster Guard = new Monster("Guard", 3);
             Guard.addWeapon(new Weapon(weapon));
-            return Guard.toString();
+            return Guard.ToString();
         }
 
         [HttpPost("switchArmour")]
@@ -29,7 +29,15 @@ namespace Monster_Builder_Web_API.Controllers
         {
             Monster Guard = new Monster("Guard", 3);
             Guard.changeArmour(new Armour(armour));
-            return Guard.toString();
+            return Guard.ToString();
+        }
+
+        [HttpPost("changeStats")]
+        public ActionResult<string> setStats(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma)
+        {
+            Monster Guard = new Monster("Guard", 3);
+            Guard.Stats.changeStats(strength, dexterity, constitution, intelligence, wisdom, charisma);
+            return Guard.ToString();
         }
 
 
