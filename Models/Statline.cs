@@ -1,6 +1,6 @@
-﻿using System.IO;
+﻿using Monster_Builder;
 
-namespace Monster_Builder_Web_API.Models
+namespace Statlines
 {
     public class Statline
     {
@@ -39,6 +39,64 @@ namespace Monster_Builder_Web_API.Models
             Health = health;
             AC = ac;
             HD = hd;
+        }
+
+        public void changeStats(int strength, int dexterity, int consitution, int intelligence, int wisdom, int charisma)
+        {
+            Strength = strength;
+            Dexterity = dexterity;
+            Consitution = consitution;
+            Intelligence = intelligence;
+            Wisdom = wisdom;
+            Charisma = charisma;
+        }
+
+        public override string ToString()
+        {
+            string message = "";
+            message += $@"
+                    HP: {Health}
+                    AC: {AC}
+                    Strength: {Strength}
+                    Dexterity: {Dexterity}
+                    Consitution: {Consitution}
+                    Intelligence: {Intelligence}
+                    Wisdom: {Wisdom}
+                    Charisma: {Charisma}";
+            message += "\n";
+            return message.Replace("\t", "").Replace("    ", "");
+        }
+
+        public void GenerateStatsFromPriority(string priority, Monster monster)
+        {
+            int loopCount = 1;
+            int addedStats = 0;
+            string[] PriorityStrings = priority.Split(" ");
+            List<int> PriorityList = new List<int>();
+            string[] StatLookup;
+            foreach (var prioritySring in PriorityStrings)
+            {
+                int parsedValue;
+                bool parseSuccess = int.TryParse(prioritySring, out parsedValue);
+
+                if (parseSuccess)
+                {
+                    PriorityList.Add(parsedValue);
+                }
+
+            }
+            while (monster.Statpool < addedStats)
+            {
+                foreach (int Priority in PriorityList)
+                {
+
+                    if (loopCount > (int)Priority)
+                    {
+
+                    }
+                }
+
+            }
         }
 
     }

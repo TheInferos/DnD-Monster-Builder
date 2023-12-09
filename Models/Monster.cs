@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
 using Armours;
+using Microsoft.Extensions.Hosting;
+using Statlines;
+
 
 namespace Monster_Builder
 
@@ -25,15 +28,23 @@ namespace Monster_Builder
             Size = "Medium";
             Type = "Humanoid";
             Statpool = (int) (8+2 * CR);
-            Weapons = new List<Weapon>();
-            Weapons.Add(new Weapon("unarmed"));
+            Weapons = [new Weapon("unarmed")];
             Armour = new Armour();
 
         }
-        public string toString()
+
+        public override string ToString()
         {
-            string message = $"{Name}\nChallenger Rating {CR}\nWeapons:\n{Weapons[0]}\nArmour: \n{Armour}";
-            return message;
+            string message = "";
+            message += $@"
+                    Name: {Name}
+                    CR: {CR}
+                    Type: {Type}
+                    Stats: {Stats}
+                    Weapons: {Weapons[0].ToString()}
+                    Armour: {Armour}";
+            message += "\n";
+            return message.Replace("\t", "").Replace("    ", "");
         }
 
         public void addWeapon(Weapon weapon)
