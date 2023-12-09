@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text.Json;
 using Armours;
 using Microsoft.Extensions.Hosting;
 using Statlines;
@@ -88,5 +90,10 @@ namespace Monster_Builder
             
             return Guard;
         }
+    }
+    public class InitialMonsterRequest
+    {
+        public string Name { get; set; }
+        public int CR { get; set; }
     }
 }
