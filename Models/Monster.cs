@@ -25,8 +25,7 @@ namespace Monster_Builder
             Size = "Medium";
             Type = "Humanoid";
             Statpool = (int) (8+2 * CR);
-            Weapons = new List<Weapon>();
-            Weapons.Add(new Weapon("unarmed"));
+            Weapons = [new Weapon("unarmed")];
             Armour = new Armour();
 
         }
