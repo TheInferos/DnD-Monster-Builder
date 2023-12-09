@@ -1,4 +1,6 @@
-﻿namespace Monster_Builder
+﻿using System.Collections.Generic;
+
+namespace Monster_Builder
 {
     public class Monster
     {
@@ -6,10 +8,12 @@
         public float CR { get; set; }
         public string Size { get; set; }
         public string Type { get; set; }
+        public List<Weapon> Weapons { get; set; }
 
         public Statline Stats { get; set; }
 
         public int Statpool { get; set; }
+
         public Monster(String name, float cr)
         {
             Name = name;
@@ -18,10 +22,17 @@
             Size = "Medium";
             Type = "Humanoid";
             Statpool = (int) (8+2 * CR);
+            Weapons = new List<Weapon>();
         }
-        public string PrintDetails()
+        public string toString()
         {
-            return $"{Name}\nChallenger Rating {CR}\n";
+            string message = $"{Name}\nChallenger Rating {CR}\n Gear:{Weapons[0]}";
+            return message;
+        }
+
+        public void addWeapon(Weapon weapon)
+        {
+            Weapons.Add(weapon);
         }
 
     }
