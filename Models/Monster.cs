@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 
 namespace Monster_Builder
+
 {
     public class Monster
     {
@@ -9,6 +10,8 @@ namespace Monster_Builder
         public string Size { get; set; }
         public string Type { get; set; }
         public List<Weapon> Weapons { get; set; }
+
+        public Weapon[] Weapons { get; set; }
 
         public Statline Stats { get; set; }
 
@@ -23,6 +26,7 @@ namespace Monster_Builder
             Type = "Humanoid";
             Statpool = (int) (8+2 * CR);
             Weapons = new List<Weapon>();
+
         }
         public string toString()
         {
@@ -34,6 +38,7 @@ namespace Monster_Builder
         {
             Weapons.Add(weapon);
         }
+
 
     }
 

@@ -1,7 +1,4 @@
-﻿using Microsoft.Extensions.Hosting;
-using System.Xml.Linq;
-
-namespace Monster_Builder
+﻿namespace Monster_Builder_Web_API.Models
 {
     public class Armour
     {
