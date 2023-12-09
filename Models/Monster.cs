@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Armours;
 
 namespace Monster_Builder
 
@@ -10,8 +11,7 @@ namespace Monster_Builder
         public string Size { get; set; }
         public string Type { get; set; }
         public List<Weapon> Weapons { get; set; }
-
-        public Weapon[] Weapons { get; set; }
+        public Armour Armour { get; set; }
 
         public Statline Stats { get; set; }
 
@@ -26,17 +26,24 @@ namespace Monster_Builder
             Type = "Humanoid";
             Statpool = (int) (8+2 * CR);
             Weapons = new List<Weapon>();
+            Weapons.Add(new Weapon("unarmed"));
+            Armour = new Armour();
 
         }
         public string toString()
         {
-            string message = $"{Name}\nChallenger Rating {CR}\n Gear:{Weapons[0]}";
+            string message = $"{Name}\nChallenger Rating {CR}\nWeapons:\n{Weapons[0]}\nArmour: \n{Armour}";
             return message;
         }
 
         public void addWeapon(Weapon weapon)
         {
             Weapons.Add(weapon);
+        }
+
+        public void changeArmour(Armour armour)
+        {
+            Armour = armour;
         }
 
 

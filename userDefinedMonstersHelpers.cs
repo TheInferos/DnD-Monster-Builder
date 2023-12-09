@@ -1,8 +1,9 @@
 ﻿using Monster_Builder_Web_API.Models;
+using Monster_Builder;
 
 internal  class userDefinedMonstersHelpers
 {
-    public static Monster Creation()
+    public Monster MonsterCreation()
     {
         Console.WriteLine("What is the name of your Monster?");
         string name = Console.ReadLine();

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Monster_Builder_Web_API.Models;
+using Armours;
 
 namespace Monster_Builder_Web_API.Controllers
 {
