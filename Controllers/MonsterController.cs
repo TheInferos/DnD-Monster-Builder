@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Armours;
+using Microsoft.AspNetCore.Mvc;
 using Monster_Builder;
 using Monster_Builder_Web_API.Models;
 
@@ -19,9 +20,18 @@ namespace Monster_Builder_Web_API.Controllers
         public ActionResult<string> AddWeapon(string weapon)
         {
             Monster Guard = new Monster("Guard", 3);
-            Guard.addWeapon(new Weapon("Dagger"));
+            Guard.addWeapon(new Weapon(weapon));
             return Guard.toString();
         }
+
+        [HttpPost("switchArmour")]
+        public ActionResult<string> changeArmour(string armour)
+        {
+            Monster Guard = new Monster("Guard", 3);
+            Guard.changeArmour(new Armour(armour));
+            return Guard.toString();
+        }
+
 
         //// GET api/monsters/{id}
         //[HttpGet("{id}")]

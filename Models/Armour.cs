@@ -1,4 +1,4 @@
-﻿namespace Monster_Builder_Web_API.Models
+﻿namespace Armours
 {
     public class Armour
     {
@@ -23,6 +23,16 @@
         public Armour() 
         {
             Name = "Padded";
+            AC = 11;
+            Cost = 200;
+            Weight = 4;
+            Strength = 0;
+            Stealth = false;
+            Type = "Light";
+        }
+        public Armour(string name)
+        {
+            Name = name;
             AC = 11;
             Cost = 200;
             Weight = 4;
