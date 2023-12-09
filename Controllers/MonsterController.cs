@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Monster_Builder;
 using Statlines;
+using System.Text.Json;
 
 namespace Monster_Builder_Web_API.Controllers
 {
@@ -16,7 +17,18 @@ namespace Monster_Builder_Web_API.Controllers
             return Guard.ToString();
         }
 
-        [HttpPost("giveWeapon")]
+        [HttpPost("MakeMonster")]
+        public ActionResult<string> MakeMonster([FromBody] InitialMonsterRequest formData)
+        {
+            if (string.IsNullOrEmpty(formData.Name) || formData.CR < 0)
+            {
+                return "{\"error\": \"Name and/ or challenge rating not provided\"}";
+            }
+            Monster monster = new Monster(formData.Name, formData.CR);
+            return JsonSerializer.Serialize(monster);
+        }
+
+        [HttpPost("GiveWeapon")]
         public ActionResult<string> AddWeapon(string weapon)
         {
             Monster Guard = new Monster("Guard", 3);
@@ -24,7 +36,7 @@ namespace Monster_Builder_Web_API.Controllers
             return Guard.ToString();
         }
 
-        [HttpPost("switchArmour")]
+        [HttpPost("SwitchArmour")]
         public ActionResult<string> changeArmour(string armour)
         {
             Monster Guard = new Monster("Guard", 3);
@@ -32,7 +44,7 @@ namespace Monster_Builder_Web_API.Controllers
             return Guard.ToString();
         }
 
-        [HttpPost("changeStats")]
+        [HttpPost("ChangeStats")]
         public ActionResult<string> setStats(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma)
         {
             Monster Guard = new Monster("Guard", 3);

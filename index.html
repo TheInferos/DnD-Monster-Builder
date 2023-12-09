@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My App</title>
+</head>
+<body>
+    <h1>Monster Builder</h1>
+
+    <form id="myForm">
+        <label for="name">What should the monster be called:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="cr">What CR are we looking at:</label>
+        <input type="number" id="cr" name="cr" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Display response here -->
+    <div id="responseDisplay"></div>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const formData = {
+                name: document.getElementById('name').value,
+                cr: parseInt(document.getElementById('cr').value)
+            };
+            fetch('https://localhost:7050/api/Monsters/MakeMonster', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json' // Ensure this header is included
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    const responseDisplay = document.getElementById('responseDisplay');
+                    responseDisplay.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    // Handle error
+                });
+        });
+    </script>
+</body>
+</html>
