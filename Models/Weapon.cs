@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Monster_Builder
 {
@@ -35,6 +36,12 @@ namespace Monster_Builder
             Ranged = false;
             Cost = 0;
             Weight =01;
+        }
+
+        [JsonConstructor]
+        public Weapon()
+        {
+            // Default constructor without parameters
         }
 
         public override string ToString()

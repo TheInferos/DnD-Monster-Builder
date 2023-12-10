@@ -14,8 +14,8 @@ namespace Monster_Builder_Web_API.Controllers
         [HttpGet]
         public ActionResult<string> GetSystemMonster()
         {
-            Monster Guard = new Monster("Guard", 3);
-            return Guard.ToString();
+            Monster monster = new Monster("Guard", 3);
+            return monster.ToString();
         }
 
         [HttpPost("MakeMonster")]
