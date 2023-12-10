@@ -1,7 +1,8 @@
 ﻿using System.Text.Json;
 using Armours;
+using Monster_Builder;
 
-namespace Monster_Builder
+namespace Monster_Builder_Web_API.Models
 {
     public class ArmouryManager
     {
@@ -13,13 +14,13 @@ namespace Monster_Builder
             weapons = new Dictionary<string, Weapon>();
         }
 
-        public void LoadBaseArmours() 
+        public void LoadBaseArmours()
         {
-            LoadArmoursFromFile("Armours.json");
+            LoadArmoursFromFile("Data/Armours.json");
         }
         public void LoadBaseWeapons()
         {
-            LoadWeaponsFromFile("Weapons.json");
+            LoadWeaponsFromFile("Data/Weapons.json");
         }
         public void LoadArmoursFromFile(string filePath)
         {

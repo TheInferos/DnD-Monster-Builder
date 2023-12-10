@@ -64,17 +64,6 @@ namespace Monster_Builder
 
     public class userDefinedMonsters
     {
-        //public static Monster Creation(UI ui)
-        //{
-            
-        //    string name =  ui.GetUserInput("What is the name of your Monster?");
-        //    float cr = float.Parse(s: ui.GetUserInput("Thank you, and what CR should we plan for this to be?"));
-        //    string statPriority =ui.GetUserInput("Please provide me the priortity stats as an integer betwen 1 and 5; Where 1 is main stat, 2 is high, 3 is hgood, 4 is base and 5 is dump");
-
-        //    Monster monster = new Monster(name, cr);
-        //    return monster;
-        //}
-
         public Monster DefineStats (Monster monster)
         {
 
@@ -96,4 +85,36 @@ namespace Monster_Builder
         public string Name { get; set; }
         public int CR { get; set; }
     }
+    // TODO
+    //public void GenerateStatsFromPriority(string priority, Monster monster)
+    //{
+    //    int loopCount = 1;
+    //    int addedStats = 0;
+    //    string[] PriorityStrings = priority.Split(" ");
+    //    List<int> PriorityList = new List<int>();
+    //    string[] StatLookup;
+    //    foreach (var prioritySring in PriorityStrings)
+    //    {
+    //        int parsedValue;
+    //        bool parseSuccess = int.TryParse(prioritySring, out parsedValue);
+
+    //        if (parseSuccess)
+    //        {
+    //            PriorityList.Add(parsedValue);
+    //        }
+
+    //    }
+    //    while (monster.Statpool < addedStats)
+    //    {
+    //        foreach (int Priority in PriorityList)
+    //        {
+
+    //            if (loopCount > (int)Priority)
+    //            {
+
+    //            }
+    //        }
+
+    //    }
+    //}
 }
