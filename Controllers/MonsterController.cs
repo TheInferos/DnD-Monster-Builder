@@ -1,15 +1,21 @@
 ﻿using Armours;
 using Microsoft.AspNetCore.Mvc;
 using Monster_Builder;
-using Statlines;
+using Monster_Builder_Web_API.Services;
 using System.Text.Json;
-using System.Threading;
 
 namespace Monster_Builder_Web_API.Controllers
 {
     [Route("api/[controller]")]
     public class MonsterController : ControllerBase
     {
+        BeastiaryService _beastiaryService;
+        ArmouryService _armouryService;
+        public MonsterController(BeastiaryService beastiaryService, ArmouryService armouryService) 
+        {
+            _beastiaryService = beastiaryService;
+            _armouryService = armouryService;
+        }
         // GET api/monster
         [HttpGet]
         public ActionResult<string> GetSystemMonster()
@@ -26,29 +32,31 @@ namespace Monster_Builder_Web_API.Controllers
                 return "{\"error\": \"Name and/ or challenge rating not provided\"}";
             }
             Monster monster = new Monster(formData.Name, formData.CR);
+            _beastiaryService.AddMonster(monster);
             return JsonSerializer.Serialize(monster);
         }
 
-        [HttpPost("GiveWeapon")]
-        public ActionResult<string> AddWeapon(string weapon)
+        [HttpPost("{id}/GiveWeapon")]
+        public ActionResult<string> AddWeapon(string weapon, string id)
         {
-            Monster monster = new Monster("Guard", 3);
+            Monster monster = _beastiaryService.GetMonsterByID(id);
             monster.addWeapon(new Weapon(weapon));
-            return monster.ToString();
-        }
-
-        [HttpPost("SwitchArmour")]
-        public ActionResult<string> changeArmour(string armour)
-        {
-            Monster monster = new Monster("Guard", 3);
-            monster.changeArmour(new Armour(armour));
             return JsonSerializer.Serialize(monster);
         }
 
-        [HttpPost("ChangeStats")]
-        public ActionResult<string> setStats(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma)
+        [HttpPost("{id}/SwitchArmour")]
+        public ActionResult<string> changeArmour(string armourString,string id)
         {
-            Monster monster = new Monster("Guard", 3);
+            Monster monster = _beastiaryService.GetMonsterByID(id);
+            Armour armour = _armouryService.GetArmourByName(armourString);
+            monster.changeArmour(armour);
+            return JsonSerializer.Serialize(monster);
+        }
+
+        [HttpPost("{id}/ChangeStats")]
+        public ActionResult<string> setStats(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, string id)
+        {
+            Monster monster = _beastiaryService.GetMonsterByID(id);
             monster.Stats.changeStats(strength, dexterity, constitution, intelligence, wisdom, charisma);
             return monster.ToString();
         }
