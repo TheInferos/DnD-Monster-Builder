@@ -3,13 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 using Monster_Builder;
 using Statlines;
 using System.Text.Json;
+using System.Threading;
 
 namespace Monster_Builder_Web_API.Controllers
 {
     [Route("api/[controller]")]
-    public class MonstersController : ControllerBase
+    public class MonsterController : ControllerBase
     {
-        // GET api/monsters
+        // GET api/monster
         [HttpGet]
         public ActionResult<string> GetSystemMonster()
         {
@@ -31,25 +32,25 @@ namespace Monster_Builder_Web_API.Controllers
         [HttpPost("GiveWeapon")]
         public ActionResult<string> AddWeapon(string weapon)
         {
-            Monster Guard = new Monster("Guard", 3);
-            Guard.addWeapon(new Weapon(weapon));
-            return Guard.ToString();
+            Monster monster = new Monster("Guard", 3);
+            monster.addWeapon(new Weapon(weapon));
+            return monster.ToString();
         }
 
         [HttpPost("SwitchArmour")]
         public ActionResult<string> changeArmour(string armour)
         {
-            Monster Guard = new Monster("Guard", 3);
-            Guard.changeArmour(new Armour(armour));
-            return Guard.ToString();
+            Monster monster = new Monster("Guard", 3);
+            monster.changeArmour(new Armour(armour));
+            return JsonSerializer.Serialize(monster);
         }
 
         [HttpPost("ChangeStats")]
         public ActionResult<string> setStats(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma)
         {
-            Monster Guard = new Monster("Guard", 3);
-            Guard.Stats.changeStats(strength, dexterity, constitution, intelligence, wisdom, charisma);
-            return Guard.ToString();
+            Monster monster = new Monster("Guard", 3);
+            monster.Stats.changeStats(strength, dexterity, constitution, intelligence, wisdom, charisma);
+            return monster.ToString();
         }
 
 

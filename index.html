@@ -2,33 +2,112 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My App</title>
+    <title>Monster Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body style="padding: 50px">
     <h1>Monster Builder</h1>
 
-    <form id="myForm">
-        <label for="name">What should the monster be called:</label>
-        <input type="text" id="name" name="name" required>
+    <form class="mb-3" id="nameCR">
+        <label class="form-label" for="name">What should the monster be called:</label>
+        <input class="form-control" type="text" id="name" name="name" required>
         <br>
-        <label for="cr">What CR are we looking at:</label>
-        <input type="number" id="cr" name="cr" required>
+        <label class="form-label" for="cr">What CR are we looking at:</label>
+        <input class="form-control" type="number" id="cr" name="cr" required>
         <br>
         <button type="submit">Submit</button>
+        <br>
+        <br>
+        <div id="armourSelector" class="d-flex gap-3 flex-wrap">
+            <!-- style="display: none;" -->
+            <label class="form-label" for="armour" id="Armour Container">What Armour type are we looking at:</label>
+        </div>
+        <div id="responseDisplay"></div>
     </form>
 
-    <!-- Display response here -->
-    <div id="responseDisplay"></div>
+    <script id="buildArmourList">
+        function handleDropdownItemClick(armourName) {
+            // Perform an action based on the selected dropdown item
+            console.log(`Selected item: ${armourName}`);
+            let data = fetch(`https://localhost:7050/api/Monster/SwitchArmour?armour=${armourName}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json' // Ensure this header is included
 
-    <script>
-        document.getElementById('myForm').addEventListener('submit', function (event) {
+                },
+            })
+                .then(response => response.json())
+                .then(data => {
+                    const responseDisplay = document.getElementById('responseDisplay');
+                    responseDisplay.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+                }).catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+        const armorArray = fetch('https://localhost:7050/api/Armoury/AllArmours', {
+            method: 'Get',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+            .then(response => response.json())
+            .then(data => {
+                const dropdownContainer = document.getElementById('armourSelector');
+
+                Object.keys(data).forEach(category => {
+                    // Create a new dropdown for each category
+                    const dropdownDiv = document.createElement('div');
+                    dropdownDiv.classList.add('dropdown', 'mb-3');
+
+                    // Dropdown button
+                    const dropdownButton = document.createElement('button');
+                    dropdownButton.classList.add('btn', 'btn-secondary', 'dropdown-toggle');
+                    dropdownButton.type = 'button';
+                    dropdownButton.setAttribute('data-bs-toggle', 'dropdown');
+                    dropdownButton.textContent = category;
+
+                    // Dropdown menu
+                    const dropdownMenu = document.createElement('ul');
+                    dropdownMenu.classList.add('dropdown-menu');
+
+                    // Add items to the dropdown menu
+                    data[category].forEach(armor => {
+                        const listItem = document.createElement('li');
+                        const anchor = document.createElement('a');
+                        anchor.href = '#';
+                        anchor.classList.add('dropdown-item');
+                        anchor.textContent = armor;
+                        anchor.addEventListener('click', (event) => {
+                            event.preventDefault();
+                            handleDropdownItemClick(armor);
+                        });
+                        listItem.appendChild(anchor);
+                        dropdownMenu.appendChild(listItem);
+                    });
+
+                    dropdownDiv.appendChild(dropdownButton);
+                    dropdownDiv.appendChild(dropdownMenu);
+                    dropdownContainer.appendChild(dropdownDiv);
+                });
+
+                const dropdowns = document.querySelectorAll('.dropdown-toggle');
+                dropdowns.forEach(dropdown => new bootstrap.Dropdown(dropdown));
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+    </script>
+
+    <script id="submitButton">
+        document.getElementById('nameCR').addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent the default form submission
 
             const formData = {
                 name: document.getElementById('name').value,
                 cr: parseInt(document.getElementById('cr').value)
             };
-            fetch('https://localhost:7050/api/Monsters/MakeMonster', {
+            fetch('https://localhost:7050/api/Monster/MakeMonster', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json' // Ensure this header is included
@@ -44,7 +123,17 @@
                     console.error('Error:', error);
                     // Handle error
                 });
+
+            const radioContainer = document.getElementById('armourSelector');
+            radioContainer.style.display = 'block';
         });
     </script>
+
+    <script id="selectArmour">
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
