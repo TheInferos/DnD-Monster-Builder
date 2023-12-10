@@ -2,30 +2,19 @@
 using Armours;
 using Monster_Builder;
 
-namespace Monster_Builder_Web_API.Models
+namespace Monster_Builder_Web_API.Services
 {
-    public class ArmouryManager
+    public class ArmouryService
     {
         public Dictionary<string, Armour> armours;
         public Dictionary<string, Weapon> weapons;
-        public Dictionary<string, Monster> monsters;
 
-        public ArmouryManager()
+        public ArmouryService()
         {
             armours = new Dictionary<string, Armour>();
             weapons = new Dictionary<string, Weapon>();
-            monsters = new Dictionary<string, Monster>();
-            LoadBaseMonsters();
-        }
-
-        public Monster FindMonster(string name)
-        {
-            return monsters[name];
-        }
-
-        public void AddMonster (Monster monster) 
-        {
-            monsters[monster.Name] = monster;
+            LoadBaseArmours();
+            LoadBaseWeapons();
         }
 
         public void LoadBaseArmours()
@@ -36,10 +25,16 @@ namespace Monster_Builder_Web_API.Models
         {
             LoadWeaponsFromFile("Data/Weapons.json");
         }
-        public void LoadBaseMonsters()
+        public Armour GetArmourByName(string name)
         {
-            LoadMonstersFromFile("Data/Monsters.json");
+            return armours[name];
         }
+
+        public Weapon GetWeaponByName(string name)
+        {
+            return weapons[name];
+        }
+
         public void LoadArmoursFromFile(string filePath)
         {
             string jsonData = File.ReadAllText(filePath);
@@ -51,23 +46,6 @@ namespace Monster_Builder_Web_API.Models
             string jsonData = File.ReadAllText(filePath);
             weapons = JsonSerializer.Deserialize<Dictionary<string, Weapon>>(jsonData);
         }
-
-        public void LoadMonstersFromFile(string filePath)
-        {
-            string jsonData = File.ReadAllText(filePath);
-            monsters = JsonSerializer.Deserialize<Dictionary<string, Monster>>(jsonData);
-        }
-
-        public void SaveMonsters(string filePath) 
-        {
-            // Create JsonSerializerOptions
-            var options = new JsonSerializerOptions
-            {
-                WriteIndented = true
-            };
-            File.WriteAllText(filePath, JsonSerializer.Serialize(monsters, options));
-        }
-
 
         public void PrintArmourDetails()
         {

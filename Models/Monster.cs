@@ -12,6 +12,7 @@ namespace Monster_Builder
     public class Monster
     {
         public string Name { get; set; }
+        public string ID { get; set; }
         public float CR { get; set; }
         public string Size { get; set; }
         public string Type { get; set; }
@@ -24,6 +25,7 @@ namespace Monster_Builder
 
         public Monster(String name, float cr)
         {
+            ID = Guid.NewGuid().ToString();
             Name = name;
             CR = cr;
             Stats = new Statline();
@@ -32,7 +34,6 @@ namespace Monster_Builder
             Statpool = (int) (8+2 * CR);
             Weapons = [new Weapon("unarmed")];
             Armour = new Armour();
-
         }
 
         public override string ToString()
@@ -43,7 +44,7 @@ namespace Monster_Builder
                     CR: {CR}
                     Type: {Type}
                     Stats: {Stats}
-                    Weapons: {Weapons[0].ToString()}
+                    Weapons: {Weapons[0]}
                     Armour: {Armour}";
             message += "\n";
             return message.Replace("\t", "").Replace("    ", "");
@@ -57,8 +58,34 @@ namespace Monster_Builder
         public void changeArmour(Armour armour)
         {
             Armour = armour;
+            calculateAC();
+
         }
 
+        public void calculateAC ()
+        {
+            Stats.AC = Armour.AC;
+            if (Armour.Type == "Heavy")
+            {
+                return;
+            }
+            else if (Armour.Type == "Medium")
+            {
+                int dexMod = (Stats.Dexterity / 2) - 5;
+                if (dexMod > 2)
+                {
+                    Stats.AC += 2;
+                }
+                else
+                {
+                    Stats.AC += dexMod;
+                }
+            }
+            else
+            {
+                Stats.AC += (Stats.Dexterity / 2) - 5;
+            }
+        }
 
     }
 
@@ -74,10 +101,10 @@ namespace Monster_Builder
     {
         public static Monster Creation()
         {
-            Monster Guard = new Monster("Guard", 3);
+            Monster monster = new Monster("Guard", 3);
             string statPriority = "1 2 2 3 4 5";
             
-            return Guard;
+            return monster;
         }
     }
     public class InitialMonsterRequest
