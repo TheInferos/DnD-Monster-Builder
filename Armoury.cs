@@ -9,9 +9,17 @@ namespace Monster_Builder
         public Dictionary<string, Weapon> weapons;
         public ArmouryManager()
         {
+            armours = new Dictionary<string, Armour>();
+            weapons = new Dictionary<string, Weapon>();
+        }
+
+        public void LoadBaseArmours() 
+        {
             LoadArmoursFromFile("Armours.json");
+        }
+        public void LoadBaseWeapons()
+        {
             LoadWeaponsFromFile("Weapons.json");
-            //manager.PrintArmourDetails();
         }
         public void LoadArmoursFromFile(string filePath)
         {
