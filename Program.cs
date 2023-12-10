@@ -1,3 +1,5 @@
+using Monster_Builder_Web_API.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -17,6 +19,9 @@ builder.Services.AddCors(options =>
                 .AllowAnyHeader();
         });
 });
+
+builder.Services.AddSingleton<BeastiaryService>();
+builder.Services.AddSingleton<ArmouryService>();
 
 var app = builder.Build();
 

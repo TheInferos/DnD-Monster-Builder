@@ -48,7 +48,6 @@ namespace Statlines
             {
                 Health += kvp.Value * kvp.Key;
             }
-            
         }
 
         public void changeStats(int strength, int dexterity, int consitution, int intelligence, int wisdom, int charisma)
