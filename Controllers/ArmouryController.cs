@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Monster_Builder;
+using Monster_Builder_Web_API.Models;
 
 
 namespace Monster_Builder_Web_API.Controllers
