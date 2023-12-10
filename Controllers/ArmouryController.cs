@@ -11,13 +11,7 @@ namespace Monster_Builder_Web_API.Controllers
         public Dictionary<string, List<string>> getArmour()
         { 
 
-            var armorObject = new Dictionary<string, List<string>>
-            {
-                //{ "Natural", new List<string> { } },
-                //{ "Light", new List<string> { } },
-                //{ "Medium", new List<string> {  } },
-                //{ "Heavy", new List<string> { } }
-            };
+            var armorObject = new Dictionary<string, List<string>>{ };
             ArmouryManager ArmourList = new ArmouryManager();
             ArmourList.LoadBaseArmours();
 
@@ -32,6 +26,10 @@ namespace Monster_Builder_Web_API.Controllers
             }
 
             return armorObject;
-    }
-}
+        }
+
+        [HttpPost("SaveMonster")]
+        public void SaveMonster(string name)
+        {
+        }
 }

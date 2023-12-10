@@ -8,10 +8,18 @@ namespace Monster_Builder_Web_API.Models
     {
         public Dictionary<string, Armour> armours;
         public Dictionary<string, Weapon> weapons;
+        public Dictionary<string, Monster> monsters;
+
         public ArmouryManager()
         {
             armours = new Dictionary<string, Armour>();
             weapons = new Dictionary<string, Weapon>();
+            monsters = new Dictionary<string, Monster>();
+        }
+
+        public Monster FindMonster(string name)
+        {
+            return monsters[name];
         }
 
         public void LoadBaseArmours()
@@ -33,6 +41,18 @@ namespace Monster_Builder_Web_API.Models
             string jsonData = File.ReadAllText(filePath);
             weapons = JsonSerializer.Deserialize<Dictionary<string, Weapon>>(jsonData);
         }
+
+        public void LoadMonstersFromFile(string filePath)
+        {
+            string jsonData = File.ReadAllText(filePath);
+            monsters = JsonSerializer.Deserialize<Dictionary<string, Monster>>(jsonData);
+        }
+
+        public void SaveMonsters(string filePath, Dictionary<string, Monster> monsters) 
+        { 
+            File.WriteAllText(filePath, JsonSerializer.Serialize(monsters)
+        }
+
 
         public void PrintArmourDetails()
         {
