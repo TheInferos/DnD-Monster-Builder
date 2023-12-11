@@ -70,4 +70,16 @@ public class ArmoursController : ControllerBase
             throw;
         }
     }
+
+    [HttpPut()]
+    public IActionResult UpdateArmour([FromBody] ArmourDTO newArmour)
+    {
+        throw new NotImplementedException();
+    }
+
+    [HttpDelete()]
+    public IActionResult DeleteArmour(string name)
+    {
+        throw new NotImplementedException();
+    }
 }
