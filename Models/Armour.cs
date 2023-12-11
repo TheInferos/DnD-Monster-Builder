@@ -1,4 +1,6 @@
 ﻿using Monster_Builder_Web_API.Models;
+using Monster_Builder_Web_API.Models.DTOs;
+using Monster_Builder_Web_API.Models.Exceptions;
 
 namespace Armours;
 
@@ -145,7 +147,7 @@ public class Armour
 
         if (validationErrors.Count > 0)
         {
-            throw new AggregateException(validationErrors.ToArray());
+            throw new ValidationException(validationErrors.ToArray());
         }
     }
 }

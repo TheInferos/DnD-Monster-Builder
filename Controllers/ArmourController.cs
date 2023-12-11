@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Armours;
 using Monster_Builder_Web_API.Services;
-using Monster_Builder_Web_API.Models;
+using Monster_Builder_Web_API.Models.DTOs;
+using Monster_Builder_Web_API.Models.Exceptions;
 
 namespace Monster_Builder_Web_API.Controllers;
 
@@ -20,8 +21,21 @@ public class ArmourController
     }
 
     [HttpPost("MakeArmour")]
-    public ActionResult<bool> MakeArmour([FromBody] ArmourDTO newArmour)
+    public Task<IActionResult> MakeArmour([FromBody] ArmourDTO newArmour)
     {
-        return _armourService.AddNewArmour(newArmour);
+        try
+        {
+            //return StatusCodeResult(200);
+            var v = _armourService.AddNewArmour(newArmour);
+            return Ok(v);
+        }
+        catch (Exception ex)
+        {
+            if(ex is ConflictException)
+            {
+                return this.BadRequest("");
+            }
+        }
+        return true;
     }
 }

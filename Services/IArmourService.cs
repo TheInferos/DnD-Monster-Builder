@@ -1,5 +1,5 @@
 ﻿using Armours;
-using Monster_Builder_Web_API.Models;
+using Monster_Builder_Web_API.Models.DTOs;
 
 namespace Monster_Builder_Web_API.Services;
 

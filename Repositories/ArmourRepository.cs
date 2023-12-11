@@ -1,4 +1,5 @@
 ﻿using Armours;
+using Monster_Builder_Web_API.Models.Exceptions;
 using System.Text.Json;
 
 namespace Monster_Builder_Web_API.Repositories;
@@ -65,7 +66,7 @@ public class ArmourRepository : IArmourRepository
         if(armourCache.ContainsKey(armour.Name))
         {
             //Could change for logging and return false or return status enums but its easy enough to handle the exception.
-            throw new Exception($"Conflict armour {armour.Name} already exists, use update.");
+            throw new ConflictException($"Conflict armour {armour.Name} already exists, use update.");
         }
 
         armourCache.Add(armour.Name, armour);    
