@@ -7,7 +7,7 @@ using Monster_Builder_Web_API.Models.Exceptions;
 namespace Monster_Builder_Web_API.Controllers;
 
 [Route("api/[controller]")]
-public class ArmourController
+public class ArmourController : ControllerBase
 {
     private readonly IArmourService _armourService;
     public ArmourController(IArmourService armourService) {
@@ -15,17 +15,28 @@ public class ArmourController
     }
 
     [HttpGet("BasicArmour")]
-    public ActionResult<Armour> GetArmour(string name)
-    {
-        return _armourService.GetArmourByName(name);
-    }
-
-    [HttpPost("MakeArmour")]
-    public Task<IActionResult> MakeArmour([FromBody] ArmourDTO newArmour)
+    public IActionResult GetArmour(string name)
     {
         try
         {
-            //return StatusCodeResult(200);
+            var result = _armourService.GetArmourByName(name);
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            if (ex is KeyNotFoundException)
+            {
+                return NotFound();
+            }
+            throw;
+        }
+    }
+
+    [HttpPost("MakeArmour")]
+    public IActionResult MakeArmour([FromBody] ArmourDTO newArmour)
+    {
+        try
+        {
             var v = _armourService.AddNewArmour(newArmour);
             return Ok(v);
         }
@@ -33,9 +44,13 @@ public class ArmourController
         {
             if(ex is ConflictException)
             {
-                return this.BadRequest("");
+                return Conflict(false);
             }
+            else if (ex is ValidationException)
+            {
+                return BadRequest(ex.Message);
+            }
+            throw;
         }
-        return true;
     }
 }
