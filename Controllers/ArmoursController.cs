@@ -13,6 +13,11 @@ public class ArmoursController : ControllerBase
         _armourService = armourService;
     }
 
+    /// <summary>
+    /// Returns armour found by name.
+    /// </summary>
+    /// <param name="name">The unique identifier used to fetch armour</param>
+    /// <returns>The armour if found, else a 404</returns>
     [HttpGet("{name}")]
     public IActionResult GetArmour(string name)
     {
