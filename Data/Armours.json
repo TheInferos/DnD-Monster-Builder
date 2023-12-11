@@ -2,92 +2,92 @@
   "Natural": {
     "AC": 13,
     "Name": "Natural",
-    "Cost": 0,
-    "Weight": 0,
-    "Strength": 0,
+    "Cost": null,
+    "Weight": null,
+    "Strength": null,
     "Stealth": true,
-    "Type": "Natural"
+    "Type": 0
   },
   "Padded": {
     "AC": 11,
     "Name": "Padded",
     "Cost": 500,
     "Weight": 8,
-    "Strength": 0,
+    "Strength": null,
     "Stealth": true,
-    "Type": "Light"
+    "Type": 1
   },
   "Leather": {
     "AC": 11,
     "Name": "Leather",
     "Cost": 1000,
     "Weight": 10,
-    "Strength": 0,
+    "Strength": null,
     "Stealth": false,
-    "Type": "Light"
+    "Type": 1
   },
   "Studded Leather": {
     "AC": 12,
     "Name": "Studded Leather",
     "Cost": 4500,
     "Weight": 13,
-    "Strength": 0,
+    "Strength": null,
     "Stealth": false,
-    "Type": "Light"
+    "Type": 1
   },
   "Hide": {
     "AC": 12,
     "Name": "Hide",
     "Cost": 1000,
     "Weight": 12,
-    "Strength": 0,
+    "Strength": null,
     "Stealth": false,
-    "Type": "Medium"
+    "Type": 2
   },
   "Chain Shirt": {
     "AC": 13,
     "Name": "Chain Shirt",
     "Cost": 5000,
     "Weight": 20,
-    "Strength": 0,
+    "Strength": null,
     "Stealth": false,
-    "Type": "Medium"
+    "Type": 2
   },
   "Scale Mail": {
     "AC": 14,
     "Name": "Scale Mail",
     "Cost": 5000,
     "Weight": 45,
-    "Strength": 0,
+    "Strength": null,
     "Stealth": true,
-    "Type": "Medium"
+    "Type": 2
   },
   "Breastplate": {
     "AC": 14,
     "Name": "Breastplate",
     "Cost": 4000,
     "Weight": 20,
-    "Strength": 0,
+    "Strength": null,
     "Stealth": false,
-    "Type": "Medium"
+    "Type": 2
   },
   "Half Plate": {
     "AC": 15,
     "Name": "Half Plate",
     "Cost": 7500,
     "Weight": 40,
-    "Strength": 0,
+    "Strength": null,
     "Stealth": true,
-    "Type": "Medium"
+    "Type": 2
   },
   "Ring Mail": {
     "AC": 14,
     "Name": "Ring Mail",
     "Cost": 3000,
     "Weight": 40,
-    "Strength": 0,
+    "Strength": null,
     "Stealth": true,
-    "Type": "Heavy"
+    "Type": 3
   },
   "Chain Mail": {
     "AC": 16,
@@ -96,7 +96,7 @@
     "Weight": 55,
     "Strength": 13,
     "Stealth": true,
-    "Type": "Heavy"
+    "Type": 3
   }
 }
 

@@ -6,14 +6,14 @@ using Monster_Builder_Web_API.Models.Exceptions;
 namespace Monster_Builder_Web_API.Controllers;
 
 [Route("api/[controller]")]
-public class ArmourController : ControllerBase
+public class ArmoursController : ControllerBase
 {
     private readonly IArmourService _armourService;
-    public ArmourController(IArmourService armourService) {
+    public ArmoursController(IArmourService armourService) {
         _armourService = armourService;
     }
 
-    [HttpGet("BasicArmour")]
+    [HttpGet("{name}")]
     public IActionResult GetArmour(string name)
     {
         try
@@ -31,8 +31,26 @@ public class ArmourController : ControllerBase
         }
     }
 
-    [HttpPost("MakeArmour")]
-    public IActionResult MakeArmour([FromBody] ArmourDTO newArmour)
+    [HttpGet()]
+    public IActionResult GetArmours()
+    {
+        try
+        {
+            var result = _armourService.GetAllArmour();
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            if (ex is NullReferenceException)
+            {
+                return NotFound();
+            }
+            throw;
+        }
+    }
+
+    [HttpPost()]
+    public IActionResult CreateArmour([FromBody] ArmourDTO newArmour)
     {
         try
         {

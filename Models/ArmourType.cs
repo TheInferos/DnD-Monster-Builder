@@ -2,6 +2,7 @@
 
 public enum ArmourType
 {
+    Natural,
     Light,
     Medium,
     Heavy

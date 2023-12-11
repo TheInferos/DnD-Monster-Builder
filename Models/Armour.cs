@@ -11,8 +11,8 @@ public class Armour
     //I don't know the design you had in mind but I can't think why the armour needs to be changeable. Just use a different armour
     private string _name;
     private int _ac;
-    private int _cost;
-    private int _weight;
+    private int? _cost;
+    private int? _weight;
     private int? _strength;
 
     public string Name
@@ -39,7 +39,7 @@ public class Armour
         }
     }
 
-    public int Cost
+    public int? Cost
     {
         get
         {
@@ -47,19 +47,21 @@ public class Armour
         }
         set
         {
-            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(value);
+            if(value != null)
+                ArgumentOutOfRangeException.ThrowIfNegativeOrZero((int)value);
             _cost = value;
         }
     }
 
-    public int Weight { 
+    public int? Weight { 
         get
         {
             return _weight;
         }
         set
         {
-            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(value);
+            if (value != null)
+                ArgumentOutOfRangeException.ThrowIfNegativeOrZero((int)value);
             _weight = value;
         }
     }
@@ -73,9 +75,7 @@ public class Armour
         set
         {
             if(value != null)
-            {
                 ArgumentOutOfRangeException.ThrowIfLessThan((int)value, 13);
-            }
             _strength = value;
         }
     }
