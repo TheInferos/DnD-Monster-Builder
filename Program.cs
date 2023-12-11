@@ -26,9 +26,10 @@ builder.Services.AddSingleton<IArmourRepository, ArmourRepository>();
 
 //Will get a new one for each request but reuse it within the request
 builder.Services.AddScoped<BeastiaryService>();
+builder.Services.AddScoped<ArmouryService>();
 //Declared after the services used in its construction are.
 //Has a lifetime of the same or less than the services it depends on
-builder.Services.AddScoped<ArmouryService>();
+builder.Services.AddScoped<IArmourService, ArmourService>();
 
 var app = builder.Build();
 

@@ -7,7 +7,6 @@ namespace Monster_Builder_Web_API.Services
 {
     public class ArmouryService
     {
-        private readonly IArmourRepository _armourRepository;
         public Dictionary<string, Weapon> weapons;
 
         public ArmouryService(IArmourRepository armourRepository)
@@ -19,12 +18,6 @@ namespace Monster_Builder_Web_API.Services
         public void LoadBaseWeapons()
         {
             LoadWeaponsFromFile("Data/Weapons.json");
-        }
-
-        public Armour GetArmourByName(string name)
-        {
-            //TODO add any security checks or validation you want.
-            return _armourRepository.GetArmour(name);
         }
 
         public Weapon GetWeaponByName(string name)
@@ -60,11 +53,6 @@ namespace Monster_Builder_Web_API.Services
                 message += "\n";
             }
             Console.WriteLine(message.Replace("\t", "").Replace("    ", ""));
-        }
-
-        public IEnumerable<Armour> GetAllArmour()
-        {
-            return _armourRepository.GetAllArmour();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Armours;
+﻿using Monster_Builder_Web_API.Models;
+
+namespace Armours;
 
 public class Armour
 {
@@ -81,25 +83,27 @@ public class Armour
 
     public Armour(string name, int ac, int cost, int weight, int? strength, bool stealth, ArmourType type)
     {
-        //Lots of validation
-        List<Exception> validationErrors = new();
-        if (string.IsNullOrWhiteSpace(name)) validationErrors.Add(new ArgumentNullException("Name cannot be null"));
-        if (ac < 10) validationErrors.Add(new ArgumentOutOfRangeException("Ac must be an integer above 10"));
-        if (cost < 0) validationErrors.Add(new ArgumentOutOfRangeException("Cost must be an integer above 0"));
-        if (strength != null && strength < 13) validationErrors.Add(new ArgumentOutOfRangeException("Strenght requirement must be above 12 or null"));
+        Validate(name, ac, cost, strength);
 
-        if (validationErrors.Count > 0)
-        {
-            throw new AggregateException(validationErrors.ToArray());
-        }
-
-        Name = name;
+        _name = name;
         AC = ac;
         Cost = cost;
         Weight = weight;
         Strength = strength;
         Stealth = stealth;
         Type = type;
+    }
+
+    public Armour(ArmourDTO armour)
+    {
+        Validate(armour.Name, armour.AC, armour.Cost, armour.Strength);
+        _name = armour.Name;
+        AC = armour.AC;
+        Cost = armour.Cost;
+        Weight = armour.Weight;
+        Strength = armour.Strength;
+        Stealth = armour.Stealth;
+        Type = armour.Type;
     }
 
     //I get that you want to populate basic armour but the armour class isnt the place for this.
@@ -128,5 +132,20 @@ public class Armour
                     Stealth: {Stealth}";
         message += "\n";
         return message.Replace("\t", "").Replace("    ", "");
+    }
+
+    private static void Validate(string name, int ac, int cost, int? strength)
+    {
+        //Lots of validation
+        List<Exception> validationErrors = new();
+        if (string.IsNullOrWhiteSpace(name)) validationErrors.Add(new ArgumentNullException("Name cannot be null"));
+        if (ac < 10) validationErrors.Add(new ArgumentOutOfRangeException("Ac must be an integer above 10"));
+        if (cost < 0) validationErrors.Add(new ArgumentOutOfRangeException("Cost must be an integer above 0"));
+        if (strength != null && strength < 13) validationErrors.Add(new ArgumentOutOfRangeException("Strenght requirement must be above 12 or null"));
+
+        if (validationErrors.Count > 0)
+        {
+            throw new AggregateException(validationErrors.ToArray());
+        }
     }
 }

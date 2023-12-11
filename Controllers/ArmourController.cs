@@ -1,24 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Armours;
+using Monster_Builder_Web_API.Services;
+using Monster_Builder_Web_API.Models;
 
-namespace Monster_Builder_Web_API.Controllers
+namespace Monster_Builder_Web_API.Controllers;
+
+[Route("api/[controller]")]
+public class ArmourController
 {
-        [Route("api/[controller]")]
-        public class ArmourController
+    private readonly IArmourService _armourService;
+    public ArmourController(IArmourService armourService) {
+        _armourService = armourService;
+    }
+
+    [HttpGet("BasicArmour")]
+    public ActionResult<Armour> GetArmour(string name)
     {
-        [HttpGet("BasicArmour")]
-        public ActionResult<string> getArmour()
-        {
-            Armour armour = new Armour();
-            return armour.ToString();
-        }
+        return _armourService.GetArmourByName(name);
+    }
 
-        [HttpPost("MakeArmour")]
-        public ActionResult<string> MakeArmour(string name, int ac, int cost, int strength, int weight, bool stealth, string type)
-        {
-            Armour armour = new Armour(name, ac, cost, weight, strength, stealth, type);
-            return armour.ToString();
-        }
-
+    [HttpPost("MakeArmour")]
+    public ActionResult<bool> MakeArmour([FromBody] ArmourDTO newArmour)
+    {
+        return _armourService.AddNewArmour(newArmour);
     }
 }
