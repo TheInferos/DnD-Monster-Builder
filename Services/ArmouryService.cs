@@ -9,9 +9,8 @@ namespace Monster_Builder_Web_API.Services
     {
         public Dictionary<string, Weapon> weapons;
 
-        public ArmouryService(IArmourRepository armourRepository)
+        public ArmouryService()
         {
-            _armourRepository = armourRepository;
             weapons = new Dictionary<string, Weapon>();
             LoadBaseWeapons();
         }

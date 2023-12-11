@@ -4,15 +4,6 @@ using System.Text.Json;
 
 namespace Monster_Builder_Web_API.Repositories;
 
-public interface IArmourRepository
-{
-    public Armour GetArmour(string name);
-    public bool CreateArmour(Armour armour);
-    public bool UpdateArmour(Armour armour);
-    public bool DeleteArmour(string name);
-    public IEnumerable<Armour> GetAllArmour();
-}
-
 /// <summary>
 /// Could later replace the file store with another data source
 /// Changes are not persisted. If you want them to persist I would

@@ -7,10 +7,10 @@ namespace Monster_Builder_Web_API.Controllers;
 [Route("api/[controller]")]
 public class ArmouryController
 {
-    ArmouryService _armouryService;
-    public ArmouryController(ArmouryService armouryService)
+    IArmourService _armourService;
+    public ArmouryController(IArmourService armourService)
     {
-        _armouryService = armouryService;
+        _armourService = armourService;
     }
 
     [HttpGet("AllArmours")]
@@ -19,16 +19,16 @@ public class ArmouryController
 
         var armorObject = new Dictionary<string, List<string>> { };
 
-        foreach (var armour in _armouryService.GetAllArmour())
+        foreach (var armour in _armourService.GetAllArmour())
         {
-            string armorType = armour.Type;
-            if (!armorObject.ContainsKey(armorType))
+            string armorType = armour.Type.ToString();
+            if (!armorObject.TryGetValue(armorType, out List<string>? value))
             {
-                armorObject[armorType] = new List<string>();
+                value = new List<string>();
+                armorObject[armorType] = value;
             }
-            armorObject[armorType].Add(armour.Name);
+            value.Add(armour.Name);
         }
-
         return armorObject;
     }
 }

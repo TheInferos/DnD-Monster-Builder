@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Monster_Builder;
 using Monster_Builder_Web_API.Services;
 using System.Text.Json;
+using static Monster_Builder.Monster;
 
 namespace Monster_Builder_Web_API.Controllers
 {
@@ -10,11 +11,11 @@ namespace Monster_Builder_Web_API.Controllers
     public class MonsterController : ControllerBase
     {
         BeastiaryService _beastiaryService;
-        ArmouryService _armouryService;
-        public MonsterController(BeastiaryService beastiaryService, ArmouryService armouryService) : base ()
+        IArmourService _armourService;
+        public MonsterController(BeastiaryService beastiaryService, IArmourService armourService)
         {
             _beastiaryService = beastiaryService;
-            _armouryService = armouryService;
+            _armourService = armourService;
         }
         // GET api/monster
         [HttpGet]
@@ -48,7 +49,7 @@ namespace Monster_Builder_Web_API.Controllers
         public ActionResult<string> changeArmour(string armourString,string id)
         {
             Monster monster = _beastiaryService.GetMonsterByID(id);
-            Armour armour = _armouryService.GetArmourByName(armourString);
+            Armour armour = _armourService.GetArmourByName(armourString);
             monster.changeArmour(armour);
             return JsonSerializer.Serialize(monster);
         }
