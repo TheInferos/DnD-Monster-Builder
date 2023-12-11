@@ -11,7 +11,7 @@ namespace Monster_Builder_Web_API.Controllers
     {
         BeastiaryService _beastiaryService;
         ArmouryService _armouryService;
-        public MonsterController(BeastiaryService beastiaryService, ArmouryService armouryService) 
+        public MonsterController(BeastiaryService beastiaryService, ArmouryService armouryService) : base ()
         {
             _beastiaryService = beastiaryService;
             _armouryService = armouryService;

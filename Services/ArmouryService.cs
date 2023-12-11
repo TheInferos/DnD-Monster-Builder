@@ -1,44 +1,35 @@
 ﻿using System.Text.Json;
 using Armours;
 using Monster_Builder;
+using Monster_Builder_Web_API.Repositories;
 
 namespace Monster_Builder_Web_API.Services
 {
     public class ArmouryService
     {
-        public Dictionary<string, Armour> armours;
+        private readonly IArmourRepository _armourRepository;
         public Dictionary<string, Weapon> weapons;
 
-        public ArmouryService()
+        public ArmouryService(IArmourRepository armourRepository)
         {
-            armours = new Dictionary<string, Armour>();
+            _armourRepository = armourRepository;
             weapons = new Dictionary<string, Weapon>();
-            LoadBaseArmours();
             LoadBaseWeapons();
-        }
-
-        public void LoadBaseArmours()
-        {
-            LoadArmoursFromFile("Data/Armours.json");
         }
         public void LoadBaseWeapons()
         {
             LoadWeaponsFromFile("Data/Weapons.json");
         }
+
         public Armour GetArmourByName(string name)
         {
-            return armours[name];
+            //TODO add any security checks or validation you want.
+            return _armourRepository.GetArmour(name);
         }
 
         public Weapon GetWeaponByName(string name)
         {
             return weapons[name];
-        }
-
-        public void LoadArmoursFromFile(string filePath)
-        {
-            string jsonData = File.ReadAllText(filePath);
-            armours = JsonSerializer.Deserialize<Dictionary<string, Armour>>(jsonData);
         }
 
         public void LoadWeaponsFromFile(string filePath)
@@ -47,29 +38,6 @@ namespace Monster_Builder_Web_API.Services
             weapons = JsonSerializer.Deserialize<Dictionary<string, Weapon>>(jsonData);
         }
 
-        public void PrintArmourDetails()
-        {
-            if (armours == null)
-            {
-                Console.WriteLine("Armours not loaded. Load armours first.");
-                return;
-            }
-            string message = "";
-            foreach (var armour in armours)
-            {
-                message += $@"
-                    Armour: {armour.Key}
-                    AC: {armour.Value.AC}
-                    Type: {armour.Value.Type}
-                    Cost: {armour.Value.Cost}
-                    Weight: {armour.Value.Weight}
-                    Strength Requirement: {armour.Value.Strength}
-                    Stealth: {armour.Value.Stealth}";
-                message += "\n";
-
-            }
-            Console.WriteLine(message.Replace("\t", "").Replace("    ", ""));
-        }
         public void PrintWeaponDetails()
         {
             if (weapons == null)
@@ -92,6 +60,11 @@ namespace Monster_Builder_Web_API.Services
                 message += "\n";
             }
             Console.WriteLine(message.Replace("\t", "").Replace("    ", ""));
+        }
+
+        public IEnumerable<Armour> GetAllArmour()
+        {
+            return _armourRepository.GetAllArmour();
         }
     }
 }
