@@ -23,7 +23,7 @@ namespace Monster_Builder_Web_API.Services
             LoadMonstersFromFile("Data/Monsters.json");
         }
 
-        public void LoadMonstersFromFile(string filePath)
+        private void LoadMonstersFromFile(string filePath)
         {
             string jsonData = File.ReadAllText(filePath);
             var options = new JsonSerializerOptions

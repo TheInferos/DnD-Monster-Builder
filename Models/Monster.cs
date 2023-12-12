@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text.Json;
-using Armours;
-using Microsoft.Extensions.Hosting;
-using Monster_Builder_Web_API.Models;
+﻿using Armours;
 using Statlines;
+using Monster_Builder_Web_API.Models;
 
 
 namespace Monster_Builder
@@ -51,19 +47,19 @@ namespace Monster_Builder
             return message.Replace("\t", "").Replace("    ", "");
         }
 
-        public void addWeapon(Weapon weapon)
+        public void AddWeapon(Weapon weapon)
         {
             Weapons.Add(weapon);
         }
 
-        public void changeArmour(Armour armour)
+        public void ChangeArmour(Armour armour)
         {
             Armour = armour;
-            calculateAC();
+            CalculateAC();
 
         }
 
-        public void calculateAC()
+        public void CalculateAC()
         {
             Stats.AC = Armour.AC;
             switch (Armour.Type)
@@ -91,41 +87,4 @@ namespace Monster_Builder
         }
 
     }
-    public class InitialMonsterRequest
-    {
-        public string Name { get; set; }
-        public int CR { get; set; }
-    }
-    // TODO
-    //public void GenerateStatsFromPriority(string priority, Monster monster)
-    //{
-    //    int loopCount = 1;
-    //    int addedStats = 0;
-    //    string[] PriorityStrings = priority.Split(" ");
-    //    List<int> PriorityList = new List<int>();
-    //    string[] StatLookup;
-    //    foreach (var prioritySring in PriorityStrings)
-    //    {
-    //        int parsedValue;
-    //        bool parseSuccess = int.TryParse(prioritySring, out parsedValue);
-
-    //        if (parseSuccess)
-    //        {
-    //            PriorityList.Add(parsedValue);
-    //        }
-
-    //    }
-    //    while (monster.Statpool < addedStats)
-    //    {
-    //        foreach (int Priority in PriorityList)
-    //        {
-
-    //            if (loopCount > (int)Priority)
-    //            {
-
-    //            }
-    //        }
-
-    //    }
-    //}
 }
