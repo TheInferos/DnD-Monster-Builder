@@ -16,6 +16,7 @@ namespace Monster_Builder_Web_API.Controllers
             _beastiaryService = beastiaryService;
         }
 
+        //TODO Actually Save
         [HttpPost("SaveMonster")]
         public void SaveMonster(string name)
         {
@@ -24,10 +25,10 @@ namespace Monster_Builder_Web_API.Controllers
             _beastiaryService.SaveMonsters("Data/Monsters.json");
         }
 
-        [HttpGet("GetMonster")]
-        public string GetMonster(string name)
+        [HttpGet("GetMonster/{id}")]
+        public ActionResult GetMonster(string id)
         {
-            return JsonSerializer.Serialize(_beastiaryService.GetMonsterByID(name));
+            return Ok(_beastiaryService.GetMonsterByID(id));
         }
     }
 }

@@ -3,6 +3,7 @@ using Monster_Builder;
 using Monster_Builder_Web_API.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
+using Monster_Builder_Web_API.Models.DTOs;
 
 namespace Monster_Builder_Web_API.Controllers
 {
@@ -16,16 +17,10 @@ namespace Monster_Builder_Web_API.Controllers
             _beastiaryService = beastiaryService;
             _armouryService = armouryService;
         }
-        // GET api/monster
-        [HttpGet]
-        public ActionResult<string> GetSystemMonster()
-        {
-            Monster monster = new Monster("Guard", 3);
-            return monster.ToString();
-        }
 
+        //TODO Change To Exception onm return error, change to Ok(monster)
         [HttpPost("MakeMonster")]
-        public ActionResult<string> MakeMonster([FromBody] InitialMonsterRequest formData)
+        public ActionResult<string> MakeMonster([FromBody] InitialMonsterRequestDTO formData)
         {
             if (string.IsNullOrEmpty(formData.Name) || formData.CR < 0)
             {
@@ -40,7 +35,7 @@ namespace Monster_Builder_Web_API.Controllers
         public ActionResult<string> AddWeapon(string weapon, string id)
         {
             Monster monster = _beastiaryService.GetMonsterByID(id);
-            monster.addWeapon(new Weapon(weapon));
+            monster.AddWeapon(new Weapon(weapon));
             return JsonSerializer.Serialize(monster);
         }
 
@@ -49,7 +44,7 @@ namespace Monster_Builder_Web_API.Controllers
         {
             Monster monster = _beastiaryService.GetMonsterByID(id);
             Armour armour = _armouryService.GetArmourByName(armourString);
-            monster.changeArmour(armour);
+            monster.ChangeArmour(armour);
             return JsonSerializer.Serialize(monster);
         }
 
