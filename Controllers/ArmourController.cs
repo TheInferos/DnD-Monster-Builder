@@ -10,9 +10,9 @@ namespace Monster_Builder_Web_API.Controllers
     {
         private readonly ArmouryService _armouryService;
         /// <summary>
-        /// Returns the Armour Object by the mame provided
+        /// Returns the Armour Object by the name provided
         /// </summary>
-        /// <returns></returns>
+        /// <returns> Json of the Armour Object</returns>
         [HttpGet("{name}")]
         public ActionResult<string> getArmour(string name)
         {
