@@ -1,20 +1,65 @@
-﻿using System.Text.Json.Serialization;
+﻿using Monster_Builder_Web_API.Models;
+using System.Text.Json.Serialization;
 
 namespace Monster_Builder
 {
 
     public class Weapon
     {
-        public string Name { get; set; }
-        public string Type { get; set; }
-        public string Damage { get; set; }
-        public List<string> Properties { get; set; }
+        private string _name { get; set; }
+        private string _damage { get; set; }
+        private List<string> _properties { get; set; }
+        private int _cost { get; set; }
+        private int _weight { get; set; }
+
+
+        public string Name
+        {
+            get { return _name; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentNullException("Name must not be empty");
+                _name = value;
+            }
+        }
+        public WeaponType Type { get; set; }
+        public string Damage {
+            get { return _damage; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentNullException("Damage must not be empty");
+                _damage = value;
+            }
+        }
+        public List<string> Properties { { return _} set; }
         public bool Martial { get; set; }
         public bool Ranged { get; set; }
-        public int Cost { get; set; }
-        public int Weight { get; set; }
-    
-        public Weapon(string name, string type, string damage, List<string> properties, bool martial, bool ranged, int cost, int weight) 
+        public int Cost {
+            get
+            {
+                return _cost;
+            }
+            set
+            {
+                ArgumentOutOfRangeException.ThrowIfNegativeOrZero(value);
+                _cost = value;
+            }
+        }
+        public int Weight {
+            get
+            {
+                return _weight;
+            }
+            set
+            {
+                ArgumentOutOfRangeException.ThrowIfNegativeOrZero((int)value);
+                _weight = value;
+            }
+        }
+
+        public Weapon(string name, WeaponType type, string damage, List<string> properties, bool martial, bool ranged, int cost, int weight) 
         {
             Name = name;
             Type = type;
