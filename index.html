@@ -9,6 +9,10 @@
     <h1>Monster Builder</h1>
 
     <form class="mb-3" id="nameCR">
+        <div>
+            <label for="monsterID">Monster ID:</label>
+            <input type="text" id="monsterID" name="monsterID">
+        </div>
         <label class="form-label" for="name">What should the monster be called:</label>
         <input class="form-control" type="text" id="name" name="name" required>
         <br>
@@ -29,7 +33,8 @@
         function handleDropdownItemClick(armourName) {
             // Perform an action based on the selected dropdown item
             console.log(`Selected item: ${armourName}`);
-            let data = fetch(`https://localhost:7050/api/Monster/SwitchArmour?armour=${armourName}`, {
+            let monsterID = document.getElementById('monsterID').value;
+            let data = fetch(`https://localhost:7050/api/Monster/${monsterID}/SwitchArmour?armourString=${armourName}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json' // Ensure this header is included
@@ -118,6 +123,8 @@
                 .then(data => {
                     const responseDisplay = document.getElementById('responseDisplay');
                     responseDisplay.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+                    const id = document.getElementById('monsterID');
+                    id.value = data.ID
                 })
                 .catch(error => {
                     console.error('Error:', error);

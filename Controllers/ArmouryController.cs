@@ -16,15 +16,13 @@ namespace Monster_Builder_Web_API.Controllers
             _armouryService = armouryService;
         }
 
-        [HttpGet("AllArmours")]
-        public Dictionary<string, List<string>> GetArmour()
+        [HttpGet("GetArmours")]
+        public Dictionary<string, List<string>> GetArmours()
         {
 
             var armorObject = new Dictionary<string, List<string>> { };
-            ArmouryService ArmourList = new ArmouryService();
-            ArmourList.LoadBaseArmours();
-
-            foreach (var armour in ArmourList.armours)
+            //TODO Clean this up should be returning as a dictionary based on Armour Type
+            foreach (var armour in _armouryService.armours)
             {
                 string armorType = armour.Value.Type;
                 if (!armorObject.ContainsKey(armorType))
