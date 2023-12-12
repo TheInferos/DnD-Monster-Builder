@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text.Json;
 using Armours;
 using Microsoft.Extensions.Hosting;
+using Monster_Builder_Web_API.Models;
 using Statlines;
 
 
@@ -31,7 +32,7 @@ namespace Monster_Builder
             Stats = new Statline();
             Size = "Medium";
             Type = "Humanoid";
-            Statpool = (int) (8+2 * CR);
+            Statpool = (int)(8 + 2 * CR);
             Weapons = [new Weapon("unarmed")];
             Armour = new Armour();
         }
@@ -62,50 +63,33 @@ namespace Monster_Builder
 
         }
 
-        public void calculateAC ()
+        public void calculateAC()
         {
             Stats.AC = Armour.AC;
-            if (Armour.Type == "Heavy")
+            switch (Armour.Type)
             {
-                return;
+                case ArmourType.Heavy:
+                    break;
+                case ArmourType.Medium:
+                    int dexMod = (Stats.Dexterity / 2) - 5;
+                    if (dexMod > 2)
+                    {
+                        Stats.AC += 2;
+                    }
+                    else
+                    {
+                        Stats.AC += dexMod;
+                    }
+                    break;
+                case ArmourType.Light:
+                    Stats.AC += (Stats.Dexterity / 2) - 5;
+                    break;
+                default:
+                    throw new NotImplementedException($"AC calculation for {Armour.Type} not implemented");
             }
-            else if (Armour.Type == "Medium")
-            {
-                int dexMod = (Stats.Dexterity / 2) - 5;
-                if (dexMod > 2)
-                {
-                    Stats.AC += 2;
-                }
-                else
-                {
-                    Stats.AC += dexMod;
-                }
-            }
-            else
-            {
-                Stats.AC += (Stats.Dexterity / 2) - 5;
-            }
+
         }
 
-    }
-
-    public class userDefinedMonsters
-    {
-        public Monster DefineStats (Monster monster)
-        {
-
-            return monster;
-        }
-    }
-    public class systemDefinedMonsters
-    {
-        public static Monster Creation()
-        {
-            Monster monster = new Monster("Guard", 3);
-            string statPriority = "1 2 2 3 4 5";
-            
-            return monster;
-        }
     }
     public class InitialMonsterRequest
     {

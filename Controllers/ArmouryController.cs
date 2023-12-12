@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Monster_Builder;
+using Monster_Builder_Web_API.Models;
 using Monster_Builder_Web_API.Services;
 using System.Text.Json;
 using System.Threading;
@@ -16,22 +17,20 @@ namespace Monster_Builder_Web_API.Controllers
             _armouryService = armouryService;
         }
 
-        [HttpGet("AllArmours")]
-        public Dictionary<string, List<string>> GetArmour()
+        [HttpGet("GetArmours")]
+        public Dictionary<string, List<string>> GetArmours()
         {
 
             var armorObject = new Dictionary<string, List<string>> { };
-            ArmouryService ArmourList = new ArmouryService();
-            ArmourList.LoadBaseArmours();
-
-            foreach (var armour in ArmourList.armours)
+            //TODO Clean this up should be returning as a dictionary based on Armour Type
+            foreach (var armour in _armouryService.armours)
             {
-                string armorType = armour.Value.Type;
-                if (!armorObject.ContainsKey(armorType))
+                var armorTypeString = Enum.GetName(typeof(ArmourType), armour.Value.Type);
+                if (!armorObject.ContainsKey(armorTypeString))
                 {
-                    armorObject[armorType] = new List<string>();
+                    armorObject[armorTypeString] = new List<string>();
                 }
-                armorObject[armorType].Add(armour.Key);
+                armorObject[armorTypeString].Add(armour.Key);
             }
 
             return armorObject;
