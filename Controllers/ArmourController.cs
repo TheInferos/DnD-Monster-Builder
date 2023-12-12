@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Armours;
 using Monster_Builder_Web_API.Services;
+using Monster_Builder_Web_API.Models;
 
 namespace Monster_Builder_Web_API.Controllers
 {
@@ -32,7 +33,7 @@ namespace Monster_Builder_Web_API.Controllers
 
         //Turn into a [FromBody] ArmourDTO newArmour
         [HttpPost("MakeArmour")]
-        public ActionResult<string> MakeArmour(string name, int ac, int cost, int strength, int weight, bool stealth, string type)
+        public ActionResult<string> MakeArmour(string name, int ac, int cost, int strength, int weight, bool stealth, ArmourType type)
         {
             Armour armour = new Armour(name, ac, cost, weight, strength, stealth, type);
             return armour.ToString();

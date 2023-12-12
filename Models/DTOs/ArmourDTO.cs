@@ -10,6 +10,5 @@ public class ArmourDTO
     public int Weight { get; set; }
     public int? Strength { get; set; }
     public bool Stealth { get; set; }
-    // TODO turn ArmourType into an ENUM
     public string Type { get; set; }
 }
