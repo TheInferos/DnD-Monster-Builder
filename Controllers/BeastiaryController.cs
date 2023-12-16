@@ -17,11 +17,9 @@ namespace Monster_Builder_Web_API.Controllers
         }
 
         //TODO Actually Save
-        [HttpPost("SaveMonster")]
-        public void SaveMonster(string name)
+        [HttpPost("SaveMonsters")]
+        public void SaveMonsters()
         {
-            Monster monster = new Monster(name, 3);
-            _beastiaryService.AddMonster(monster);
             _beastiaryService.SaveMonsters("Data/Monsters.json");
         }
 
