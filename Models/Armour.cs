@@ -45,7 +45,7 @@ namespace Armours
             set
             {
                 if (value != null)
-                    ArgumentOutOfRangeException.ThrowIfNegativeOrZero((int)value);
+                    ArgumentOutOfRangeException.ThrowIfNegative((int)value);
                 _cost = value;
             }
         }
@@ -59,7 +59,7 @@ namespace Armours
             set
             {
                 if (value != null)
-                    ArgumentOutOfRangeException.ThrowIfNegativeOrZero((int)value);
+                    ArgumentOutOfRangeException.ThrowIfNegative((int)value);
                 _weight = value;
             }
         }
@@ -73,7 +73,7 @@ namespace Armours
             set
             {
                 if (value != null)
-                    ArgumentOutOfRangeException.ThrowIfNegativeOrZero((int)value);
+                    ArgumentOutOfRangeException.ThrowIfNegative((int)value);
                 _strength = value;
             }
         }
@@ -105,7 +105,7 @@ namespace Armours
             Type = armour.Type;
         }
 
-        //TODO Remove once 
+        //TODO Remove 
         public Armour() 
         {
             Name = "None";
@@ -116,6 +116,7 @@ namespace Armours
             Stealth = false;
             Type = ArmourType.Other;
         }
+        //TODO Remove 
         public Armour(string name)
         {
             Name = name;

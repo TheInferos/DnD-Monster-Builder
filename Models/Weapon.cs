@@ -43,7 +43,7 @@ namespace Monster_Builder
             }
             set
             {
-                ArgumentOutOfRangeException.ThrowIfNegativeOrZero(value);
+                ArgumentOutOfRangeException.ThrowIfNegative(value);
                 _cost = value;
             }
         }
@@ -54,7 +54,7 @@ namespace Monster_Builder
             }
             set
             {
-                ArgumentOutOfRangeException.ThrowIfNegativeOrZero((int)value);
+                ArgumentOutOfRangeException.ThrowIfNegative((int)value);
                 _weight = value;
             }
         }

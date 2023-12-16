@@ -4,7 +4,8 @@ namespace Statlines
 {
     public class Statline
     {
-        public int Strength { get; set; }
+        // change to Private and setable via function
+        public int Strength { get;  set; }
         public int Dexterity { get; set; }
         public int Consitution { get; set; }
         public int Intelligence { get; set; }
@@ -50,6 +51,7 @@ namespace Statlines
             }
         }
 
+        // Change to request class
         public void changeStats(int strength, int dexterity, int consitution, int intelligence, int wisdom, int charisma)
         {
             Strength = strength;

@@ -8,7 +8,7 @@
     "Weapons": [
       {
         "Name": "unarmed",
-        "Type": "",
+        "Type": 0,
         "Damage": "d4",
         "Properties": [],
         "Martial": false,
