@@ -20,7 +20,7 @@ namespace Monster_Builder
 
         public int Statpool { get; set; }
 
-        public Monster(String name, float cr)
+        public Monster(string name, float cr)
         {
             ID = Guid.NewGuid().ToString();
             Name = name;
@@ -59,7 +59,7 @@ namespace Monster_Builder
 
         }
 
-        public void CalculateAC()
+        private void CalculateAC()
         {
             Stats.AC = Armour.AC;
             switch (Armour.Type)

@@ -6,16 +6,85 @@ namespace Armours
 {
     public class Armour
     {
-        public string Name { get; set; }
-        public int AC { get; set; }
-        public int? Cost { get; set; }
-        public int? Weight { get; set; }
-        public int? Strength { get; set; }
-        public bool? Stealth { get; set; }
+        private string _name;
+        private int _ac;
+        private int? _cost;
+        private int? _weight;
+        private int? _strength;
+
+        public string Name
+        {
+            get { return _name; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentNullException("Name must not be empty");
+                _name = value;
+            }
+        }
+
+        public int AC
+        {
+            get
+            {
+                return _ac;
+            }
+            set
+            {
+                ArgumentOutOfRangeException.ThrowIfNegativeOrZero((int)value);
+                _ac = value;
+            }
+        }
+
+        public int? Cost
+        {
+            get
+            {
+                return _cost;
+            }
+            set
+            {
+                if (value != null)
+                    ArgumentOutOfRangeException.ThrowIfNegative((int)value);
+                _cost = value;
+            }
+        }
+
+        public int? Weight
+        {
+            get
+            {
+                return _weight;
+            }
+            set
+            {
+                if (value != null)
+                    ArgumentOutOfRangeException.ThrowIfNegative((int)value);
+                _weight = value;
+            }
+        }
+
+        public int? Strength
+        {
+            get
+            {
+                return _strength;
+            }
+            set
+            {
+                if (value != null)
+                    ArgumentOutOfRangeException.ThrowIfNegative((int)value);
+                _strength = value;
+            }
+        }
+        public bool Stealth { get; set; }
+ 
         public ArmourType Type { get; set; }
 
+
+
         public Armour(string name, int ac, int cost, int weight, int strength, bool stealth, ArmourType type) 
-        { 
+        {
             Name = name;
             AC = ac;
             Cost = cost;
@@ -26,18 +95,28 @@ namespace Armours
         }
         public Armour(ArmourDTO armour)
         {
-
+            Validate(armour.Name, armour.AC, armour.Cost, armour.Strength);
+            _name = armour.Name;
+            AC = armour.AC;
+            Cost = armour.Cost;
+            Weight = armour.Weight;
+            Strength = armour.Strength;
+            Stealth = armour.Stealth;
+            Type = armour.Type;
         }
+
+        //TODO Remove 
         public Armour() 
         {
-            Name = "Padded";
-            AC = 11;
-            Cost = 200;
-            Weight = 4;
+            Name = "None";
+            AC = 10;
+            Cost = 0;
+            Weight = 0;
             Strength = 0;
             Stealth = false;
-            Type = ArmourType.Light;
+            Type = ArmourType.Other;
         }
+        //TODO Remove 
         public Armour(string name)
         {
             Name = name;

@@ -1,7 +1,7 @@
 {
   "Longsword": {
     "Name": "Longsword",
-    "Type": "Melee",
+    "Type": 0,
     "Damage": "1d8 slashing",
     "Properties": [ "Versatile (1d10)" ],
     "Martial": true,
@@ -11,7 +11,7 @@
   },
   "Shortbow": {
     "Name": "Shortbow",
-    "Type": "Ranged",
+    "Type": 1,
     "Damage": "1d6 piercing",
     "Properties": [ "Ammunition (range 80/320)", "Two-handed" ],
     "Martial": true,
@@ -21,7 +21,7 @@
   },
   "Dagger": {
     "Name": "Dagger",
-    "Type": "Melee",
+    "Type": 0,
     "Damage": "1d4 piercing",
     "Properties": [ "Finesse", "Light", "Thrown (range 20/60)" ],
     "Martial": false,
@@ -31,7 +31,7 @@
   },
   "Warhammer": {
     "Name": "Warhammer",
-    "Type": "Melee",
+    "Type": 0,
     "Damage": "1d8 bludgeoning",
     "Properties": [ "Versatile (1d10)" ],
     "Martial": true,
@@ -41,7 +41,7 @@
   },
   "Light Crossbow": {
     "Name": "Light Crossbow",
-    "Type": "Ranged",
+    "Type": 1,
     "Damage": "1d8 piercing",
     "Properties": [ "Ammunition (range 80/320)", "Loading", "Two-handed" ],
     "Martial": true,
@@ -51,7 +51,7 @@
   },
   "Greatsword": {
     "Name": "Greatsword",
-    "Type": "Melee",
+    "Type": 0,
     "Damage": "2d6 slashing",
     "Properties": [ "Heavy", "Two-handed" ],
     "Martial": true,
@@ -61,7 +61,7 @@
   },
   "Handaxe": {
     "Name": "Handaxe",
-    "Type": "Melee",
+    "Type": 0,
     "Damage": "1d6 slashing",
     "Properties": [ "Light", "Thrown (range 20/60)" ],
     "Martial": false,
@@ -71,7 +71,7 @@
   },
   "Sling": {
     "Name": "Sling",
-    "Type": "Ranged",
+    "Type": 1,
     "Damage": "1d4 bludgeoning",
     "Properties": [ "Ammunition (range 30/120)" ],
     "Martial": false,
@@ -81,7 +81,7 @@
   },
   "Mace": {
     "Name": "Mace",
-    "Type": "Melee",
+    "Type": 0,
     "Damage": "1d6 bludgeoning",
     "Properties": [],
     "Martial": true,
@@ -91,7 +91,7 @@
   },
   "Quarterstaff": {
     "Name": "Quarterstaff",
-    "Type": "Melee",
+    "Type": 0,
     "Damage": "1d6 bludgeoning",
     "Properties": [ "Versatile (1d8)" ],
     "Martial": false,
@@ -101,7 +101,7 @@
   },
   "Rapier": {
     "Name": "Rapier",
-    "Type": "Melee",
+    "Type": 0,
     "Damage": "1d8 piercing",
     "Properties": [ "Finesse" ],
     "Martial": false,
@@ -111,7 +111,7 @@
   },
   "Javelin": {
     "Name": "Javelin",
-    "Type": "Melee",
+    "Type": 0,
     "Damage": "1d6 piercing",
     "Properties": [ "Thrown (range 30/120)" ],
     "Martial": false,
@@ -121,7 +121,7 @@
   },
   "Battleaxe": {
     "Name": "Battleaxe",
-    "Type": "Melee",
+    "Type": 0,
     "Damage": "1d8 slashing",
     "Properties": [ "Versatile (1d10)" ],
     "Martial": true,
@@ -131,7 +131,7 @@
   },
   "Heavy Crossbow": {
     "Name": "Heavy Crossbow",
-    "Type": "Ranged",
+    "Type": 1,
     "Damage": "1d10 piercing",
     "Properties": [ "Ammunition (range 100/400)", "Loading", "Two-handed" ],
     "Martial": true,
@@ -141,7 +141,7 @@
   },
   "Scimitar": {
     "Name": "Scimitar",
-    "Type": "Melee",
+    "Type": 0,
     "Damage": "1d6 slashing",
     "Properties": [ "Finesse", "Light" ],
     "Martial": false,
@@ -151,7 +151,7 @@
   },
   "Pike": {
     "Name": "Pike",
-    "Type": "Melee",
+    "Type": 0,
     "Damage": "1d10 piercing",
     "Properties": [ "Heavy", "Reach", "Two-handed" ],
     "Martial": true,
@@ -161,7 +161,7 @@
   },
   "Trident": {
     "Name": "Trident",
-    "Type": "Melee",
+    "Type": 0,
     "Damage": "1d6 piercing",
     "Properties": [ "Thrown (range 20/60)", "Versatile (1d8)" ],
     "Martial": true,
@@ -171,7 +171,7 @@
   },
   "Whip": {
     "Name": "Whip",
-    "Type": "Melee",
+    "Type": 0,
     "Damage": "1d4 slashing",
     "Properties": [ "Finesse", "Reach" ],
     "Martial": false,
@@ -181,7 +181,7 @@
   },
   "Club": {
     "Name": "Club",
-    "Type": "Melee",
+    "Type": 0,
     "Damage": "1d4 bludgeoning",
     "Properties": [ "Light" ],
     "Martial": false,
@@ -191,7 +191,7 @@
   },
   "Morningstar": {
     "Name": "Morningstar",
-    "Type": "Melee",
+    "Type": 0,
     "Damage": "1d8 piercing",
     "Properties": [],
     "Martial": true,
@@ -201,7 +201,7 @@
   },
   "Spear": {
     "Name": "Spear",
-    "Type": "Melee",
+    "Type": 0,
     "Damage": "1d6 piercing",
     "Properties": [ "Thrown (range 20/60)", "Versatile (1d8)" ],
     "Martial": true,
@@ -211,7 +211,7 @@
   },
   "Glaive": {
     "Name": "Glaive",
-    "Type": "Melee",
+    "Type": 0,
     "Damage": "1d10 slashing",
     "Properties": [ "Heavy", "Reach", "Two-handed" ],
     "Martial": true,
@@ -221,7 +221,7 @@
   },
   "Halberd": {
     "Name": "Halberd",
-    "Type": "Melee",
+    "Type": 0,
     "Damage": "1d10 slashing",
     "Properties": [ "Heavy", "Reach", "Two-handed" ],
     "Martial": true,
@@ -231,7 +231,7 @@
   },
   "Blowgun": {
     "Name": "Blowgun",
-    "Type": "Ranged",
+    "Type": 1,
     "Damage": "1 piercing",
     "Properties": [ "Ammunition (range 25/100)", "Loading" ],
     "Martial": false,
@@ -241,7 +241,7 @@
   },
   "Net": {
     "Name": "Net",
-    "Type": "Ranged",
+    "Type": 1,
     "Damage": "Special",
     "Properties": [ "Special", "Thrown (range 5/15)" ],
     "Martial": false,
@@ -251,7 +251,7 @@
   },
   "Heavy Flail": {
     "Name": "Heavy Flail",
-    "Type": "Melee",
+    "Type": 0,
     "Damage": "2d8 bludgeoning",
     "Properties": [ "Heavy", "Two-handed" ],
     "Martial": true,
@@ -261,7 +261,7 @@
   },
   "Hand Crossbow": {
     "Name": "Hand Crossbow",
-    "Type": "Ranged",
+    "Type": 1,
     "Damage": "1d6 piercing",
     "Properties": [ "Ammunition (range 30/120)", "Light", "Loading" ],
     "Martial": true,
