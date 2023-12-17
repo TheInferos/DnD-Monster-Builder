@@ -12,6 +12,7 @@ namespace Armours
         private int? _weight;
         private int? _strength;
 
+        public string ID { get; set; }
         public string Name
         {
             get { return _name; }
@@ -85,6 +86,7 @@ namespace Armours
 
         public Armour(string name, int ac, int cost, int weight, int strength, bool stealth, ArmourType type) 
         {
+            ID = Guid.NewGuid().ToString();
             Name = name;
             AC = ac;
             Cost = cost;
@@ -95,6 +97,7 @@ namespace Armours
         }
         public Armour(ArmourDTO armour)
         {
+            ID = Guid.NewGuid().ToString();
             Validate(armour.Name, armour.AC, armour.Cost, armour.Strength);
             _name = armour.Name;
             AC = armour.AC;
@@ -108,6 +111,7 @@ namespace Armours
         //TODO Remove 
         public Armour() 
         {
+            ID = Guid.NewGuid().ToString();
             Name = "None";
             AC = 10;
             Cost = 0;
@@ -119,6 +123,7 @@ namespace Armours
         //TODO Remove 
         public Armour(string name)
         {
+            ID = Guid.NewGuid().ToString();
             Name = name;
             AC = 11;
             Cost = 200;

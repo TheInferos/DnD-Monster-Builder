@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Monster_Builder;
+using Weapons;
 using Monster_Builder_Web_API.Services;
 using System.Text.Json;
 

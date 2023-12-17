@@ -1,18 +1,19 @@
 ﻿using Armours;
-using Monster_Builder;
+using Weapons;
 using System.Text.Json;
+using Monster_Builder_Web_API.Repositories;
 
 namespace Monster_Builder_Web_API.Services
 {
     public class ArmouryService
     {
-        public Dictionary<string, Armour> armours;
-        public Dictionary<string, Weapon> weapons;
+        public ArmourRepository Armoury;
+        public Dictionary<string, Weapons.Weapon> weapons;
 
         public ArmouryService()
         {
             armours = new Dictionary<string, Armour>();
-            weapons = new Dictionary<string, Weapon>();
+            weapons = new Dictionary<string, Weapons.Weapon>();
             LoadBaseArmours();
             LoadBaseWeapons();
         }
@@ -30,7 +31,7 @@ namespace Monster_Builder_Web_API.Services
             return armours[name];
         }
 
-        public Weapon GetWeaponByName(string name)
+        public Weapons.Weapon GetWeaponByName(string name)
         {
             return weapons[name];
         }
@@ -44,7 +45,7 @@ namespace Monster_Builder_Web_API.Services
         private void LoadWeaponsFromFile(string filePath)
         {
             string jsonData = File.ReadAllText(filePath);
-            weapons = JsonSerializer.Deserialize<Dictionary<string, Weapon>>(jsonData);
+            weapons = JsonSerializer.Deserialize<Dictionary<string, Weapons>>(jsonData);
         }
     }
 }

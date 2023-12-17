@@ -1,36 +1,36 @@
 ﻿using Monster_Builder_Web_API.Models;
 using System.Text.Json.Serialization;
 
-namespace Monster_Builder
+namespace Weapons
 {
 
     public class Weapon
     {
-        private string _name { get; set; }
-        private string _damage { get; set; }
+        private string name { get; set; }
+        private string damage { get; set; }
         public List<string> Properties { get; set; }
-        private int _cost { get; set; }
-        private int _weight { get; set; }
+        private int cost { get; set; }
+        private int weight { get; set; }
 
-
+        public string ID { get; set; }
         public string Name
         {
-            get { return _name; }
+            get { return name; }
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
                     throw new ArgumentNullException("Name must not be empty");
-                _name = value;
+                name = value;
             }
         }
         public WeaponType Type { get; set; }
         public string Damage {
-            get { return _damage; }
+            get { return damage; }
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
                     throw new ArgumentNullException("Damage must not be empty");
-                _damage = value;
+                damage = value;
             }
         }
         //public List<string> Properties { { return _} set; }
@@ -39,28 +39,29 @@ namespace Monster_Builder
         public int Cost {
             get
             {
-                return _cost;
+                return cost;
             }
             set
             {
                 ArgumentOutOfRangeException.ThrowIfNegative(value);
-                _cost = value;
+                cost = value;
             }
         }
         public int Weight {
             get
             {
-                return _weight;
+                return weight;
             }
             set
             {
                 ArgumentOutOfRangeException.ThrowIfNegative((int)value);
-                _weight = value;
+                weight = value;
             }
         }
 
         public Weapon(string name, WeaponType type, string damage, List<string> properties, bool martial, bool ranged, int cost, int weight) 
         {
+            ID = Guid.NewGuid().ToString();
             Name = name;
             Type = type;
             Damage = damage;
@@ -72,6 +73,7 @@ namespace Monster_Builder
         }
         public Weapon(string name)
         {
+            ID = Guid.NewGuid().ToString();
             Name = name;
             Type = WeaponType.Melee;
             Damage = "d4";
