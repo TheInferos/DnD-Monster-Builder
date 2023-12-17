@@ -26,6 +26,25 @@
             <!-- style="display: none;" -->
             <label class="form-label" for="armour" id="Armour Container">What Armour type are we looking at:</label>
         </div>
+        <div class="row">
+            <div id="stats" class="col-md-6">
+                <label class="form-label" for="str">Strength:</label>
+                <input class="form-control" type="number" id="str" name="str">
+                <label class="form-label" for="dex">Dexterity:</label>
+                <input class="form-control" type="number" id="dex" name="dex">
+                <label class="form-label" for="con">Constitution:</label>
+                <input class="form-control" type="number" id="con" name="con">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" for="int">Intelligence:</label>
+                <input class="form-control" type="number" id="int" name="int">
+                <label class="form-label" for="wis">Wisdom:</label>
+                <input class="form-control" type="number" id="wis" name="wis">
+                <label class="form-label" for="cha">Charisma:</label>
+                <input class="form-control" type="number" id="cha" name="cha">
+            </div>
+        </div>
+        <button type="submit">Update</button>
         <div id="responseDisplay"></div>
     </form>
 
@@ -125,6 +144,12 @@
                     responseDisplay.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
                     const id = document.getElementById('monsterID');
                     id.value = data.ID
+                    document.getElementById('str').value = data.Stats.Strength
+                    document.getElementById('dex').value = data.Stats.Dexterity
+                    document.getElementById('con').value = data.Stats.Consitution
+                    document.getElementById('int').value = data.Stats.Intelligence
+                    document.getElementById('wis').value = data.Stats.Wisdom
+                    document.getElementById('cha').value = data.Stats.Charisma
                 })
                 .catch(error => {
                     console.error('Error:', error);
