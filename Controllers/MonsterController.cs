@@ -49,11 +49,12 @@ namespace Monster_Builder_Web_API.Controllers
         }
 
         [HttpPost("{id}/ChangeStats")]
-        public ActionResult<string> SetStats(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, string id)
+        public ActionResult<string> SetStats([FromBody] StatblockDTO formData, string id)
+
         {
             Monster monster = _beastiaryService.GetMonsterByID(id);
-            monster.Stats.changeStats(strength, dexterity, constitution, intelligence, wisdom, charisma);
-            return monster.ToString();
+            monster.Stats.ChangeStats(formData);
+            return JsonSerializer.Serialize(monster);
         }
 
 
