@@ -25,7 +25,7 @@ namespace Weapons
             ID = Guid.NewGuid().ToString();
             Name = name;
             CR = cr;
-            Stats = new Statline();
+            Stats = new Statline((int)cr);
             Size = "Medium";
             Type = "Humanoid";
             Statpool = (int)(8 + 2 * CR);

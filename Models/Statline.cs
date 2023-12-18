@@ -27,18 +27,33 @@ namespace Statlines
             Health = 0;
             AC = 10;
             HD = new Dictionary<int, int>()
-        {
-            { 0, 0 }
-        };
+            {
+                { 0, 0 }
+            };
         }
-        public Statline(int strength, int dexterity, int consitution, int intelligence, int wisdom, int charisma, int ac, Dictionary<int, int> hd)
+        public Statline(int cr)
         {
-            Strength = strength;
-            Dexterity = dexterity;
-            Consitution = consitution;
-            Intelligence = intelligence;
-            Wisdom = wisdom;
-            Charisma = charisma;
+            Strength = 10;
+            Dexterity = 10;
+            Consitution = 10;
+            Intelligence = 10;
+            Wisdom = 10;
+            Charisma = 10;
+            Health = 0;
+            AC = 10;
+            HD = new Dictionary<int, int>()
+            {
+                { 8, cr }
+            };
+        }
+        public Statline(StatblockDTO stats, int ac, Dictionary<int, int> hd)
+        {
+            Strength = stats.Strength;
+            Dexterity = stats.Dexterity;
+            Consitution = stats.Consitution;
+            Intelligence = stats.Intelligence;
+            Wisdom = stats.Wisdom;
+            Charisma = stats.Charisma;
             AC = ac;
             HD = hd;
             CalculateHeath();
