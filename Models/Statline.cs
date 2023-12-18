@@ -1,4 +1,5 @@
 ﻿using Monster_Builder;
+using Monster_Builder_Web_API.Models.DTOs;
 
 namespace Statlines
 {
@@ -52,14 +53,14 @@ namespace Statlines
         }
 
         // Change to request class
-        public void changeStats(int strength, int dexterity, int consitution, int intelligence, int wisdom, int charisma)
+        public void ChangeStats(StatblockDTO data)
         {
-            Strength = strength;
-            Dexterity = dexterity;
-            Consitution = consitution;
-            Intelligence = intelligence;
-            Wisdom = wisdom;
-            Charisma = charisma;
+            Strength = data.Strength;
+            Dexterity = data.Dexterity;
+            Consitution = data.Consitution;
+            Intelligence = data.Intelligence;
+            Wisdom = data.Wisdom;
+            Charisma = data.Charisma;
         }
 
         public override string ToString()
