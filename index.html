@@ -44,6 +44,7 @@
                 <input class="form-control" type="number" id="cha" name="cha">
             </div>
         </div>
+        <br />
         <button type="submit" id="update">Update</button>
         <div id="responseDisplay"></div>
     </form>
@@ -124,7 +125,7 @@
     </script>
 
     <script id="submitButton">
-        document.getElementById('update').addEventListener('submit', function (event) {
+        document.getElementById('nameCR').addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent the default form submission
 
             const formData = {
@@ -160,38 +161,37 @@
             radioContainer.style.display = 'block';
         });
     </script>
-    <!--<script id="updateButton">
+    <script id="updateButton">
         document.getElementById('update').addEventListener('click', function (event) {
             event.preventDefault(); // Prevent the default form submission
             let monsterID = document.getElementById('monsterID').value;
             const formData = {
                 Strength: document.getElementById('str').value,
-                Dexterity: document.getElementById('dex').value = data.Stats.Dexterity,
-                Consitution: document.getElementById('con').value = data.Stats.Consitution,
-                Intelligence: document.getElementById('int').value = data.Stats.Intelligence,
-                Wisdom: document.getElementById('wis').value = data.Stats.Wisdom,
-                Charisma: document.getElementById('cha').value = data.Stats.Charisma
+                Dexterity: document.getElementById('dex').value,
+                Consitution: document.getElementById('con').value,
+                Intelligence: document.getElementById('int').value,
+                Wisdom: document.getElementById('wis').value,
+                Charisma: document.getElementById('cha').value
             };
             fetch(`https://localhost:7050/api/Monster/${monsterID}/ChangeStats`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json' // Ensure this header is included
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(formData)
-            }).then(response => {
-                // Handle the response here
-                if (response.ok) {
-                    // Do something if the update was successful
-                } else {
-                    // Handle errors if the update failed
-                }
-            })
+            }).
+               then(response => response.json()).
+                then(data => {
+                console.log(data)
+                    const responseDisplay = document.getElementById('responseDisplay');
+                    responseDisplay.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+                 })
                 .catch(error => {
                     console.error('Error:', error);
                     // Handle fetch errors
                 });
         })
-    </script >-->
+    </script >
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
