@@ -8,38 +8,47 @@
 <body style="padding: 50px">
     <h1>Monster Builder</h1>
 
-    <form class="mb-3" id="nameCR">
+    <form class="mb-3" id="coreDetails">
         <div>
             <label for="monsterID">Monster ID:</label>
             <input type="text" id="monsterID" name="monsterID">
         </div>
-        <label class="form-label" for="name">What should the monster be called:</label>
-        <input class="form-control" type="text" id="name" name="name" required>
-        <br>
-        <label class="form-label" for="cr">What CR are we looking at:</label>
-        <input class="form-control" type="number" id="cr" name="cr" required>
+        <div class="row">
+            <div id="stats" class="col-md-6">
+                <label class="form-label" for="name">What should the monster be called:</label>
+                <input class="form-control" type="text" id="name" name="name" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" for="cr">What CR are we looking at:</label>
+                <input class="form-control" type="number" id="cr" name="cr" required>
+            </div>
+        </div>
         <br>
         <button type="submit">Submit</button>
-        <br>
-        <br>
+        <br />
+        <br />
         <div id="armourSelector" class="d-flex gap-3 flex-wrap" style="display: none;">
             <!-- style="display: none;" -->
             <label class="form-label" for="armour" id="Armour Container">What Armour type are we looking at:</label>
         </div>
         <div class="row">
             <div id="stats" class="col-md-6">
+                <label class="form-label" for="name">Health:</label>
+                <input class="form-control" type="text" id="health" name="health">
                 <label class="form-label" for="str">Strength:</label>
                 <input class="form-control" type="number" id="str" name="str">
-                <label class="form-label" for="dex">Dexterity:</label>
-                <input class="form-control" type="number" id="dex" name="dex">
                 <label class="form-label" for="con">Constitution:</label>
                 <input class="form-control" type="number" id="con" name="con">
-            </div>
-            <div class="col-md-6">
-                <label class="form-label" for="int">Intelligence:</label>
-                <input class="form-control" type="number" id="int" name="int">
                 <label class="form-label" for="wis">Wisdom:</label>
                 <input class="form-control" type="number" id="wis" name="wis">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" for="name">AC:</label>
+                <input class="form-control" type="text" id="ac" name="ac">
+                <label class="form-label" for="dex">Dexterity:</label>
+                <input class="form-control" type="number" id="dex" name="dex">
+                <label class="form-label" for="int">Intelligence:</label>
+                <input class="form-control" type="number" id="int" name="int">
                 <label class="form-label" for="cha">Charisma:</label>
                 <input class="form-control" type="number" id="cha" name="cha">
             </div>
@@ -63,8 +72,7 @@
             })
                 .then(response => response.json())
                 .then(data => {
-                    const responseDisplay = document.getElementById('responseDisplay');
-                    responseDisplay.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+                    updateStats(data)
                 }).catch(error => {
                     console.error('Error:', error);
                 });
@@ -124,8 +132,23 @@
 
     </script>
 
+    <script id="updateFunction">
+        function updateStats(montser) {
+            document.getElementById('monsterID').value = montser.ID;
+            document.getElementById('health').value = montser.Stats.Health;
+            document.getElementById('ac').value = montser.Stats.AC;
+            document.getElementById('str').value = montser.Stats.Strength;
+            document.getElementById('dex').value = montser.Stats.Dexterity;
+            document.getElementById('con').value = montser.Stats.Consitution;
+            document.getElementById('int').value = montser.Stats.Intelligence;
+            document.getElementById('wis').value = montser.Stats.Wisdom;
+            document.getElementById('cha').value = montser.Stats.Charisma;
+            document.getElementById('responseDisplay').innerHTML = `<pre>${JSON.stringify(montser, null, 2)}</pre>`;
+        }
+    </script>
+
     <script id="submitButton">
-        document.getElementById('nameCR').addEventListener('submit', function (event) {
+        document.getElementById('coreDetails').addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent the default form submission
 
             const formData = {
@@ -141,16 +164,7 @@
             })
                 .then(response => response.json())
                 .then(data => {
-                    const responseDisplay = document.getElementById('responseDisplay');
-                    responseDisplay.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
-                    const id = document.getElementById('monsterID');
-                    id.value = data.ID
-                    document.getElementById('str').value = data.Stats.Strength
-                    document.getElementById('dex').value = data.Stats.Dexterity
-                    document.getElementById('con').value = data.Stats.Consitution
-                    document.getElementById('int').value = data.Stats.Intelligence
-                    document.getElementById('wis').value = data.Stats.Wisdom
-                    document.getElementById('cha').value = data.Stats.Charisma
+                    updateStats(data)
                 })
                 .catch(error => {
                     console.error('Error:', error);
@@ -182,9 +196,7 @@
             }).
                then(response => response.json()).
                 then(data => {
-                console.log(data)
-                    const responseDisplay = document.getElementById('responseDisplay');
-                    responseDisplay.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+                    updateStats(data)
                  })
                 .catch(error => {
                     console.error('Error:', error);
