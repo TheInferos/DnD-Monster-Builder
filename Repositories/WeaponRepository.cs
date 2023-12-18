@@ -6,15 +6,18 @@ namespace Monster_Builder_Web_API.Repositories
 {
     public class WeaponRepository
     {
-        private Dictionary<string, Weapon> Weapons;
-    
+        public Dictionary<string, Weapon> weapons {  get; set; }
+        public Dictionary<string, Weapon> Weapons { get { return weapons; } }
+        private string filePath;
 
         public WeaponRepository()
         {
-            Weapons = GetWeaponsFromFile("Data/Weapons.json");
+            filePath = "Data/Weapons.json";
+            weapons = GetWeaponsFromFile();
+            WriteWeapons();
         }
 
-        private Dictionary<string, Weapon> GetWeaponsFromFile(string filePath)
+        private Dictionary<string, Weapon> GetWeaponsFromFile()
         {
             string jsonData = File.ReadAllText(filePath);
             var weapons = JsonSerializer.Deserialize<Dictionary<string, Weapon>>(jsonData);
@@ -30,6 +33,14 @@ namespace Monster_Builder_Web_API.Repositories
         {
             return Weapons[id];
         }
+        public void WriteWeapons()
+        {
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+            File.WriteAllText(filePath, JsonSerializer.Serialize(weapons, options));
+        }
 
 
         public bool UpdateWeapon(Weapon weapon)
@@ -37,6 +48,7 @@ namespace Monster_Builder_Web_API.Repositories
             if (Weapons.ContainsKey(weapon.ID))
             {
                 Weapons[weapon.ID] = weapon;
+                WriteWeapons();
                 return true;
             }
             throw new Exception($"Weapon {weapon.Name} not found, use create.");

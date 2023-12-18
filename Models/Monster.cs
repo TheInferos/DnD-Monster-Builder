@@ -78,6 +78,8 @@ namespace Weapons
                     }
                     break;
                 case ArmourType.Light:
+                case ArmourType.Natural:
+                case ArmourType.Spell:
                     Stats.AC += (Stats.Dexterity / 2) - 5;
                     break;
                 default:

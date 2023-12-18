@@ -23,7 +23,7 @@ namespace Monster_Builder_Web_API.Controllers
 
             var armorObject = new Dictionary<string, List<string>> { };
             //TODO Clean this up should be returning as a dictionary based on Armour Type
-            foreach (var armour in _armouryService.armours)
+            foreach (var armour in _armouryService.ArmourStore.Armours)
             {
                 var armorTypeString = Enum.GetName(typeof(ArmourType), armour.Value.Type);
                 if (!armorObject.ContainsKey(armorTypeString))
@@ -34,6 +34,11 @@ namespace Monster_Builder_Web_API.Controllers
             }
 
             return armorObject;
+        }
+        [HttpGet("SaveWeapons")]
+        public void Save()
+        {
+            _armouryService.WeaponStore.WriteWeapons();
         }
     }
 }

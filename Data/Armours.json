@@ -1,7 +1,8 @@
 {
   "Natural": {
-    "AC": 13,
+    "ID": "7f2bb2a4-723f-482d-a91c-b114819970ba",
     "Name": "Natural",
+    "AC": 13,
     "Cost": null,
     "Weight": null,
     "Strength": null,
@@ -9,8 +10,9 @@
     "Type": 0
   },
   "Padded": {
-    "AC": 11,
+    "ID": "df9e8d8f-203c-4150-97c6-6ad30258255c",
     "Name": "Padded",
+    "AC": 11,
     "Cost": 500,
     "Weight": 8,
     "Strength": null,
@@ -18,8 +20,9 @@
     "Type": 1
   },
   "Leather": {
-    "AC": 11,
+    "ID": "a2597a6d-7511-480d-8002-4cadf77c9e52",
     "Name": "Leather",
+    "AC": 11,
     "Cost": 1000,
     "Weight": 10,
     "Strength": null,
@@ -27,8 +30,9 @@
     "Type": 1
   },
   "Studded Leather": {
-    "AC": 12,
+    "ID": "c22a1604-006a-4bfa-aab9-5002d55d6a0c",
     "Name": "Studded Leather",
+    "AC": 12,
     "Cost": 4500,
     "Weight": 13,
     "Strength": null,
@@ -36,8 +40,9 @@
     "Type": 1
   },
   "Hide": {
-    "AC": 12,
+    "ID": "d5e944d4-0aff-48be-ac51-5951ced3a4f5",
     "Name": "Hide",
+    "AC": 12,
     "Cost": 1000,
     "Weight": 12,
     "Strength": null,
@@ -45,8 +50,9 @@
     "Type": 2
   },
   "Chain Shirt": {
-    "AC": 13,
+    "ID": "40aa5c27-aa10-4130-a1ac-baa30342c041",
     "Name": "Chain Shirt",
+    "AC": 13,
     "Cost": 5000,
     "Weight": 20,
     "Strength": null,
@@ -54,8 +60,9 @@
     "Type": 2
   },
   "Scale Mail": {
-    "AC": 14,
+    "ID": "f7520384-1160-4f12-bc43-f00dbb297319",
     "Name": "Scale Mail",
+    "AC": 14,
     "Cost": 5000,
     "Weight": 45,
     "Strength": null,
@@ -63,8 +70,9 @@
     "Type": 2
   },
   "Breastplate": {
-    "AC": 14,
+    "ID": "b514ded5-0426-4ca7-952d-f1293b00d840",
     "Name": "Breastplate",
+    "AC": 14,
     "Cost": 4000,
     "Weight": 20,
     "Strength": null,
@@ -72,8 +80,9 @@
     "Type": 2
   },
   "Half Plate": {
-    "AC": 15,
+    "ID": "5b28ed9d-6f18-4f07-9ad4-3814e5c318c4",
     "Name": "Half Plate",
+    "AC": 15,
     "Cost": 7500,
     "Weight": 40,
     "Strength": null,
@@ -81,8 +90,9 @@
     "Type": 2
   },
   "Ring Mail": {
-    "AC": 14,
+    "ID": "e7ca5cb0-a092-418f-acef-9b848b855eb5",
     "Name": "Ring Mail",
+    "AC": 14,
     "Cost": 3000,
     "Weight": 40,
     "Strength": null,
@@ -90,8 +100,9 @@
     "Type": 3
   },
   "Chain Mail": {
-    "AC": 16,
+    "ID": "dd228c3b-7add-41c5-a70f-c735b1a97b2d",
     "Name": "Chain Mail",
+    "AC": 16,
     "Cost": 7500,
     "Weight": 55,
     "Strength": 13,
@@ -99,5 +110,3 @@
     "Type": 3
   }
 }
-
-

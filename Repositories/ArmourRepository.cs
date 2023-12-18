@@ -1,16 +1,20 @@
 ﻿using Armours;
 using System.Text.Json;
+using Weapons;
 
 namespace Monster_Builder_Web_API.Repositories
 {
     public class ArmourRepository
     {
-        private Dictionary<string, Armour> Armours;
+        private Dictionary<string, Armour> armours;
+        public Dictionary<string, Armour> Armours { get { return armours; } }
+        private string filePath {  get; set; }
         public ArmourRepository()
         {
-            Armours = GetArmoursFromFile("Data/Armours.json");
+            filePath = "Data/Armours.json";
+            armours = GetArmoursFromFile();
         }
-        private Dictionary<string, Armour> GetArmoursFromFile(string filePath)
+        private Dictionary<string, Armour> GetArmoursFromFile()
         {
             string jsonData = File.ReadAllText(filePath);
             var armours = JsonSerializer.Deserialize<Dictionary<string, Armour>>(jsonData);
@@ -31,23 +35,33 @@ namespace Monster_Builder_Web_API.Repositories
         /// 
         public Armour GetArmour(string id)
         {
-            return Armours[id];
+            return armours[id];
         }
 
 
         public bool UpdateArmour(Armour armour)
         {
-            if (Armours.ContainsKey(armour.ID))
+            if (armours.ContainsKey(armour.ID))
             {
-                Armours[armour.ID] = armour;
+                armours[armour.ID] = armour;
+                WriteArmours();
                 return true;
             }
             throw new Exception($"Armour {armour.Name} not found, use create.");
         }
 
-        public IEnumerable<Armour> GetAllArmour()
+        private void WriteArmours()
         {
-            return Armours.Values.ToList();
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+            File.WriteAllText(filePath, JsonSerializer.Serialize(armours, options));
         }
+
+        public IEnumerable<Armour> GetAllArmour()
+            {
+                return armours.Values.ToList();
+            }
     }
 }

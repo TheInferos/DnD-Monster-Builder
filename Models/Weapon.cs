@@ -87,6 +87,7 @@ namespace Weapons
         [JsonConstructor]
         public Weapon()
         {
+            ID = Guid.NewGuid().ToString();
             // Default constructor without parameters
         }
 
