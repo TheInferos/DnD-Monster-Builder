@@ -3,7 +3,7 @@ using Statlines;
 using Monster_Builder_Web_API.Models;
 
 
-namespace Monster_Builder
+namespace Weapons
 
 {
     public class Monster
@@ -78,6 +78,8 @@ namespace Monster_Builder
                     }
                     break;
                 case ArmourType.Light:
+                case ArmourType.Natural:
+                case ArmourType.Spell:
                     Stats.AC += (Stats.Dexterity / 2) - 5;
                     break;
                 default:
