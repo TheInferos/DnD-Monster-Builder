@@ -1,269 +1,370 @@
 {
   "Longsword": {
+    "Properties": [
+      "Versatile (1d10)"
+    ],
+    "ID": "dbeafec1-f642-49d0-bff9-73d344a389f3",
     "Name": "Longsword",
     "Type": 0,
     "Damage": "1d8 slashing",
-    "Properties": [ "Versatile (1d10)" ],
     "Martial": true,
     "Ranged": false,
     "Cost": 1500,
     "Weight": 3
   },
   "Shortbow": {
+    "Properties": [
+      "Ammunition (range 80/320)",
+      "Two-handed"
+    ],
+    "ID": "1d23d1f5-0df3-4828-960b-138fba6a1099",
     "Name": "Shortbow",
     "Type": 1,
     "Damage": "1d6 piercing",
-    "Properties": [ "Ammunition (range 80/320)", "Two-handed" ],
     "Martial": true,
     "Ranged": true,
     "Cost": 2500,
     "Weight": 2
   },
   "Dagger": {
+    "Properties": [
+      "Finesse",
+      "Light",
+      "Thrown (range 20/60)"
+    ],
+    "ID": "ca7e9daf-4f7e-4a94-8c19-746ece2495bc",
     "Name": "Dagger",
     "Type": 0,
     "Damage": "1d4 piercing",
-    "Properties": [ "Finesse", "Light", "Thrown (range 20/60)" ],
     "Martial": false,
     "Ranged": true,
     "Cost": 20,
     "Weight": 1
   },
   "Warhammer": {
+    "Properties": [
+      "Versatile (1d10)"
+    ],
+    "ID": "88df2b37-00a0-415c-8b12-9c1dcf2523a4",
     "Name": "Warhammer",
     "Type": 0,
     "Damage": "1d8 bludgeoning",
-    "Properties": [ "Versatile (1d10)" ],
     "Martial": true,
     "Ranged": false,
     "Cost": 1500,
     "Weight": 2
   },
   "Light Crossbow": {
+    "Properties": [
+      "Ammunition (range 80/320)",
+      "Loading",
+      "Two-handed"
+    ],
+    "ID": "696fc0c7-c3eb-4bcb-a2f6-210736f4f0ed",
     "Name": "Light Crossbow",
     "Type": 1,
     "Damage": "1d8 piercing",
-    "Properties": [ "Ammunition (range 80/320)", "Loading", "Two-handed" ],
     "Martial": true,
     "Ranged": true,
     "Cost": 2500,
     "Weight": 5
   },
   "Greatsword": {
+    "Properties": [
+      "Heavy",
+      "Two-handed"
+    ],
+    "ID": "5c5f6f82-b6e8-448b-ada4-caff86424b77",
     "Name": "Greatsword",
     "Type": 0,
     "Damage": "2d6 slashing",
-    "Properties": [ "Heavy", "Two-handed" ],
     "Martial": true,
     "Ranged": false,
     "Cost": 5000,
     "Weight": 6
   },
   "Handaxe": {
+    "Properties": [
+      "Light",
+      "Thrown (range 20/60)"
+    ],
+    "ID": "cf930968-caf9-4427-af12-b3f6f2598215",
     "Name": "Handaxe",
     "Type": 0,
     "Damage": "1d6 slashing",
-    "Properties": [ "Light", "Thrown (range 20/60)" ],
     "Martial": false,
     "Ranged": true,
     "Cost": 50,
     "Weight": 2
   },
   "Sling": {
+    "Properties": [
+      "Ammunition (range 30/120)"
+    ],
+    "ID": "7e3da2cd-2f6d-4248-acee-6ee7f6fd18b4",
     "Name": "Sling",
     "Type": 1,
     "Damage": "1d4 bludgeoning",
-    "Properties": [ "Ammunition (range 30/120)" ],
     "Martial": false,
     "Ranged": true,
     "Cost": 1,
     "Weight": 0
   },
   "Mace": {
+    "Properties": [],
+    "ID": "0c113ac0-23c0-4c27-9b68-33af4921f470",
     "Name": "Mace",
     "Type": 0,
     "Damage": "1d6 bludgeoning",
-    "Properties": [],
     "Martial": true,
     "Ranged": false,
     "Cost": 500,
     "Weight": 4
   },
   "Quarterstaff": {
+    "Properties": [
+      "Versatile (1d8)"
+    ],
+    "ID": "79323ebe-5391-4675-a6bd-cb5be0c79c9a",
     "Name": "Quarterstaff",
     "Type": 0,
     "Damage": "1d6 bludgeoning",
-    "Properties": [ "Versatile (1d8)" ],
     "Martial": false,
     "Ranged": false,
     "Cost": 2,
     "Weight": 4
   },
   "Rapier": {
+    "Properties": [
+      "Finesse"
+    ],
+    "ID": "de95fd05-0e67-4fcc-88e3-910ec58b615f",
     "Name": "Rapier",
     "Type": 0,
     "Damage": "1d8 piercing",
-    "Properties": [ "Finesse" ],
     "Martial": false,
     "Ranged": false,
     "Cost": 2500,
     "Weight": 2
   },
   "Javelin": {
+    "Properties": [
+      "Thrown (range 30/120)"
+    ],
+    "ID": "09d44205-905c-406e-822b-6f028384d52c",
     "Name": "Javelin",
     "Type": 0,
     "Damage": "1d6 piercing",
-    "Properties": [ "Thrown (range 30/120)" ],
     "Martial": false,
     "Ranged": true,
     "Cost": 50,
     "Weight": 2
   },
   "Battleaxe": {
+    "Properties": [
+      "Versatile (1d10)"
+    ],
+    "ID": "896f909d-cb14-41c8-916a-880989dd8935",
     "Name": "Battleaxe",
     "Type": 0,
     "Damage": "1d8 slashing",
-    "Properties": [ "Versatile (1d10)" ],
     "Martial": true,
     "Ranged": false,
     "Cost": 1000,
     "Weight": 4
   },
   "Heavy Crossbow": {
+    "Properties": [
+      "Ammunition (range 100/400)",
+      "Loading",
+      "Two-handed"
+    ],
+    "ID": "32b9e5fd-b72d-46bd-8d9e-e0ee2ca50bb3",
     "Name": "Heavy Crossbow",
     "Type": 1,
     "Damage": "1d10 piercing",
-    "Properties": [ "Ammunition (range 100/400)", "Loading", "Two-handed" ],
     "Martial": true,
     "Ranged": true,
     "Cost": 5000,
     "Weight": 18
   },
   "Scimitar": {
+    "Properties": [
+      "Finesse",
+      "Light"
+    ],
+    "ID": "424719c4-8049-4ae1-9abb-578525d92aaa",
     "Name": "Scimitar",
     "Type": 0,
     "Damage": "1d6 slashing",
-    "Properties": [ "Finesse", "Light" ],
     "Martial": false,
     "Ranged": false,
     "Cost": 2500,
     "Weight": 3
   },
   "Pike": {
+    "Properties": [
+      "Heavy",
+      "Reach",
+      "Two-handed"
+    ],
+    "ID": "79609a1a-f172-4e1c-aeba-c8a8b23588dc",
     "Name": "Pike",
     "Type": 0,
     "Damage": "1d10 piercing",
-    "Properties": [ "Heavy", "Reach", "Two-handed" ],
     "Martial": true,
     "Ranged": false,
     "Cost": 500,
     "Weight": 18
   },
   "Trident": {
+    "Properties": [
+      "Thrown (range 20/60)",
+      "Versatile (1d8)"
+    ],
+    "ID": "81232215-702c-401f-94f2-266b1b8d4ef6",
     "Name": "Trident",
     "Type": 0,
     "Damage": "1d6 piercing",
-    "Properties": [ "Thrown (range 20/60)", "Versatile (1d8)" ],
     "Martial": true,
     "Ranged": true,
     "Cost": 500,
     "Weight": 4
   },
   "Whip": {
+    "Properties": [
+      "Finesse",
+      "Reach"
+    ],
+    "ID": "3be1b5d5-f1c7-4101-a06d-4aa673b52b2a",
     "Name": "Whip",
     "Type": 0,
     "Damage": "1d4 slashing",
-    "Properties": [ "Finesse", "Reach" ],
     "Martial": false,
     "Ranged": false,
     "Cost": 200,
     "Weight": 3
   },
   "Club": {
+    "Properties": [
+      "Light"
+    ],
+    "ID": "73edb599-bd7c-41ee-bb93-99f7c8fd787a",
     "Name": "Club",
     "Type": 0,
     "Damage": "1d4 bludgeoning",
-    "Properties": [ "Light" ],
     "Martial": false,
     "Ranged": false,
     "Cost": 10,
     "Weight": 2
   },
   "Morningstar": {
+    "Properties": [],
+    "ID": "8800ff62-d857-411e-929e-b93fa78cee2b",
     "Name": "Morningstar",
     "Type": 0,
     "Damage": "1d8 piercing",
-    "Properties": [],
     "Martial": true,
     "Ranged": false,
     "Cost": 1500,
     "Weight": 4
   },
   "Spear": {
+    "Properties": [
+      "Thrown (range 20/60)",
+      "Versatile (1d8)"
+    ],
+    "ID": "0dffd269-5b48-4cf4-8d5b-9a059e45f973",
     "Name": "Spear",
     "Type": 0,
     "Damage": "1d6 piercing",
-    "Properties": [ "Thrown (range 20/60)", "Versatile (1d8)" ],
     "Martial": true,
     "Ranged": true,
     "Cost": 100,
     "Weight": 3
   },
   "Glaive": {
+    "Properties": [
+      "Heavy",
+      "Reach",
+      "Two-handed"
+    ],
+    "ID": "2c981a6d-13bc-4035-864c-cfee38d05d53",
     "Name": "Glaive",
     "Type": 0,
     "Damage": "1d10 slashing",
-    "Properties": [ "Heavy", "Reach", "Two-handed" ],
     "Martial": true,
     "Ranged": false,
     "Cost": 2000,
     "Weight": 6
   },
   "Halberd": {
+    "Properties": [
+      "Heavy",
+      "Reach",
+      "Two-handed"
+    ],
+    "ID": "bc64e7c5-6660-4352-a2d9-8fa5db4a4ef8",
     "Name": "Halberd",
     "Type": 0,
     "Damage": "1d10 slashing",
-    "Properties": [ "Heavy", "Reach", "Two-handed" ],
     "Martial": true,
     "Ranged": false,
     "Cost": 2000,
     "Weight": 6
   },
   "Blowgun": {
+    "Properties": [
+      "Ammunition (range 25/100)",
+      "Loading"
+    ],
+    "ID": "1c13e926-8949-4d29-8c4e-fa3118cf3e2e",
     "Name": "Blowgun",
     "Type": 1,
     "Damage": "1 piercing",
-    "Properties": [ "Ammunition (range 25/100)", "Loading" ],
     "Martial": false,
     "Ranged": true,
     "Cost": 1000,
     "Weight": 1
   },
   "Net": {
+    "Properties": [
+      "Special",
+      "Thrown (range 5/15)"
+    ],
+    "ID": "b81b234b-4410-43fd-b527-3dd2750daaf1",
     "Name": "Net",
     "Type": 1,
     "Damage": "Special",
-    "Properties": [ "Special", "Thrown (range 5/15)" ],
     "Martial": false,
     "Ranged": true,
     "Cost": 100,
     "Weight": 3
   },
   "Heavy Flail": {
+    "Properties": [
+      "Heavy",
+      "Two-handed"
+    ],
+    "ID": "23a3b046-e23d-4274-828c-055f6f178dfe",
     "Name": "Heavy Flail",
     "Type": 0,
     "Damage": "2d8 bludgeoning",
-    "Properties": [ "Heavy", "Two-handed" ],
     "Martial": true,
     "Ranged": false,
     "Cost": 7500,
     "Weight": 10
   },
   "Hand Crossbow": {
+    "Properties": [
+      "Ammunition (range 30/120)",
+      "Light",
+      "Loading"
+    ],
+    "ID": "005af5c1-9c22-46e4-8ba2-a0700273c17c",
     "Name": "Hand Crossbow",
     "Type": 1,
     "Damage": "1d6 piercing",
-    "Properties": [ "Ammunition (range 30/120)", "Light", "Loading" ],
     "Martial": true,
     "Ranged": true,
     "Cost": 7500,

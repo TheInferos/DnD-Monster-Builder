@@ -1,5 +1,5 @@
 ﻿using Armours;
-using Monster_Builder;
+using Weapons;
 using Monster_Builder_Web_API.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
@@ -35,12 +35,12 @@ namespace Monster_Builder_Web_API.Controllers
         public ActionResult<string> AddWeapon(string weapon, string id)
         {
             Monster monster = _beastiaryService.GetMonsterByID(id);
-            monster.AddWeapon(new Weapon(weapon));
+            monster.AddWeapon(new Weapons.Weapon(weapon));
             return JsonSerializer.Serialize(monster);
         }
 
         [HttpPost("{id}/SwitchArmour")]
-        public ActionResult<string> changeArmour(string armourString,string id)
+        public ActionResult<string> ChangeArmour(string armourString,string id)
         {
             Monster monster = _beastiaryService.GetMonsterByID(id);
             Armour armour = _armouryService.GetArmourByName(armourString);
@@ -49,7 +49,7 @@ namespace Monster_Builder_Web_API.Controllers
         }
 
         [HttpPost("{id}/ChangeStats")]
-        public ActionResult<string> setStats(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, string id)
+        public ActionResult<string> SetStats(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, string id)
         {
             Monster monster = _beastiaryService.GetMonsterByID(id);
             monster.Stats.changeStats(strength, dexterity, constitution, intelligence, wisdom, charisma);
