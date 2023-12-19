@@ -1,6 +1,7 @@
 ﻿using Armours;
 using Statlines;
 using Monster_Builder_Web_API.Models;
+using System.Text.Json.Serialization;
 
 
 namespace Weapons
@@ -20,17 +21,23 @@ namespace Weapons
 
         public int Statpool { get; set; }
 
-        public Monster(string name, float cr)
+        public Monster(string name, float cr, int hd)
         {
             ID = Guid.NewGuid().ToString();
             Name = name;
             CR = cr;
-            Stats = new Statline();
+            Stats = new Statline(hd, (int)cr);
             Size = "Medium";
             Type = "Humanoid";
             Statpool = (int)(8 + 2 * CR);
             Weapons = [new Weapon("unarmed")];
             Armour = new Armour();
+        }
+
+        [JsonConstructor]
+        public Monster()
+        {
+
         }
 
         public override string ToString()
