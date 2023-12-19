@@ -31,7 +31,7 @@ namespace Statlines
                 { 0, 0 }
             };
         }
-        public Statline(int cr)
+        public Statline(int hd, int cr)
         {
             Strength = 10;
             Dexterity = 10;
@@ -43,8 +43,9 @@ namespace Statlines
             AC = 10;
             HD = new Dictionary<int, int>()
             {
-                { 8, cr }
+                { hd, cr }
             };
+             CalculateHeath();
         }
         public Statline(StatblockDTO stats, int ac, Dictionary<int, int> hd)
         {

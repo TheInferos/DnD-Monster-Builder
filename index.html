@@ -9,18 +9,19 @@
     <h1>Monster Builder</h1>
 
     <form class="mb-3" id="coreDetails">
-        <div>
-            <label for="monsterID">Monster ID:</label>
-            <input type="text" id="monsterID" name="monsterID">
-        </div>
+
         <div class="row">
             <div id="stats" class="col-md-6">
                 <label class="form-label" for="name">What should the monster be called:</label>
                 <input class="form-control" type="text" id="name" name="name" required>
-            </div>
-            <div class="col-md-6">
                 <label class="form-label" for="cr">What CR are we looking at:</label>
                 <input class="form-control" type="number" id="cr" name="cr" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" for="monsterID">Monster ID:</label>
+                <input class="form-control" type="text" id="monsterID" name="monsterID">
+                <label class="form-label" for="hd">What Size Hit Die are we looking at:</label>
+                <input class="form-control" type="number" id="hd" name="hd" required>
             </div>
         </div>
         <br>
@@ -153,7 +154,8 @@
 
             const formData = {
                 name: document.getElementById('name').value,
-                cr: parseInt(document.getElementById('cr').value)
+                cr: parseInt(document.getElementById('cr').value),
+                hd: parseInt(document.getElementById('hd').value)
             };
             fetch('https://localhost:7050/api/Monster/MakeMonster', {
                 method: 'POST',
