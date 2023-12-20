@@ -1,5 +1,5 @@
 ﻿using Monster_Builder_Web_API.Models.DTOs;
-using Monster_Builder_Web_API.Models.ENUM;
+using Monster_Builder_Web_API.Models.Enum;
 using System.ComponentModel.DataAnnotations;
 
 namespace Armours
@@ -150,15 +150,17 @@ namespace Armours
         {
             //Lots of validation 
             List<Exception> validationErrors = new();
-            if (string.IsNullOrWhiteSpace(name)) validationErrors.Add(new ArgumentNullException("Name cannot be null"));
-            if (ac < 10) validationErrors.Add(new ArgumentOutOfRangeException("Ac must be an integer above 10"));
-            if (cost < 0) validationErrors.Add(new ArgumentOutOfRangeException("Cost must be an integer above 0"));
-            if (strength != null && strength < 13) validationErrors.Add(new ArgumentOutOfRangeException("Strenght requirement must be above 12 or null"));
+            if (string.IsNullOrWhiteSpace(name))
+                validationErrors.Add(new ArgumentNullException("Name cannot be null"));
+            if (ac < 10) 
+                validationErrors.Add(new ArgumentOutOfRangeException("Ac must be an integer above 10"));
+            if (cost < 0)
+                validationErrors.Add(new ArgumentOutOfRangeException("Cost must be an integer above 0"));
+            if (strength != null && strength < 13)
+                validationErrors.Add(new ArgumentOutOfRangeException("Strenght requirement must be above 12 or null"));
 
             if (validationErrors.Count > 0)
-            {
                 throw new ValidationException(string.Join("; ", validationErrors));
-            }
         }
     }
     

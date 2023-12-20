@@ -1,7 +1,7 @@
 ﻿using Armours;
 using Statlines;
 using System.Text.Json.Serialization;
-using Monster_Builder_Web_API.Models.ENUM;
+using Monster_Builder_Web_API.Models.Enum;
 
 
 namespace Weapons
@@ -58,7 +58,7 @@ namespace Weapons
         {
             Weapons.Add(weapon);
         }
-
+        //TODO move to stats
         public void ChangeArmour(Armour armour)
         {
             Armour = armour;

@@ -1,4 +1,4 @@
-﻿using Monster_Builder_Web_API.Models.ENUM;
+﻿using Monster_Builder_Web_API.Models.Enum;
 
 namespace Monster_Builder_Web_API.Models
 {
@@ -8,7 +8,6 @@ namespace Monster_Builder_Web_API.Models
         public string Description { get; set; }
         public ActionType Type { get; set; }
         public RechargeType Recharge { get; set; }
-
 
     }
 }

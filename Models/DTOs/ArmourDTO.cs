@@ -1,6 +1,4 @@
-﻿
-using Monster_Builder_Web_API.Models.ENUM;
-
+﻿using Monster_Builder_Web_API.Models.Enum;
 namespace Monster_Builder_Web_API.Models.DTOs;
 
 public class ArmourDTO

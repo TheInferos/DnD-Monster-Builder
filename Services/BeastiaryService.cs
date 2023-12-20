@@ -4,9 +4,9 @@ using System.Text.Json;
 
 namespace Monster_Builder_Web_API.Services
 {
-    public class BeastiaryService
+    public class BeastiaryService : IBeastiaryService
     {
-        public Dictionary<string, Monster> _monsters;
+        private Dictionary<string, Monster> _monsters;
 
         public BeastiaryService()
         {

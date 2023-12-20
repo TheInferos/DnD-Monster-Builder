@@ -1,4 +1,4 @@
-﻿namespace Monster_Builder_Web_API.Models.ENUM
+﻿namespace Monster_Builder_Web_API.Models.Enum
 {
     public enum WeaponType
     {
