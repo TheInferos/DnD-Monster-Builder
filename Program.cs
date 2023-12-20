@@ -1,3 +1,4 @@
+using Monster_Builder_Web_API.Repositories;
 using Monster_Builder_Web_API.Services;
 using System.Reflection;
 
@@ -24,9 +25,13 @@ builder.Services.AddCors(options =>
                 .AllowAnyHeader();
         });
 });
+//Will use the same Repo for the lifetime of the service. Good for a cache or low memory use service.
+builder.Services.AddSingleton<IArmourRepository, ArmourRepository>();
+builder.Services.AddSingleton<IWeaponRepository, WeaponRepository>();
 
-builder.Services.AddSingleton<BeastiaryService>();
-builder.Services.AddSingleton<ArmouryService>();
+
+builder.Services.AddSingleton<IBeastiaryService, BeastiaryService>();
+builder.Services.AddSingleton<IArmouryService, ArmouryService>();
 
 var app = builder.Build();
 
