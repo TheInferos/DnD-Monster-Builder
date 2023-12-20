@@ -4,9 +4,9 @@ using Weapons;
 
 namespace Monster_Builder_Web_API.Repositories
 {
-    public class WeaponRepository
+    public class WeaponRepository : IWeaponRepository
     {
-        public Dictionary<string, Weapon> weapons {  get; set; }
+        public Dictionary<string, Weapon> weapons { get; set; }
         public Dictionary<string, Weapon> Weapons { get { return weapons; } }
         private string filePath;
 

@@ -4,11 +4,11 @@ using Weapons;
 
 namespace Monster_Builder_Web_API.Repositories
 {
-    public class ArmourRepository
+    public class ArmourRepository : IArmourRepository
     {
         private Dictionary<string, Armour> armours;
         public Dictionary<string, Armour> Armours { get { return armours; } }
-        private string filePath {  get; set; }
+        private string filePath { get; set; }
         public ArmourRepository()
         {
             filePath = "Data/Armours.json";
@@ -60,8 +60,8 @@ namespace Monster_Builder_Web_API.Repositories
         }
 
         public IEnumerable<Armour> GetAllArmour()
-            {
-                return armours.Values.ToList();
-            }
+        {
+            return armours.Values.ToList();
+        }
     }
 }

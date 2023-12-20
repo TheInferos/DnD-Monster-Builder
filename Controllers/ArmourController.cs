@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Armours;
 using Monster_Builder_Web_API.Services;
-using Monster_Builder_Web_API.Models;
+using Monster_Builder_Web_API.Models.Enum;
 
 namespace Monster_Builder_Web_API.Controllers
 {
-        [Route("api/[controller]")]
+    [Route("api/[controller]")]
         public class ArmourController: ControllerBase
     {
-        private readonly ArmouryService _armouryService;
+        private readonly IArmouryService _armouryService;
         /// <summary>
         /// Returns the Armour Object by the name provided
         /// </summary>
