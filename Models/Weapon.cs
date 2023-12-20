@@ -1,4 +1,4 @@
-﻿using Monster_Builder_Web_API.Models;
+﻿using Monster_Builder_Web_API.Models.ENUM;
 using System.Text.Json.Serialization;
 
 namespace Weapons

@@ -1,7 +1,7 @@
 ﻿using Armours;
 using Statlines;
-using Monster_Builder_Web_API.Models;
 using System.Text.Json.Serialization;
+using Monster_Builder_Web_API.Models.ENUM;
 
 
 namespace Weapons

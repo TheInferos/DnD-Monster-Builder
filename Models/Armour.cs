@@ -1,5 +1,5 @@
-﻿using Monster_Builder_Web_API.Models;
-using Monster_Builder_Web_API.Models.DTOs;
+﻿using Monster_Builder_Web_API.Models.DTOs;
+using Monster_Builder_Web_API.Models.ENUM;
 using System.ComponentModel.DataAnnotations;
 
 namespace Armours
