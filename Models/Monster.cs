@@ -2,6 +2,7 @@
 using Statlines;
 using System.Text.Json.Serialization;
 using Monster_Builder_Web_API.Models.Enum;
+using Monster_Builder_Web_API.Models.DTOs;
 
 
 namespace Weapons
@@ -58,12 +59,17 @@ namespace Weapons
         {
             Weapons.Add(weapon);
         }
-        //TODO move to stats
+
         public void ChangeArmour(Armour armour)
         {
             Armour = armour;
             CalculateAC();
 
+        }
+        public void UpdateStats(StatblockDTO data)
+        {
+            Stats.ChangeStats(data);
+            CalculateAC();
         }
 
         private void CalculateAC()
@@ -87,6 +93,7 @@ namespace Weapons
                 case ArmourType.Light:
                 case ArmourType.Natural:
                 case ArmourType.Spell:
+                case ArmourType.Other:
                     Stats.AC += (Stats.Dexterity / 2) - 5;
                     break;
                 default:

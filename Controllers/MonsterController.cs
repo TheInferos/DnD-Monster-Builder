@@ -53,7 +53,7 @@ namespace Monster_Builder_Web_API.Controllers
 
         {
             Monster monster = _beastiaryService.GetMonsterByID(id);
-            monster.Stats.ChangeStats(formData);
+            monster.UpdateStats(formData);
             return JsonSerializer.Serialize(monster);
         }
 

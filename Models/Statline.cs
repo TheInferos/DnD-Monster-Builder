@@ -69,7 +69,6 @@ namespace Statlines
             }
         }
 
-        // Change to request class
         public void ChangeStats(StatblockDTO data)
         {
             Strength = data.Strength;
