@@ -1,11 +1,9 @@
-﻿using Armours;
-using Statlines;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 using Monster_Builder_Web_API.Models.Enum;
 using Monster_Builder_Web_API.Models.DTOs;
 
 
-namespace Weapons
+namespace Monster_Builder_Web_API.Models
 
 {
     public class Monster
@@ -15,6 +13,7 @@ namespace Weapons
         public float CR { get; set; }
         public string Size { get; set; }
         public string Type { get; set; }
+        public List<MonsterAction> MonsterActions { get; set; }
         public List<Weapon> Weapons { get; set; }
         public Armour Armour { get; set; }
 
@@ -58,6 +57,7 @@ namespace Weapons
         public void AddWeapon(Weapon weapon)
         {
             Weapons.Add(weapon);
+            MonsterActions.Concat(weapon.GetMonsterActions());
         }
 
         public void ChangeArmour(Armour armour)

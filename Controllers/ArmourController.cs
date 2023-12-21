@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Armours;
-using Monster_Builder_Web_API.Services;
+using Monster_Builder_Web_API.Models;
 using Monster_Builder_Web_API.Models.Enum;
+using Monster_Builder_Web_API.Services;
 
 namespace Monster_Builder_Web_API.Controllers
 {

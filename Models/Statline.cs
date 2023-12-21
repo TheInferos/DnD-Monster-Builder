@@ -1,8 +1,6 @@
-
-﻿using Weapons;
 using Monster_Builder_Web_API.Models.DTOs;
 
-namespace Statlines
+namespace Monster_Builder_Web_API.Models
 {
     public class Statline
     {

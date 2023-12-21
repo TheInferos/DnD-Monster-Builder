@@ -1,5 +1,4 @@
-﻿using Armours;
-using Weapons;
+﻿using Monster_Builder_Web_API.Models;
 
 namespace Monster_Builder_Web_API.Services
 {

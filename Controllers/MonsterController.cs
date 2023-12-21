@@ -1,8 +1,7 @@
-﻿using Armours;
-using Weapons;
-using Monster_Builder_Web_API.Services;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
+using Monster_Builder_Web_API.Models;
+using Monster_Builder_Web_API.Services;
 using Monster_Builder_Web_API.Models.DTOs;
 
 namespace Monster_Builder_Web_API.Controllers
@@ -35,7 +34,7 @@ namespace Monster_Builder_Web_API.Controllers
         public ActionResult<string> AddWeapon(string weapon, string id)
         {
             Monster monster = _beastiaryService.GetMonsterByID(id);
-            monster.AddWeapon(new Weapons.Weapon(weapon));
+            monster.AddWeapon(new Weapon(weapon));
             return JsonSerializer.Serialize(monster);
         }
 
