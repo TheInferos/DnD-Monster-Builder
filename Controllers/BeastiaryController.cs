@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Weapons;
+using Monster_Builder_Web_API.Models;
 using Monster_Builder_Web_API.Services;
-using System.Text.Json;
 
 namespace Monster_Builder_Web_API.Controllers
 {

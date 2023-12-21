@@ -1,6 +1,5 @@
-﻿using Armours;
-using System.Text.Json;
-using Weapons;
+﻿using System.Text.Json;
+using Monster_Builder_Web_API.Models;
 
 namespace Monster_Builder_Web_API.Repositories
 {

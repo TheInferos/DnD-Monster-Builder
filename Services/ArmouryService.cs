@@ -1,7 +1,6 @@
-﻿using Armours;
-using Weapons;
+﻿using Monster_Builder_Web_API.Models.Enum;
+using Monster_Builder_Web_API.Models;
 using Monster_Builder_Web_API.Repositories;
-using Monster_Builder_Web_API.Models.Enum;
 
 namespace Monster_Builder_Web_API.Services
 {
