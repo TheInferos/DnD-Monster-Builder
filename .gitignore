@@ -5,6 +5,7 @@
 /.vs
 /bin
 /obj
+/packages
 /Monster Builder Web API.http
 
 /Data/Monsters.json
