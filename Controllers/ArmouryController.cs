@@ -7,7 +7,7 @@ namespace Monster_Builder_Web_API.Controllers
     [Route("api/[controller]")]
     public class ArmouryController : ControllerBase
     {
-        IArmouryService _armouryService;
+        private IArmouryService _armouryService { get; init; }
         public ArmouryController(IArmouryService armouryService)
         {
             _armouryService = armouryService;

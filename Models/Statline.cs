@@ -58,7 +58,7 @@ namespace Monster_Builder_Web_API.Models
             CalculateHeath();
         }
 
-        public void CalculateHeath()
+        private void CalculateHeath()
         {
             Health = 0;
             foreach (var kvp in HD)
@@ -75,6 +75,7 @@ namespace Monster_Builder_Web_API.Models
             Intelligence = data.Intelligence;
             Wisdom = data.Wisdom;
             Charisma = data.Charisma;
+            CalculateHeath();
         }
 
         public override string ToString()
