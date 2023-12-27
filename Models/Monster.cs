@@ -10,7 +10,8 @@ namespace Monster_Builder_Web_API.Models
     {
         public string Name { get; set; }
         public string ID { get; set; }
-        public float CR { get; set; }
+        //TODO Change to Float to account for 1/2 and 1/4
+        public int CR { get; set; }
         public string Size { get; set; }
         public string Type { get; set; }
         public List<MonsterAction> MonsterActions { get; set; }
@@ -21,15 +22,15 @@ namespace Monster_Builder_Web_API.Models
 
         public int Statpool { get; set; }
 
-        public Monster(string name, float cr, int hd)
+        public Monster(string name, int cr, int hd)
         {
             ID = Guid.NewGuid().ToString();
             Name = name;
             CR = cr;
-            Stats = new Statline(hd, (int)cr);
+            Stats = new Statline(hd, cr);
             Size = "Medium";
             Type = "Humanoid";
-            Statpool = (int)(8 + 2 * CR);
+            Statpool = 8 + 2 * CR;
             Weapons = [new Weapon("unarmed")];
             Armour = new Armour();
         }
