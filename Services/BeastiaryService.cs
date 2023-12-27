@@ -18,7 +18,7 @@ namespace Monster_Builder_Web_API.Services
         {
             _monsters[monster.ID] = monster;
         }
-        public void LoadBaseMonsters()
+        private void LoadBaseMonsters()
         {
             LoadMonstersFromFile("Data/Monsters.json");
         }
@@ -32,8 +32,8 @@ namespace Monster_Builder_Web_API.Services
             };
             _monsters = JsonSerializer.Deserialize<Dictionary<string, Monster>>(jsonData, options);
         }
-
-        public void SaveMonsters(string filePath)
+        //TODO look into IDisposable 
+        private void SaveMonsters(string filePath)
         {
             // Create JsonSerializerOptions
             var options = new JsonSerializerOptions
