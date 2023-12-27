@@ -6,7 +6,23 @@ namespace Monster_Builder_Web_API.Repositories
     public class WeaponRepository : IWeaponRepository
     {
         private Dictionary<string, Weapon> weapons { get; set; }
-        public Dictionary<string, Weapon> Weapons { get { return weapons; } }
+
+        /// <summary>
+        /// This is the public front of WeaponRepository getting will create a shallow copy 
+        /// of the dictionary so that the dictionary itself cannot be ammended 
+        /// but the weapons within it can be
+        /// </summary>
+        public Dictionary<string, Weapon> Weapons {
+                get
+            {
+                    var copiedWeapons = new Dictionary<string, Weapon>();
+                    foreach (var pair in weapons)
+                    {
+                        copiedWeapons.Add(pair.Key, pair.Value);
+                    }
+                    return copiedWeapons;
+                }
+            }
         private string filePath;
 
         public WeaponRepository()

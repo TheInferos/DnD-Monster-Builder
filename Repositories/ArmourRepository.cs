@@ -6,7 +6,24 @@ namespace Monster_Builder_Web_API.Repositories
     public class ArmourRepository : IArmourRepository
     {
         private Dictionary<string, Armour> armours;
-        public Dictionary<string, Armour> Armours { get { return armours; } }
+
+        /// <summary>
+        /// This is the public front of ArmourRepository getting will create a shallow copy 
+        /// of the dictionary so that the dictionary itself cannot be ammended 
+        /// but the armours within it can be
+        /// </summary>
+        public Dictionary<string, Armour> Armours
+        {
+            get
+            {
+                var copiedArmours = new Dictionary<string, Armour>();
+                foreach (var pair in armours)
+                {
+                    copiedArmours.Add(pair.Key, pair.Value);
+                }
+                return copiedArmours;
+            } 
+        }
         private string filePath { get; set; }
         public ArmourRepository()
         {

@@ -9,8 +9,8 @@ namespace Monster_Builder_Web_API.Controllers
     [Route("api/[controller]")]
     public class MonsterController : ControllerBase
     {
-        IBeastiaryService _beastiaryService;
-        IArmouryService _armouryService;
+        private IBeastiaryService _beastiaryService { get; init; }
+        private IArmouryService _armouryService { get; init; }
         public MonsterController(IBeastiaryService beastiaryService, IArmouryService armouryService) 
         {
             _beastiaryService = beastiaryService;

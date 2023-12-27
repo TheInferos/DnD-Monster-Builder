@@ -1,10 +1,19 @@
 ﻿using System.Text.Json.Serialization;
+using System.Xml.Linq;
 
 namespace Monster_Builder_Web_API.Models
 {
     public class ActionEffect
     {
-        public string Description { get; set; }
+        private string description { get; set; }
+        public string Description { get { return description; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentNullException("Description must not be empty");
+                description = value;
+            }
+        }
         
         [JsonConstructor]
         public ActionEffect() 
@@ -12,7 +21,9 @@ namespace Monster_Builder_Web_API.Models
         }
         public ActionEffect(string description)
         {
-            Description = description;
+            description = Description;
+
         }
+
     }
 }
