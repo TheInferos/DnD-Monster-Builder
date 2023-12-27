@@ -8,9 +8,9 @@ namespace Monster_Builder_Web_API.Models
     {
         private string _name;
         private int _ac;
-        private int? _cost;
-        private int? _weight;
-        private int? _strength;
+        private int _cost;
+        private int _weight;
+        private int _strength;
 
         public string ID { get; set; }
         public string Name
@@ -37,7 +37,7 @@ namespace Monster_Builder_Web_API.Models
             }
         }
 
-        public int? Cost
+        public int Cost
         {
             get
             {
@@ -51,7 +51,7 @@ namespace Monster_Builder_Web_API.Models
             }
         }
 
-        public int? Weight
+        public int Weight
         {
             get
             {
@@ -65,7 +65,7 @@ namespace Monster_Builder_Web_API.Models
             }
         }
 
-        public int? Strength
+        public int Strength
         {
             get
             {

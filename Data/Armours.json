@@ -3,9 +3,9 @@
     "ID": "7f2bb2a4-723f-482d-a91c-b114819970ba",
     "Name": "Natural",
     "AC": 13,
-    "Cost": null,
-    "Weight": null,
-    "Strength": null,
+    "Cost": 0,
+    "Weight": 0,
+    "Strength": 0,
     "Stealth": true,
     "Type": 0
   },
@@ -15,7 +15,7 @@
     "AC": 11,
     "Cost": 500,
     "Weight": 8,
-    "Strength": null,
+    "Strength": 0,
     "Stealth": true,
     "Type": 1
   },
@@ -25,7 +25,7 @@
     "AC": 11,
     "Cost": 1000,
     "Weight": 10,
-    "Strength": null,
+    "Strength": 0,
     "Stealth": false,
     "Type": 1
   },
@@ -35,7 +35,7 @@
     "AC": 12,
     "Cost": 4500,
     "Weight": 13,
-    "Strength": null,
+    "Strength": 0,
     "Stealth": false,
     "Type": 1
   },
@@ -45,7 +45,7 @@
     "AC": 12,
     "Cost": 1000,
     "Weight": 12,
-    "Strength": null,
+    "Strength": 0,
     "Stealth": false,
     "Type": 2
   },
@@ -55,7 +55,7 @@
     "AC": 13,
     "Cost": 5000,
     "Weight": 20,
-    "Strength": null,
+    "Strength": 0,
     "Stealth": false,
     "Type": 2
   },
@@ -65,7 +65,7 @@
     "AC": 14,
     "Cost": 5000,
     "Weight": 45,
-    "Strength": null,
+    "Strength": 0,
     "Stealth": true,
     "Type": 2
   },
@@ -75,7 +75,7 @@
     "AC": 14,
     "Cost": 4000,
     "Weight": 20,
-    "Strength": null,
+    "Strength": 0,
     "Stealth": false,
     "Type": 2
   },
@@ -85,7 +85,7 @@
     "AC": 15,
     "Cost": 7500,
     "Weight": 40,
-    "Strength": null,
+    "Strength": 0,
     "Stealth": true,
     "Type": 2
   },
@@ -95,7 +95,7 @@
     "AC": 14,
     "Cost": 3000,
     "Weight": 40,
-    "Strength": null,
+    "Strength": 0,
     "Stealth": true,
     "Type": 3
   },
