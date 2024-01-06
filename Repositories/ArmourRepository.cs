@@ -37,6 +37,7 @@ namespace Monster_Builder_Web_API.Repositories
         {
             filePath = "Data/Armours.json";
             armours = GetArmoursFromFile();
+            WriteArmours();
         }
         private Dictionary<string, Armour> GetArmoursFromFile()
         {

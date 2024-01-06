@@ -40,8 +40,9 @@ namespace Monster_Builder_Web_API.Repositories
             if (weapons == null || weapons.Count == 0)
             {
                 throw new Exception($"No armours found in file {filePath}");
+                return weapons;
             }
-
+            WriteWeapons();
             return weapons;
         }
         public Weapon GetWeapon(string id)
@@ -50,11 +51,15 @@ namespace Monster_Builder_Web_API.Repositories
         }
         public void WriteWeapons()
         {
-            var options = new JsonSerializerOptions
+            //TODO: This function is called when weapons is null.
+            if(weapons != null)
             {
-                WriteIndented = true
-            };
-            File.WriteAllText(filePath, JsonSerializer.Serialize(weapons, options));
+                var options = new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                };
+                File.WriteAllText(filePath, JsonSerializer.Serialize(weapons, options));
+            }
         }
 
 

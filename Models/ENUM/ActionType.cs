@@ -1,7 +1,8 @@
 ﻿namespace Monster_Builder_Web_API.Models.Enum
 {
     /// <summary>
-    /// 
+    /// This is a Simple way of working out the differnt types:
+    /// 0:Action, 1: Bonus, 2: Reaction, 3: Free, 4:Movement, 5:Object, 6: Legendary, 7: Lair
     /// </summary>
     public enum ActionType
     {

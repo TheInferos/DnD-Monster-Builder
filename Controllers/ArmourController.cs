@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Monster_Builder_Web_API.Models;
 using Monster_Builder_Web_API.Models.DTOs;
-using Monster_Builder_Web_API.Models.Enum;
 using Monster_Builder_Web_API.Services;
 
 namespace Monster_Builder_Web_API.Controllers

@@ -2,6 +2,7 @@
 {
     /// <summary>
     /// This is the type of Armour which will help derive how AC is calculated
+    /// 0: Natural, 1: Light, 2: Medium, 3: Heavy, 4: Spell, 5: Other
     /// </summary>
     public enum ArmourType
     {

@@ -1,112 +1,123 @@
 {
   "Natural": {
-    "ID": "7f2bb2a4-723f-482d-a91c-b114819970ba",
-    "Name": "Natural",
     "AC": 13,
+    "Strength": 0,
+    "Stealth": true,
+    "Type": 0,
+    "Name": "Natural",
     "Cost": 0,
     "Weight": 0,
-    "Strength": 0,
-    "Stealth": true,
-    "Type": 0
+    "TypeOfItem": 0,
+    "ID": "cf4314db-6666-4246-928a-e2e38adc434c"
   },
   "Padded": {
-    "ID": "df9e8d8f-203c-4150-97c6-6ad30258255c",
-    "Name": "Padded",
     "AC": 11,
+    "Strength": 0,
+    "Stealth": true,
+    "Type": 1,
+    "Name": "Padded",
     "Cost": 500,
     "Weight": 8,
-    "Strength": 0,
-    "Stealth": true,
-    "Type": 1
+    "TypeOfItem": 0,
+    "ID": "80c58fb5-091b-48f4-b059-c28f6b330987"
   },
   "Leather": {
-    "ID": "a2597a6d-7511-480d-8002-4cadf77c9e52",
-    "Name": "Leather",
     "AC": 11,
+    "Strength": 0,
+    "Stealth": false,
+    "Type": 1,
+    "Name": "Leather",
     "Cost": 1000,
     "Weight": 10,
-    "Strength": 0,
-    "Stealth": false,
-    "Type": 1
+    "TypeOfItem": 0,
+    "ID": "b1037788-7673-474c-95a3-1c3a6adfee55"
   },
   "Studded Leather": {
-    "ID": "c22a1604-006a-4bfa-aab9-5002d55d6a0c",
-    "Name": "Studded Leather",
     "AC": 12,
+    "Strength": 0,
+    "Stealth": false,
+    "Type": 1,
+    "Name": "Studded Leather",
     "Cost": 4500,
     "Weight": 13,
-    "Strength": 0,
-    "Stealth": false,
-    "Type": 1
+    "TypeOfItem": 0,
+    "ID": "b380937e-833e-4942-a617-ec5fed9b4875"
   },
   "Hide": {
-    "ID": "d5e944d4-0aff-48be-ac51-5951ced3a4f5",
-    "Name": "Hide",
     "AC": 12,
+    "Strength": 0,
+    "Stealth": false,
+    "Type": 2,
+    "Name": "Hide",
     "Cost": 1000,
     "Weight": 12,
-    "Strength": 0,
-    "Stealth": false,
-    "Type": 2
+    "TypeOfItem": 0,
+    "ID": "8c51cde4-9ba6-4e9d-b9db-e08e350c1101"
   },
   "Chain Shirt": {
-    "ID": "40aa5c27-aa10-4130-a1ac-baa30342c041",
-    "Name": "Chain Shirt",
     "AC": 13,
-    "Cost": 5000,
-    "Weight": 20,
     "Strength": 0,
     "Stealth": false,
-    "Type": 2
+    "Type": 2,
+    "Name": "Chain Shirt",
+    "Cost": 5000,
+    "Weight": 20,
+    "TypeOfItem": 0,
+    "ID": "e9ded094-adc1-45f0-b2b0-9c12be018d17"
   },
   "Scale Mail": {
-    "ID": "f7520384-1160-4f12-bc43-f00dbb297319",
-    "Name": "Scale Mail",
     "AC": 14,
+    "Strength": 0,
+    "Stealth": true,
+    "Type": 2,
+    "Name": "Scale Mail",
     "Cost": 5000,
     "Weight": 45,
-    "Strength": 0,
-    "Stealth": true,
-    "Type": 2
+    "TypeOfItem": 0,
+    "ID": "97d2842f-0b6a-4806-a7e7-991250a5dd39"
   },
   "Breastplate": {
-    "ID": "b514ded5-0426-4ca7-952d-f1293b00d840",
-    "Name": "Breastplate",
     "AC": 14,
-    "Cost": 4000,
-    "Weight": 20,
     "Strength": 0,
     "Stealth": false,
-    "Type": 2
+    "Type": 2,
+    "Name": "Breastplate",
+    "Cost": 4000,
+    "Weight": 20,
+    "TypeOfItem": 0,
+    "ID": "5cd5dc1e-e937-4593-af7d-54e764dbf244"
   },
   "Half Plate": {
-    "ID": "5b28ed9d-6f18-4f07-9ad4-3814e5c318c4",
-    "Name": "Half Plate",
     "AC": 15,
-    "Cost": 7500,
-    "Weight": 40,
     "Strength": 0,
     "Stealth": true,
-    "Type": 2
+    "Type": 2,
+    "Name": "Half Plate",
+    "Cost": 7500,
+    "Weight": 40,
+    "TypeOfItem": 0,
+    "ID": "51641a5d-2728-4e88-a464-b2d6f17c5b35"
   },
   "Ring Mail": {
-    "ID": "e7ca5cb0-a092-418f-acef-9b848b855eb5",
-    "Name": "Ring Mail",
     "AC": 14,
-    "Cost": 3000,
-    "Weight": 40,
     "Strength": 0,
     "Stealth": true,
-    "Type": 3
+    "Type": 3,
+    "Name": "Ring Mail",
+    "Cost": 3000,
+    "Weight": 40,
+    "TypeOfItem": 0,
+    "ID": "3f183d2c-1d7a-402c-b0c8-7a8842439d13"
   },
   "Chain Mail": {
-    "ID": "dd228c3b-7add-41c5-a70f-c735b1a97b2d",
-    "Name": "Chain Mail",
     "AC": 16,
-    "Cost": 7500,
-    "Weight": 55,
     "Strength": 13,
     "Stealth": true,
-    "Type": 3
+    "Type": 3,
+    "Name": "Chain Mail",
+    "Cost": 7500,
+    "Weight": 55,
+    "TypeOfItem": 0,
+    "ID": "a76cb9f4-dda3-45df-b5fd-ff018d8a9bd0"
   }
 }
