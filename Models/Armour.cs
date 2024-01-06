@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using Monster_Builder_Web_API.Models.DTOs;
 using Monster_Builder_Web_API.Models.Enum;
 
@@ -8,30 +9,10 @@ namespace Monster_Builder_Web_API.Models
     /// This is the base for a class for armours to be stated and used
     /// The core information is contained within the armour.
     /// </summary>
-    public class Armour
+    public class Armour :Item
     {
-        private string _name;
-        private int _ac;
-        private int _cost;
-        private int _weight;
-        private int _strength;
-        /// <summary>
-        /// This is the key that is used to access the armour in the future
-        /// </summary>
-        public string ID { get; set; }
-        /// <summary>
-        /// This is the name of the armour. 
-        /// </summary>
-        public string Name
-        {
-            get { return _name; }
-            set
-            {
-                if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentNullException("Name must not be empty");
-                _name = value;
-            }
-        }
+        private int ac;
+        private int strength;
         /// <summary>
         /// This is the Armour class for the armour giving the baseline armour value
         /// </summary>
@@ -39,44 +20,12 @@ namespace Monster_Builder_Web_API.Models
         {
             get
             {
-                return _ac;
+                return ac;
             }
             set
             {
                 ArgumentOutOfRangeException.ThrowIfNegativeOrZero((int)value);
-                _ac = value;
-            }
-        }
-        /// <summary>
-        /// This is the number of copper pieces that the armour costs.
-        /// </summary>
-        public int Cost
-        {
-            get
-            {
-                return _cost;
-            }
-            set
-            {
-                if (value != null)
-                    ArgumentOutOfRangeException.ThrowIfNegative((int)value);
-                _cost = value;
-            }
-        }
-        /// <summary>
-        /// This is the weight in lbs of the armour. 0 is a valid value for armour
-        /// </summary>
-        public int Weight
-        {
-            get
-            {
-                return _weight;
-            }
-            set
-            {
-                if (value != null)
-                    ArgumentOutOfRangeException.ThrowIfNegative((int)value);
-                _weight = value;
+                ac = value;
             }
         }
         /// <summary>
@@ -86,13 +35,13 @@ namespace Monster_Builder_Web_API.Models
         {
             get
             {
-                return _strength;
+                return strength;
             }
             set
             {
                 if (value != null)
                     ArgumentOutOfRangeException.ThrowIfNegative((int)value);
-                _strength = value;
+                strength = value;
             }
         }
         /// <summary>
@@ -105,27 +54,27 @@ namespace Monster_Builder_Web_API.Models
         /// </summary>
         public ArmourType Type { get; set; }
 
-
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="ac"></param>
+        /// <param name="_name"></param>
+        /// <param name="_ac"></param>
         /// <param name="cost"></param>
         /// <param name="weight"></param>
-        /// <param name="strength"></param>
-        /// <param name="stealth"></param>
-        /// <param name="type"></param>
-        public Armour(string name, int ac, int cost, int weight, int strength, bool stealth, ArmourType type) 
+        /// <param name="_strength"></param>
+        /// <param name="_stealth"></param>
+        /// <param name="_type"></param>
+        public Armour(string _name, int _ac, int _cost, int _weight, int _strength, bool _stealth, ArmourType _type) 
         {
-            ID = Guid.NewGuid().ToString();
-            Name = name;
-            AC = ac;
-            Cost = cost;
-            Weight = weight;
-            Strength = strength;
-            Stealth = stealth;
-            Type = type;
+            id = Guid.NewGuid().ToString();
+            type = ItemType.Armour;
+            Name = _name;
+            AC = _ac;
+            cost = _cost;
+            weight = _weight;
+            Strength = _strength;
+            Stealth = _stealth;
+            Type = _type;
         }
         /// <summary>
         /// This is the constructor from the webpage using the ArmourDTO to define the stats
@@ -133,47 +82,43 @@ namespace Monster_Builder_Web_API.Models
         /// <param name="armour"></param>
         public Armour(ArmourDTO armour)
         {
-            ID = Guid.NewGuid().ToString();
+            id = Guid.NewGuid().ToString();
             Validate(armour.Name, armour.AC, armour.Cost, armour.Strength);
-            _name = armour.Name;
+            name = armour.Name;
             AC = armour.AC;
             Cost = armour.Cost;
-            Weight = armour.Weight;
+            weight = armour.Weight;
             Strength = armour.Strength;
             Stealth = armour.Stealth;
             Type = armour.Type;
         }
 
         /// <summary>
-        /// This is here to create a default Armour value.
-        /// This should be deleted
+        /// This is the constructor that ArmourRepository uses when importing. 
         /// </summary>
-        public Armour() 
+        [JsonConstructor]
+        public Armour()
         {
-            ID = Guid.NewGuid().ToString();
-            Name = "None";
-            AC = 10;
-            Cost = 0;
-            Weight = 0;
-            Strength = 0;
-            Stealth = false;
-            Type = ArmourType.Natural;
+            id = ID;
+            actions = new List<CreatureAction>();
+            type = TypeOfItem;
+
         }
         /// <summary>
         /// TODO Remove
-        /// This is a constructor for an armour where just a name is defined for a light armour
+        /// This is a constructor for an armour where just a name is defined and is classified as natural. Used in the Monster Constructor class.
         /// </summary>
         /// <param name="name"></param>
         public Armour(string name)
         {
-            ID = Guid.NewGuid().ToString();
+            id = Guid.NewGuid().ToString();
             Name = name;
-            AC = 11;
-            Cost = 200;
-            Weight = 4;
+            AC = 10;
+            Cost = 0;
+            weight = 0;
             Strength = 0;
             Stealth = false;
-            Type = ArmourType.Light;
+            Type = ArmourType.Natural;
         }
         /// <summary>
         /// Creates a string version of the Armour ( not a object)

@@ -1,32 +1,33 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using Monster_Builder_Web_API.Models.DTOs;
 using Monster_Builder_Web_API.Models.Enum;
 
 namespace Monster_Builder_Web_API.Models
 {
 
-    public class Weapon
+    public class Weapon : Item
     {
-        private string name { get; set; }
         private string damage { get; set; }
-        public List<string> Properties { get; set; }
-        private int cost { get; set; }
+        private List<string> properties { get; set; }
 
-        private List<MonsterAction> actions { get; set; }
-        private int weight { get; set; }
-
-        public string ID { get; set; }
-        public string Name
+        /// <summary>
+        /// This is a string list of all the properties that the weapon has
+        /// TODO if this turns into more these should do things but for now they do not do anything but describe
+        /// </summary>
+        public List<string> Properties
         {
-            get { return name; }
-            set
-            {
-                if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentNullException("Name must not be empty");
-                name = value;
+            get => properties; 
+            init {
+                properties = value;
             }
         }
-        public WeaponType Type { get; set; }
+
+        /// <summary>
+        /// This is where the damage that the weapon does is stored. 
+        /// TODO:
+        /// For now it is a string however this should be a class even if curerntly all it does is return the string
+        /// </summary>
         public string Damage {
             get { return damage; }
             set
@@ -36,69 +37,67 @@ namespace Monster_Builder_Web_API.Models
                 damage = value;
             }
         }
-        //public List<string> Properties { { return _} set; }
+        /// <summary>
+        /// This is a boolean for wether the weapon is a Martial (true) or Simple (false)
+        /// </summary>
         public bool Martial { get; set; }
+        /// <summary>
+        /// This defines wether the weapon is a Ranged (true) or Melee( false). Thrown weapons should be set to false.
+        /// </summary>
         public bool Ranged { get; set; }
-        public int Cost {
-            get
-            {
-                return cost;
-            }
-            set
-            {
-                ArgumentOutOfRangeException.ThrowIfNegative(value);
-                cost = value;
-            }
-        }
-        public int Weight {
-            get
-            {
-                return weight;
-            }
-            set
-            {
-                ArgumentOutOfRangeException.ThrowIfNegative((int)value);
-                weight = value;
-            }
-        }
 
-        public Weapon(string name, WeaponType type, string damage, List<string> properties, bool martial, bool ranged, int cost, int weight) 
+        /// <summary>
+        /// This is the full constructor for a weapon where all attributes are defined.
+        /// </summary>
+        /// <param name="_weapon"> This is the DTO object to make things easier to use</param>
+        public Weapon(WeaponDTO _weapon) 
         {
-            ID = Guid.NewGuid().ToString();
-            Name = name;
-            Type = type;
-            Damage = damage;
-            Properties = properties;
-            Martial = martial;
-            Ranged = ranged;
-            Cost = cost;
-            Weight = weight;
-            actions = new List<MonsterAction>();
+            id = Guid.NewGuid().ToString();
+            type = ItemType.Weapon;
+            Name = _weapon.Name;
+            Damage = _weapon.Damage;
+            properties = _weapon.Properties;
+            Martial = _weapon.Martial;
+            Ranged = _weapon.Ranged;
+            Cost = _weapon.Cost;
+            Weight = _weapon.Weight;
+            actions = new List<CreatureAction>();
             AddAction();
         }
+        /// <summary>
+        /// This is a constructor for a weapon when just a name is provided. 
+        /// TODO: Really this consturctor shouldn't exist and should be removed. However it is used as the Unarmed constructor and that needs ammending first
+        /// </summary>
+        /// <param name="name"></param>
         public Weapon(string name)
         {
-            ID = Guid.NewGuid().ToString();
+            id = Guid.NewGuid().ToString();
             Name = name;
-            Type = WeaponType.Melee;
+            type = ItemType.Weapon;
             Damage = "d4";
-            Properties = [];
+            properties = [];
             Martial = false;
             Ranged = false;
             Cost = 0;
             Weight =0;
-            actions = new List<MonsterAction>();
+            actions = new List<CreatureAction>();
             AddAction();
         }
-
+        /// <summary>
+        /// This is the constructor that the WeaponRepository uses when building the weapons.
+        /// </summary>
         [JsonConstructor]
         public Weapon()
         {
-            actions = new List<MonsterAction>();
+            id = ID;
+            actions = new List<CreatureAction>();
+            properties = Properties;
+            type = ItemType.Weapon;
             AddAction();
-            // Default constructor without parameters
         }
-        
+        /// <summary>
+        /// This function is used to add a new Action to the Weapon.
+        /// </summary>
         public void AddAction()
         {
             // ActionType type, RechargeType recharge, ActionEffect effect)
@@ -106,20 +105,20 @@ namespace Monster_Builder_Web_API.Models
             string ActionName = name + "Attack";
             string ActionDescription = "An attack with a " + name;
             ActionEffect effect = new ActionEffect(damage);
-            MonsterAction action = new MonsterAction(ActionName, ActionDescription, ActionType.Action, RechargeType.Round, effect);
+            CreatureAction action = new CreatureAction(ActionName, ActionDescription, ActionType.Action, RechargeType.Round, effect);
             actions.Add(action);
         }
-        public List<MonsterAction> GetMonsterActions()
-        {
-            return actions;
-        }
-
+        
+        /// <summary>
+        /// For debugging purposes this can return a simple pretty output.
+        /// TODO: update with new properties when needed.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             string message = "";
             message += $@"
                     Weapon: {Name}
-                    Type: {Type}
                     Damage: {Damage}
                     Properties: {string.Join(", ", Properties)}
                     Cost: {Cost}
