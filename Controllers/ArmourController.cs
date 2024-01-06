@@ -1,10 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Monster_Builder_Web_API.Models;
+using Monster_Builder_Web_API.Models.DTOs;
 using Monster_Builder_Web_API.Models.Enum;
 using Monster_Builder_Web_API.Services;
 
 namespace Monster_Builder_Web_API.Controllers
 {
+    /// <summary>
+    /// This is the API Controller for Armour. 
+    /// This makes use of the armouryService for saved armours and will be imported
+    /// </summary>
     [Route("api/[controller]")]
         public class ArmourController: ControllerBase
     {
@@ -31,12 +36,16 @@ namespace Monster_Builder_Web_API.Controllers
             }
         }
 
-        //Turn into a [FromBody] ArmourDTO newArmour
+        /// <summary>
+        /// This API will make the armour.
+        /// </summary>
+        /// <param name="formData"> This uses the Armour DTO Object which shoiuld </param>
+        /// <returns>an ID for accessing the armour</returns>
         [HttpPost("MakeArmour")]
-        public ActionResult<string> MakeArmour(string name, int ac, int cost, int strength, int weight, bool stealth, ArmourType type)
+        public ActionResult<string> MakeArmour([FromBody] ArmourDTO formData)
         {
-            Armour armour = new Armour(name, ac, cost, weight, strength, stealth, type);
-            return armour.ToString();
+            Armour armour = new Armour(formData.Name, formData.AC, formData.Cost, formData.Weight, formData.Strength, formData.Stealth, formData.Type);
+            return armour.ID;
         }
 
         //TODO
