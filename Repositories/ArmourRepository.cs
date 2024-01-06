@@ -3,6 +3,11 @@ using Monster_Builder_Web_API.Models;
 
 namespace Monster_Builder_Web_API.Repositories
 {
+    /// <summary>
+    /// This is the Repository for all the Armours.
+    /// This handels the setting up and saving the Armours
+    /// TODO switch the information from being stored in JSONS to be stored in a Database.
+    /// </summary>
     public class ArmourRepository : IArmourRepository
     {
         private Dictionary<string, Armour> armours;
@@ -25,6 +30,9 @@ namespace Monster_Builder_Web_API.Repositories
             } 
         }
         private string filePath { get; set; }
+        /// <summary>
+        /// This contructor assigns where the armour is stored by its filepath and then will build the list of armours from the stored data.
+        /// </summary>
         public ArmourRepository()
         {
             filePath = "Data/Armours.json";
@@ -54,7 +62,12 @@ namespace Monster_Builder_Web_API.Repositories
             return armours[id];
         }
 
-
+        /// <summary>
+        /// This function updates the dictionary and then saves the list ensuring retention
+        /// </summary>
+        /// <param name="armour">Armour to be updated</param>
+        /// <returns>true or an exception</returns>
+        /// <exception cref="Exception"></exception>
         public bool UpdateArmour(Armour armour)
         {
             if (armours.ContainsKey(armour.ID))
@@ -74,7 +87,10 @@ namespace Monster_Builder_Web_API.Repositories
             };
             File.WriteAllText(filePath, JsonSerializer.Serialize(armours, options));
         }
-
+        /// <summary>
+        /// This produces a list of items that can iterated through of the armours
+        /// </summary>
+        /// <returns>List of Armours</returns>
         public IEnumerable<Armour> GetAllArmour()
         {
             return armours.Values.ToList();
