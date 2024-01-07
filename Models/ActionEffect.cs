@@ -33,7 +33,7 @@ namespace Monster_Builder_Web_API.Models
         /// <param name="description"> This should be used to describe the effect</param>
         public ActionEffect(string description)
         {
-            description = Description;
+            Description = description;
 
         }
 
