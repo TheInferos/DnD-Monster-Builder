@@ -5,7 +5,10 @@ using Monster_Builder_Web_API.Models.Enum;
 
 namespace Monster_Builder_Web_API.Models
 {
-
+    /// <summary>
+    /// This Class contains all the methods of the Weapon Item.
+    /// This inherets methods and properties from Item class as weapons are a type of item.
+    /// </summary>
     public class Weapon : Item
     {
         private string damage { get; set; }
