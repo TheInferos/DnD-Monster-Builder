@@ -59,8 +59,8 @@ namespace Monster_Builder_Web_API.Models
         /// </summary>
         /// <param name="_name"></param>
         /// <param name="_ac"></param>
-        /// <param name="cost"></param>
-        /// <param name="weight"></param>
+        /// <param name="_cost"></param>
+        /// <param name="_weight"></param>
         /// <param name="_strength"></param>
         /// <param name="_stealth"></param>
         /// <param name="_type"></param>

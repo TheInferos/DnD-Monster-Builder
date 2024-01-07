@@ -14,7 +14,7 @@ namespace Monster_Builder_Web_API.Models
         public int CR { get; set; }
         public string Size { get; set; }
         public string Type { get; set; }
-        public List<CreatureAction> MonsterActions { get; set; }
+        public List<CreatureAction> CreatureActions { get; set; }
         public List<Weapon> Weapons { get; set; }
         public Armour Armour { get; set; }
 
@@ -58,7 +58,7 @@ namespace Monster_Builder_Web_API.Models
         public void AddWeapon(Weapon weapon)
         {
             Weapons.Add(weapon);
-            MonsterActions.Concat(weapon.GetItemActions());
+            CreatureActions.Concat(weapon.GetItemActions());
         }
 
         public void ChangeArmour(Armour armour)

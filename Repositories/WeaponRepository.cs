@@ -3,6 +3,10 @@ using Monster_Builder_Web_API.Models;
 
 namespace Monster_Builder_Web_API.Repositories
 {
+    /// <summary>
+    /// This is the Weapon Repository Class, this will handle the importing and exporting of default values
+    /// Classes should import this class if they want to get the default data/ save to storage
+    /// </summary>
     public class WeaponRepository : IWeaponRepository
     {
         private Dictionary<string, Weapon> weapons { get; set; }
@@ -24,7 +28,10 @@ namespace Monster_Builder_Web_API.Repositories
                 }
             }
         private string filePath;
-
+        /// <summary>
+        /// This is the standard constructor for the classs where the default filepath is hardcoded and then weapons are loaded in 
+        /// TODO: Move the filepath to be  brought in from settings.
+        /// </summary>
         public WeaponRepository()
         {
             filePath = "Data/Weapons.json";
@@ -40,15 +47,22 @@ namespace Monster_Builder_Web_API.Repositories
             if (weapons == null || weapons.Count == 0)
             {
                 throw new Exception($"No armours found in file {filePath}");
-                return weapons;
             }
             WriteWeapons();
             return weapons;
         }
+        /// <summary>
+        /// The aim of this function is to return the weapon from the repository given the id
+        /// </summary>
+        /// <param name="id">Id for the weapon to be searched via</param>
+        /// <returns>Weapon whos id matches the query</returns>
         public Weapon GetWeapon(string id)
         {
             return Weapons[id];
         }
+        /// <summary>
+        /// This will write the weapons to the chosen storage solution
+        /// </summary>
         public void WriteWeapons()
         {
             //TODO: This function is called when weapons is null.
@@ -61,8 +75,13 @@ namespace Monster_Builder_Web_API.Repositories
                 File.WriteAllText(filePath, JsonSerializer.Serialize(weapons, options));
             }
         }
-
-
+        /// <summary>
+        /// This will update the weapon in the Repository if it wasn't passed by refernece and then write all weapons to for storage
+        /// </summary>
+        /// <param name="weapon">Weapon that has been updated</param>
+        /// <returns>boolean of sucess status or Exception
+        /// TODO in sucess pass back a 200</returns>
+        /// <exception cref="Exception">Returns an exception saying the weapon exists and needs creating</exception>
         public bool UpdateWeapon(Weapon weapon)
         {
             if (Weapons.ContainsKey(weapon.ID))
@@ -74,6 +93,11 @@ namespace Monster_Builder_Web_API.Repositories
             throw new Exception($"Weapon {weapon.Name} not found, use create.");
         }
 
+        /// <summary>
+        /// Returns a list of all weapons that are stored within the repository
+        /// TODO: should do a deep copy rather than pass by reference.
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Weapon> GetAllWeapons()
         {
             return Weapons.Values.ToList();
