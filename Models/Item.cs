@@ -12,7 +12,7 @@ namespace Monster_Builder_Web_API.Models
         /// This is the name of the armour 
         /// Protected. 
         /// </summary>
-        protected string name;
+        protected string name = string.Empty;
         /// <summary>
         /// This is the number of copper pieces that the armour costs.
         /// </summary>
@@ -35,7 +35,7 @@ namespace Monster_Builder_Web_API.Models
         /// <summary>
         /// This is a list of Action that should be added to any creature using this item.
         /// </summary>
-        protected List<CreatureAction> actions { get; set; }
+        protected List<CreatureAction> actions { get; set; }= new List<CreatureAction>();
         /// <summary>
         /// This is a toggle as to wether the item requires an attunement slot to gain affects.
         /// </summary>

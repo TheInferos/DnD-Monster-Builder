@@ -7,7 +7,7 @@ namespace Monster_Builder_Web_API.Models
     /// </summary>
     public class ActionEffect
     {
-        private string description { get; set; }
+        private string description { get; set; } = string.Empty;
         /// <summary>
         /// This is the public description of the action effect describing how it operates
         /// </summary>
@@ -18,8 +18,8 @@ namespace Monster_Builder_Web_API.Models
                     throw new ArgumentNullException("Description must not be empty");
                 description = value;
             }
-        }
-        
+        } 
+
         /// <summary>
         /// This is a JSON constructor for the Action Effect to be used when importing from Repository
         /// </summary>

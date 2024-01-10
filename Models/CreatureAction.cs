@@ -12,15 +12,15 @@ namespace Monster_Builder_Web_API.Models
         /// <summary>
         /// This is the Name of the Action
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
         /// <summary>
         /// This is a summary of the actions effect to display in quick form.
         /// </summary>
-        public string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
         /// <summary>
         /// This is what type of action that is required to use the action
         /// </summary>
-        public ActionType Type { get; set; }
+        public ActionType Type { get; set; } 
         /// <summary>
         /// This is for how often the Action will Recharge. Instant means no recharge. 
         /// </summary>
@@ -29,7 +29,7 @@ namespace Monster_Builder_Web_API.Models
         /// This is a placeholder effect for the Action. This should define what the action does in detail
         /// And the user should be able to follow this for the full effect.
         /// </summary>
-        public ActionEffect Effect { get; set; }
+        public ActionEffect Effect { get; set; } = new ActionEffect();
         /// <summary>
         /// This is optional value for if the action has changes and if so how many. This typically will only be used for Short and Long rest Items and items
         /// That do not recharge
@@ -56,6 +56,7 @@ namespace Monster_Builder_Web_API.Models
         /// This is a basic constructor for JSONS to import into as needed
         /// </summary>
         [JsonConstructor]
-        public CreatureAction(){}
+        public CreatureAction(){
+        }
     }
 }
