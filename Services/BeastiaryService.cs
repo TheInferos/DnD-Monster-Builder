@@ -10,8 +10,6 @@ namespace Monster_Builder_Web_API.Services
     public class BeastiaryService : IBeastiaryService
     {
         private Dictionary<string, Monster> monsters;
-
-
         /// <summary>
         /// Basic Constructor creating the Dictionary on monsters
         /// </summary>
