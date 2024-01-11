@@ -12,7 +12,7 @@ namespace Monster_Builder_Web_API.Models
     public class Weapon : Item
     {
         private string damage { get; set; } = string.Empty;
-        private List<string> properties { get; set; } = new List<string>();
+        private List<string> properties { get; set; } = [];
 
         /// <summary>
         /// This is a string list of all the properties that the weapon has
@@ -33,10 +33,10 @@ namespace Monster_Builder_Web_API.Models
         /// </summary>
         public string Damage {
             get { return damage; }
-            set
+            set 
             {
                 if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentNullException("Damage must not be empty");
+                    throw new ArgumentNullException(nameof(value), "Damage must not be empty");
                 damage = value;
             }
         }
@@ -64,7 +64,7 @@ namespace Monster_Builder_Web_API.Models
             Ranged = _weapon.Ranged;
             Cost = _weapon.Cost;
             Weight = _weapon.Weight;
-            actions = new List<CreatureAction>();
+            actions = [];
             AddAction();
         }
         /// <summary>
@@ -83,7 +83,7 @@ namespace Monster_Builder_Web_API.Models
             Ranged = false;
             Cost = 0;
             Weight =0;
-            actions = new List<CreatureAction>();
+            actions = [];
             AddAction();
         }
         /// <summary>
@@ -93,7 +93,7 @@ namespace Monster_Builder_Web_API.Models
         public Weapon()
         {
             id = ID;
-            actions = new List<CreatureAction>();
+            actions = [];
             properties = Properties;
             type = ItemType.Weapon;
             AddAction();
@@ -107,8 +107,8 @@ namespace Monster_Builder_Web_API.Models
 
             string ActionName = name + "Attack";
             string ActionDescription = "An attack with a " + name;
-            ActionEffect effect = new ActionEffect(damage);
-            CreatureAction action = new CreatureAction(ActionName, ActionDescription, ActionType.Action, RechargeType.Round, effect);
+            ActionEffect effect = new (damage);
+            CreatureAction action = new(ActionName, ActionDescription, ActionType.Action, RechargeType.Round, effect);
             actions.Add(action);
         }
         

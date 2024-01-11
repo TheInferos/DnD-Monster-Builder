@@ -41,7 +41,7 @@ namespace Monster_Builder_Web_API.Controllers
             {
                 return "{\"error\": \"Name and/ or challenge rating not provided\"}";
             }
-            Monster monster = new Monster(formData.Name, formData.CR, formData.hd);
+            Monster monster = new (formData.Name, formData.CR, formData.hd);
             _beastiaryService.AddMonster(monster);
             return JsonSerializer.Serialize(monster);
         }

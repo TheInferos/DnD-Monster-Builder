@@ -99,7 +99,7 @@ namespace Monster_Builder_Web_API.Models
         public Armour()
         {
             id = ID;
-            actions = new List<CreatureAction>();
+            actions = [];
             type = TypeOfItem;
 
         }
@@ -140,7 +140,7 @@ namespace Monster_Builder_Web_API.Models
         private static void Validate(string name, int ac, int cost, int? strength)
         {
             //Lots of validation 
-            List<Exception> validationErrors = new();
+            List<Exception> validationErrors = [];
             if (string.IsNullOrWhiteSpace(name))
                 validationErrors.Add(new ArgumentNullException("Name cannot be null"));
             if (ac < 10) 
