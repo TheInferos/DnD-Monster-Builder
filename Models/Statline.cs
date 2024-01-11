@@ -146,45 +146,5 @@ namespace Monster_Builder_Web_API.Models
             message += "\n";
             return message.Replace("\t", "").Replace("    ", "");
         }
-        /// <summary>
-        /// Work in Progress function. 
-        /// TBD If this is the best way to do it.
-        /// </summary>
-        /// <param name="priority"></param>
-        /// <param name="monster"></param>
-        /// <param name="statpool"></param>
-        public void GenerateStatsFromPriority(string priority, Monster monster, int statpool)
-        {
-            int loopCount = 1;
-            int addedStats = 0;
-            string[] PriorityStrings = priority.Split(" ");
-            List<int> PriorityList = new List<int>();
-            string[] StatLookup;
-            foreach (var prioritySring in PriorityStrings)
-            {
-                int parsedValue;
-                bool parseSuccess = int.TryParse(prioritySring, out parsedValue);
-
-                if (parseSuccess)
-                {
-                    PriorityList.Add(parsedValue);
-                }
-
-            }
-            while (statpool < addedStats)
-            {
-                foreach (int Priority in PriorityList)
-                {
-
-                    if (loopCount > (int)Priority)
-                    {
-
-                    }
-                }
-
-            }
-        }
-
     }
-
 }

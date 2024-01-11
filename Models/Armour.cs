@@ -11,8 +11,8 @@ namespace Monster_Builder_Web_API.Models
     /// </summary>
     public class Armour :Item
     {
-        private int ac;
-        private int strength;
+        private int ac = 0;
+        private int strength = 0;
         /// <summary>
         /// This is the Armour class for the armour giving the baseline armour value
         /// </summary>
@@ -39,8 +39,7 @@ namespace Monster_Builder_Web_API.Models
             }
             set
             {
-                if (value != null)
-                    ArgumentOutOfRangeException.ThrowIfNegative((int)value);
+                ArgumentOutOfRangeException.ThrowIfNegative(value);
                 strength = value;
             }
         }

@@ -11,8 +11,8 @@ namespace Monster_Builder_Web_API.Models
     /// </summary>
     public class Weapon : Item
     {
-        private string damage { get; set; }
-        private List<string> properties { get; set; }
+        private string damage { get; set; } = string.Empty;
+        private List<string> properties { get; set; } = new List<string>();
 
         /// <summary>
         /// This is a string list of all the properties that the weapon has

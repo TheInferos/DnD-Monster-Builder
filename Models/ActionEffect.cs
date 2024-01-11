@@ -7,19 +7,20 @@ namespace Monster_Builder_Web_API.Models
     /// </summary>
     public class ActionEffect
     {
-        private string description { get; set; }
+        private string description { get; set; } = string.Empty;
         /// <summary>
         /// This is the public description of the action effect describing how it operates
         /// </summary>
         public string Description { get { return description; }
             set
             {
-                if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentNullException("Description must not be empty");
+                //TODO fix this value check after null value removal
+                //if (string.IsNullOrWhiteSpace(value))
+                    //throw new ArgumentNullException("Description must not be empty");
                 description = value;
             }
-        }
-        
+        } 
+
         /// <summary>
         /// This is a JSON constructor for the Action Effect to be used when importing from Repository
         /// </summary>

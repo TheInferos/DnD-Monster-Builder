@@ -1,6 +1,7 @@
 ﻿using System.Text.Json.Serialization;
 using Monster_Builder_Web_API.Models.Enum;
 using Monster_Builder_Web_API.Models.DTOs;
+using Microsoft.AspNetCore.Mvc.Formatters;
 
 
 namespace Monster_Builder_Web_API.Models
@@ -16,48 +17,48 @@ namespace Monster_Builder_Web_API.Models
         /// <summary>
         /// This is the name of the monster to be stored
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
         /// <summary>
         /// This is the ID that the monster is stored under
         /// </summary>
-        public string ID { get; init; }
+        public string ID { get; init; } = Guid.NewGuid().ToString();
         /// <summary>
         /// This contains the challenge rating of the monster. Typically this should be 0+ 
         /// (max expected is 30 but it can go higher)
         /// Change to Float to account for 1/2 and 1/4
         /// </summary>
-        public int CR { get; set; }
+        public int CR { get; set; } =  1;
         /// <summary>
         /// This is the monsters Size
         /// TODO: Switch to Enum
         /// </summary>
-        public string Size { get; set; }
+        public string Size { get; set; } = string.Empty;
         /// <summary>
         /// This is the monster Type 
         /// TODO: Switch to Enum containing the options
         /// </summary>
-        public string Type { get; set; }
+        public string Type { get; set; } = string.Empty;
         /// <summary>
         /// This is a list of actions  that the monster has indcluding ones imported from weapons and armour
         /// </summary>
-        public List<CreatureAction> CreatureActions { get; set; }
+        public List<CreatureAction> CreatureActions { get; set; } = new List<CreatureAction>();
         /// <summary>
         /// This is a list of weapons that the monster has.
         /// </summary>
-        public List<Weapon> Weapons { get; set; }
+        public List<Weapon> Weapons { get; set; } = new List<Weapon> { };
         /// <summary>
         /// This is the armour that the monster has equipt. There can only be one.
         /// TODO: add item list for holding. That way more armours can be held even if not used
         /// </summary>
-        public Armour Armour { get; set; }
+        public Armour Armour { get; set; } = new Armour();
         /// <summary>
         /// This is the statline for the Monster, This is self contained and can be accessed to get the relevant Stats
         /// </summary>
-        public Statline Stats { get; set; }
+        public Statline Stats { get; set; } = new Statline();
         /// <summary>
         /// TODO, this is a work in progress, but this should be used to calculate stats
         /// </summary>
-        private int Statpool { get; set; }
+        private int Statpool { get; set; } = 0;
 
         /// <summary>
         /// This is the constructor for monster from the Webpage
@@ -67,7 +68,6 @@ namespace Monster_Builder_Web_API.Models
         /// <param name="hd">This is the hid die size. Used to calculate hitpoints</param>
         public Monster(string name, int cr, int hd)
         {
-            ID = Guid.NewGuid().ToString();
             Name = name;
             CR = cr;
             Stats = new Statline(hd, cr);
