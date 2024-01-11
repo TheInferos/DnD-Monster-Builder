@@ -92,11 +92,6 @@ namespace Monster_Builder_Web_API.Models
         [JsonConstructor]
         public Weapon()
         {
-            id = ID;
-            actions = [];
-            properties = Properties;
-            type = ItemType.Weapon;
-            AddAction();
         }
         /// <summary>
         /// This function is used to add a new Action to the Weapon.
@@ -105,9 +100,9 @@ namespace Monster_Builder_Web_API.Models
         {
             // ActionType type, RechargeType recharge, ActionEffect effect)
 
-            string ActionName = name + "Attack";
+            string ActionName = Name + " Attack";
             string ActionDescription = "An attack with a " + name;
-            ActionEffect effect = new (damage);
+            ActionEffect effect = new (Damage);
             CreatureAction action = new(ActionName, ActionDescription, ActionType.Action, RechargeType.Round, effect);
             actions.Add(action);
         }

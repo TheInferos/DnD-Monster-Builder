@@ -10,7 +10,19 @@
     "Cost": 1500,
     "Weight": 3,
     "TypeOfItem": 1,
-    "ID": "899e6b4d-723b-40f0-a1f6-0fa7378286c5"
+    "ID": "899e6b4d-723b-40f0-a1f6-0fa7378286c5",
+    "Actions": [
+      {
+        "Name": "Longsword Attack",
+        "Description": "An attack with a Longsword",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d8 slashing"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Shortbow": {
     "Properties": [
@@ -24,7 +36,19 @@
     "Cost": 2500,
     "Weight": 2,
     "TypeOfItem": 1,
-    "ID": "b2ca0a9c-c47e-4fec-9913-c973827b1078"
+    "ID": "b2ca0a9c-c47e-4fec-9913-c973827b1078",
+    "Actions": [
+      {
+        "Name": "Shortbow Attack",
+        "Description": "An attack with a Shortbow",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d6 piercing"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Dagger": {
     "Properties": [
@@ -39,7 +63,19 @@
     "Cost": 20,
     "Weight": 1,
     "TypeOfItem": 1,
-    "ID": "2d9bbce9-4719-4e15-b149-b83f5b98411e"
+    "ID": "2d9bbce9-4719-4e15-b149-b83f5b98411e",
+    "Actions": [
+      {
+        "Name": "Dagger Attack",
+        "Description": "An attack with a Dagger",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d4 piercing"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Warhammer": {
     "Properties": [
@@ -52,7 +88,19 @@
     "Cost": 1500,
     "Weight": 2,
     "TypeOfItem": 1,
-    "ID": "50579b95-959d-4af3-a9fb-83ddb83951fc"
+    "ID": "50579b95-959d-4af3-a9fb-83ddb83951fc",
+    "Actions": [
+      {
+        "Name": "Warhammer Attack",
+        "Description": "An attack with a Warhammer",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d8 bludgeoning"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Light Crossbow": {
     "Properties": [
@@ -67,7 +115,19 @@
     "Cost": 2500,
     "Weight": 5,
     "TypeOfItem": 1,
-    "ID": "47032228-c99c-4497-98ba-ba72eb587d86"
+    "ID": "47032228-c99c-4497-98ba-ba72eb587d86",
+    "Actions": [
+      {
+        "Name": "Light Crossbow Attack",
+        "Description": "An attack with a Light Crossbow",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d8 piercing"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Greatsword": {
     "Properties": [
@@ -81,7 +141,19 @@
     "Cost": 5000,
     "Weight": 6,
     "TypeOfItem": 1,
-    "ID": "05010a31-e99d-402e-a023-c5ca14b0e29f"
+    "ID": "05010a31-e99d-402e-a023-c5ca14b0e29f",
+    "Actions": [
+      {
+        "Name": "Greatsword Attack",
+        "Description": "An attack with a Greatsword",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "2d6 slashing"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Handaxe": {
     "Properties": [
@@ -95,7 +167,19 @@
     "Cost": 50,
     "Weight": 2,
     "TypeOfItem": 1,
-    "ID": "b64f2679-b8c4-4b2e-9683-0197e8108e6d"
+    "ID": "b64f2679-b8c4-4b2e-9683-0197e8108e6d",
+    "Actions": [
+      {
+        "Name": "Handaxe Attack",
+        "Description": "An attack with a Handaxe",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d6 slashing"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Sling": {
     "Properties": [
@@ -108,7 +192,19 @@
     "Cost": 1,
     "Weight": 0,
     "TypeOfItem": 1,
-    "ID": "e66a26e3-02f8-4c3b-9ee0-144804178414"
+    "ID": "e66a26e3-02f8-4c3b-9ee0-144804178414",
+    "Actions": [
+      {
+        "Name": "Sling Attack",
+        "Description": "An attack with a Sling",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d4 bludgeoning"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Mace": {
     "Properties": [],
@@ -119,7 +215,19 @@
     "Cost": 500,
     "Weight": 4,
     "TypeOfItem": 1,
-    "ID": "69b832d0-c5cb-4370-9f18-a76bbdeb68da"
+    "ID": "69b832d0-c5cb-4370-9f18-a76bbdeb68da",
+    "Actions": [
+      {
+        "Name": "Mace Attack",
+        "Description": "An attack with a Mace",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d6 bludgeoning"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Quarterstaff": {
     "Properties": [
@@ -132,7 +240,19 @@
     "Cost": 2,
     "Weight": 4,
     "TypeOfItem": 1,
-    "ID": "7bfde2ce-3425-4911-ab9d-f6d3cb2b1428"
+    "ID": "7bfde2ce-3425-4911-ab9d-f6d3cb2b1428",
+    "Actions": [
+      {
+        "Name": "Quarterstaff Attack",
+        "Description": "An attack with a Quarterstaff",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d6 bludgeoning"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Rapier": {
     "Properties": [
@@ -145,7 +265,19 @@
     "Cost": 2500,
     "Weight": 2,
     "TypeOfItem": 1,
-    "ID": "fe29c857-7db8-493f-9cc6-3bd7f9b79516"
+    "ID": "fe29c857-7db8-493f-9cc6-3bd7f9b79516",
+    "Actions": [
+      {
+        "Name": "Rapier Attack",
+        "Description": "An attack with a Rapier",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d8 piercing"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Javelin": {
     "Properties": [
@@ -158,7 +290,19 @@
     "Cost": 50,
     "Weight": 2,
     "TypeOfItem": 1,
-    "ID": "6260ed29-008a-42d8-83e9-53665304d340"
+    "ID": "6260ed29-008a-42d8-83e9-53665304d340",
+    "Actions": [
+      {
+        "Name": "Javelin Attack",
+        "Description": "An attack with a Javelin",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d6 piercing"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Battleaxe": {
     "Properties": [
@@ -171,7 +315,19 @@
     "Cost": 1000,
     "Weight": 4,
     "TypeOfItem": 1,
-    "ID": "532932cd-f11f-479f-b77c-dab008a4ed5a"
+    "ID": "532932cd-f11f-479f-b77c-dab008a4ed5a",
+    "Actions": [
+      {
+        "Name": "Battleaxe Attack",
+        "Description": "An attack with a Battleaxe",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d8 slashing"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Heavy Crossbow": {
     "Properties": [
@@ -186,7 +342,19 @@
     "Cost": 5000,
     "Weight": 18,
     "TypeOfItem": 1,
-    "ID": "abc44d11-7741-426f-977d-642d6d969008"
+    "ID": "abc44d11-7741-426f-977d-642d6d969008",
+    "Actions": [
+      {
+        "Name": "Heavy Crossbow Attack",
+        "Description": "An attack with a Heavy Crossbow",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d10 piercing"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Scimitar": {
     "Properties": [
@@ -200,7 +368,19 @@
     "Cost": 2500,
     "Weight": 3,
     "TypeOfItem": 1,
-    "ID": "d7c523ac-8e35-4eff-a3c4-c7d1964fbcac"
+    "ID": "d7c523ac-8e35-4eff-a3c4-c7d1964fbcac",
+    "Actions": [
+      {
+        "Name": "Scimitar Attack",
+        "Description": "An attack with a Scimitar",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d6 slashing"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Pike": {
     "Properties": [
@@ -215,7 +395,19 @@
     "Cost": 500,
     "Weight": 18,
     "TypeOfItem": 1,
-    "ID": "334ce96a-4f80-474e-bec1-a841aa72d204"
+    "ID": "334ce96a-4f80-474e-bec1-a841aa72d204",
+    "Actions": [
+      {
+        "Name": "Pike Attack",
+        "Description": "An attack with a Pike",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d10 piercing"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Trident": {
     "Properties": [
@@ -229,7 +421,19 @@
     "Cost": 500,
     "Weight": 4,
     "TypeOfItem": 1,
-    "ID": "eb9d8c1c-b7fe-4077-ac4d-bdce3e4dc153"
+    "ID": "eb9d8c1c-b7fe-4077-ac4d-bdce3e4dc153",
+    "Actions": [
+      {
+        "Name": "Trident Attack",
+        "Description": "An attack with a Trident",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d6 piercing"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Whip": {
     "Properties": [
@@ -243,7 +447,19 @@
     "Cost": 200,
     "Weight": 3,
     "TypeOfItem": 1,
-    "ID": "bc6b0b23-568d-46a9-b7dd-a70d7fdcad82"
+    "ID": "bc6b0b23-568d-46a9-b7dd-a70d7fdcad82",
+    "Actions": [
+      {
+        "Name": "Whip Attack",
+        "Description": "An attack with a Whip",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d4 slashing"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Club": {
     "Properties": [
@@ -256,7 +472,19 @@
     "Cost": 10,
     "Weight": 2,
     "TypeOfItem": 1,
-    "ID": "75479e44-7903-4488-9a0a-5b52919cb3e7"
+    "ID": "75479e44-7903-4488-9a0a-5b52919cb3e7",
+    "Actions": [
+      {
+        "Name": "Club Attack",
+        "Description": "An attack with a Club",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d4 bludgeoning"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Morningstar": {
     "Properties": [],
@@ -267,7 +495,19 @@
     "Cost": 1500,
     "Weight": 4,
     "TypeOfItem": 1,
-    "ID": "b51f01d6-9f07-4f6a-b144-25fa684f9f76"
+    "ID": "b51f01d6-9f07-4f6a-b144-25fa684f9f76",
+    "Actions": [
+      {
+        "Name": "Morningstar Attack",
+        "Description": "An attack with a Morningstar",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d8 piercing"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Spear": {
     "Properties": [
@@ -281,7 +521,19 @@
     "Cost": 100,
     "Weight": 3,
     "TypeOfItem": 1,
-    "ID": "d8803495-22dc-4df2-a115-7ed113217cc9"
+    "ID": "d8803495-22dc-4df2-a115-7ed113217cc9",
+    "Actions": [
+      {
+        "Name": "Spear Attack",
+        "Description": "An attack with a Spear",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d6 piercing"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Glaive": {
     "Properties": [
@@ -296,7 +548,19 @@
     "Cost": 2000,
     "Weight": 6,
     "TypeOfItem": 1,
-    "ID": "e4451dca-1086-41ff-92bc-65f0a53bcba7"
+    "ID": "e4451dca-1086-41ff-92bc-65f0a53bcba7",
+    "Actions": [
+      {
+        "Name": "Glaive Attack",
+        "Description": "An attack with a Glaive",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d10 slashing"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Halberd": {
     "Properties": [
@@ -311,7 +575,19 @@
     "Cost": 2000,
     "Weight": 6,
     "TypeOfItem": 1,
-    "ID": "5b94403b-7cbd-4767-b60f-9017478872b5"
+    "ID": "5b94403b-7cbd-4767-b60f-9017478872b5",
+    "Actions": [
+      {
+        "Name": "Halberd Attack",
+        "Description": "An attack with a Halberd",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d10 slashing"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Blowgun": {
     "Properties": [
@@ -325,7 +601,19 @@
     "Cost": 1000,
     "Weight": 1,
     "TypeOfItem": 1,
-    "ID": "2c8ef578-e748-40e6-b06f-7da315d76f24"
+    "ID": "2c8ef578-e748-40e6-b06f-7da315d76f24",
+    "Actions": [
+      {
+        "Name": "Blowgun Attack",
+        "Description": "An attack with a Blowgun",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1 piercing"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Net": {
     "Properties": [
@@ -339,7 +627,19 @@
     "Cost": 100,
     "Weight": 3,
     "TypeOfItem": 1,
-    "ID": "393fd24d-2542-4a85-a9b4-df3cd8ab5479"
+    "ID": "393fd24d-2542-4a85-a9b4-df3cd8ab5479",
+    "Actions": [
+      {
+        "Name": "Net Attack",
+        "Description": "An attack with a Net",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "Special"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Heavy Flail": {
     "Properties": [
@@ -353,7 +653,19 @@
     "Cost": 7500,
     "Weight": 10,
     "TypeOfItem": 1,
-    "ID": "ec605e3e-15b3-4588-a958-b98a040bb1f4"
+    "ID": "ec605e3e-15b3-4588-a958-b98a040bb1f4",
+    "Actions": [
+      {
+        "Name": "Heavy Flail Attack",
+        "Description": "An attack with a Heavy Flail",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "2d8 bludgeoning"
+        },
+        "Charges": null
+      }
+    ]
   },
   "Hand Crossbow": {
     "Properties": [
@@ -368,6 +680,18 @@
     "Cost": 7500,
     "Weight": 3,
     "TypeOfItem": 1,
-    "ID": "c6170e1c-17e6-4c91-9114-6f6d0c06a7a3"
+    "ID": "c6170e1c-17e6-4c91-9114-6f6d0c06a7a3",
+    "Actions": [
+      {
+        "Name": "Hand Crossbow Attack",
+        "Description": "An attack with a Hand Crossbow",
+        "Type": 0,
+        "Recharge": 1,
+        "Effect": {
+          "Description": "1d6 piercing"
+        },
+        "Charges": null
+      }
+    ]
   }
 }
