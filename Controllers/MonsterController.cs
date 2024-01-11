@@ -13,8 +13,8 @@ namespace Monster_Builder_Web_API.Controllers
     [Route("api/[controller]")]
     public class MonsterController : ControllerBase
     {
-        private IBeastiaryService _beastiaryService { get; init; }
-        private IArmouryService _armouryService { get; init; }
+        private IBeastiaryService BeastiaryService { get; init; }
+        private IArmouryService ArmouryService { get; init; }
         /// <summary>
         /// This is the constructor for the Monster Building API. It will handle adding items from the armour and weapons to the changing of monster stats
         /// </summary>
@@ -22,8 +22,8 @@ namespace Monster_Builder_Web_API.Controllers
         /// <param name="armouryService">This is for the storage of Items (Armour and Weapons)</param>
         public MonsterController(IBeastiaryService beastiaryService, IArmouryService armouryService) 
         {
-            _beastiaryService = beastiaryService;
-            _armouryService = armouryService;
+            BeastiaryService = beastiaryService;
+            ArmouryService = armouryService;
         }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace Monster_Builder_Web_API.Controllers
                 return "{\"error\": \"Name and/ or challenge rating not provided\"}";
             }
             Monster monster = new (formData.Name, formData.CR, formData.hd);
-            _beastiaryService.AddMonster(monster);
+            BeastiaryService.AddMonster(monster);
             return JsonSerializer.Serialize(monster);
         }
 
@@ -56,7 +56,7 @@ namespace Monster_Builder_Web_API.Controllers
         [HttpPost("{id}/GiveWeapon")]
         public ActionResult<string> AddWeapon(string weapon, string id)
         {
-            Monster monster = _beastiaryService.GetMonsterByID(id);
+            Monster monster = BeastiaryService.GetMonsterByID(id);
             monster.AddWeapon(new Weapon(weapon));
             return JsonSerializer.Serialize(monster);
         }
@@ -70,8 +70,8 @@ namespace Monster_Builder_Web_API.Controllers
         [HttpPost("{id}/SwitchArmour")]
         public ActionResult<string> ChangeArmour(string armourString,string id)
         {
-            Monster monster = _beastiaryService.GetMonsterByID(id);
-            Armour armour = _armouryService.GetArmourByName(armourString);
+            Monster monster = BeastiaryService.GetMonsterByID(id);
+            Armour armour = ArmouryService.GetArmourByName(armourString);
             monster.ChangeArmour(armour);
             return JsonSerializer.Serialize(monster);
         }
@@ -87,7 +87,7 @@ namespace Monster_Builder_Web_API.Controllers
         public ActionResult<string> SetStats([FromBody] StatblockDTO formData, string id)
 
         {
-            Monster monster = _beastiaryService.GetMonsterByID(id);
+            Monster monster = BeastiaryService.GetMonsterByID(id);
             monster.UpdateStats(formData);
             return JsonSerializer.Serialize(monster);
         }
