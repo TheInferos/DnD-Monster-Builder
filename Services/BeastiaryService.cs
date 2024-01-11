@@ -9,13 +9,15 @@ namespace Monster_Builder_Web_API.Services
     /// </summary>
     public class BeastiaryService : IBeastiaryService
     {
-        private Dictionary<string, Monster> _monsters;
+        private Dictionary<string, Monster> monsters;
+
+
         /// <summary>
         /// Basic Constructor creating the Dictionary on monsters
         /// </summary>
         public BeastiaryService()
         {
-            _monsters = new Dictionary<string, Monster>();
+            monsters = [];
             LoadBaseMonsters();
         }
 
@@ -25,7 +27,7 @@ namespace Monster_Builder_Web_API.Services
         /// <param name="monster">This is the monster that you plan to add it needs an ID as that is what it is stored under</param>
         public void AddMonster(Monster monster)
         {
-            _monsters[monster.ID] = monster;
+            monsters[monster.ID] = monster;
         }
         private void LoadBaseMonsters()
         {
@@ -39,7 +41,10 @@ namespace Monster_Builder_Web_API.Services
             {
                 PropertyNameCaseInsensitive = true
             };
-            _monsters = JsonSerializer.Deserialize<Dictionary<string, Monster>>(jsonData, options);
+            //TODO Review if this is the best scenario
+#pragma warning disable CS8601 // Possible null reference assignment.
+            monsters = JsonSerializer.Deserialize<Dictionary<string, Monster>>(jsonData, options);
+#pragma warning restore CS8601 // Possible null reference assignment.
         }
         //TODO look into IDisposable 
         private void SaveMonsters(string filePath)
@@ -49,7 +54,7 @@ namespace Monster_Builder_Web_API.Services
             {
                 WriteIndented = true
             };
-            File.WriteAllText(filePath, JsonSerializer.Serialize(_monsters, options));
+            File.WriteAllText(filePath, JsonSerializer.Serialize(monsters, options));
         }
 
         /// <summary>
@@ -61,7 +66,7 @@ namespace Monster_Builder_Web_API.Services
         /// <returns>Monster object requested</returns>
         public Monster GetMonsterByID(string id)
         {
-            return _monsters[id];
+            return monsters[id];
         }
     }
 }

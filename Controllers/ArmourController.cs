@@ -12,7 +12,7 @@ namespace Monster_Builder_Web_API.Controllers
     [Route("api/[controller]")]
         public class ArmourController: ControllerBase
     {
-        private IArmouryService _armouryService { get; init; } = new ArmouryService();
+        private ArmouryService ArmouryService { get; init; } = new ArmouryService();
         /// <summary>
         /// Returns the Armour Object by the name provided
         /// </summary>
@@ -22,7 +22,7 @@ namespace Monster_Builder_Web_API.Controllers
         {
             try
             {
-                Armour armour = _armouryService.GetArmourByName(name);
+                Armour armour = ArmouryService.GetArmourByName(name);
                 return Ok(armour);
             }
             catch (Exception ex)
@@ -43,7 +43,7 @@ namespace Monster_Builder_Web_API.Controllers
         [HttpPost("MakeArmour")]
         public ActionResult<string> MakeArmour([FromBody] ArmourDTO formData)
         {
-            Armour armour = new Armour(formData.Name, formData.AC, formData.Cost, formData.Weight, formData.Strength, formData.Stealth, formData.Type);
+            Armour armour = new (formData.Name, formData.AC, formData.Cost, formData.Weight, formData.Strength, formData.Stealth, formData.Type);
             return armour.ID;
         }
 

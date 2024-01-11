@@ -12,11 +12,11 @@
         /// <summary>
         /// This should contain the damage that the weapon deals
         /// </summary>
-        public string Damage { get; set; }
+        public string Damage { get; set; } = string.Empty;
         /// <summary>
         /// This is a string list of the properties that the weapon has. Thrown, Finesse and Versatile should all go here
         /// </summary>
-        public List<string> Properties { get; set; }
+        public List<string> Properties { get; set; } = [];
         /// <summary>
         /// This is a boolean for wether the weapon is a Martial (true) or a Simple (false) Weapon
         /// </summary>
@@ -28,10 +28,10 @@
         /// <summary>
         /// This will be the cost of the Weapon in Copper peices. Whilst this can be 0 it should never be negative.
         /// </summary>
-        public int Cost { get; set; }
+        public int Cost { get; set; } = 0;
         /// <summary>
         /// This will be the weight of the Weapon in lbs. Whilst this can be 0 it should never be negative.
         /// </summary>
-        public int Weight { get; set; }
+        public int Weight { get; set; } = 0;
     }
 }
