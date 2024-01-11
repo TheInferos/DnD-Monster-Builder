@@ -7,6 +7,5 @@
 /obj
 /packages
 /Monster Builder Web API.http
-
-/Data/Monsters.json
-/Data/Monsters.json
+/GlobalSuppressions.cs
+/Data

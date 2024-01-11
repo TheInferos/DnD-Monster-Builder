@@ -99,7 +99,7 @@ namespace Monster_Builder_Web_API.Models
         public Armour()
         {
             id = ID;
-            actions = new List<CreatureAction>();
+            actions = [];
             type = TypeOfItem;
 
         }
@@ -140,15 +140,15 @@ namespace Monster_Builder_Web_API.Models
         private static void Validate(string name, int ac, int cost, int? strength)
         {
             //Lots of validation 
-            List<Exception> validationErrors = new();
+            List<Exception> validationErrors = [];
             if (string.IsNullOrWhiteSpace(name))
-                validationErrors.Add(new ArgumentNullException("Name cannot be null"));
+                validationErrors.Add(new ArgumentNullException(nameof(name), "Name cannot be null"));
             if (ac < 10) 
-                validationErrors.Add(new ArgumentOutOfRangeException("Ac must be an integer above 10"));
+                validationErrors.Add(new ArgumentOutOfRangeException(nameof(ac), "Ac must be an integer above 10"));
             if (cost < 0)
-                validationErrors.Add(new ArgumentOutOfRangeException("Cost must be an integer above 0"));
+                validationErrors.Add(new ArgumentOutOfRangeException(nameof(cost), "Cost must be an integer above 0"));
             if (strength != null && strength < 13)
-                validationErrors.Add(new ArgumentOutOfRangeException("Strenght requirement must be above 12 or null"));
+                validationErrors.Add(new ArgumentOutOfRangeException(nameof(strength), "Strength requirement must be above 12 or null"));
 
             if (validationErrors.Count > 0)
                 throw new ValidationException(string.Join("; ", validationErrors));

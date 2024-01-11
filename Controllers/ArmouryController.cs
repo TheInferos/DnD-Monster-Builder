@@ -11,14 +11,14 @@ namespace Monster_Builder_Web_API.Controllers
     [Route("api/[controller]")]
     public class ArmouryController : ControllerBase
     {
-        private IArmouryService _armouryService { get; init; }
+        private IArmouryService ArmouryService { get; init; }
         /// <summary>
         /// This is the constructor for creating the ArmouryController.
         /// </summary>
         /// <param name="armouryService"> It takes in the armoury service which contains the repositories.</param>
         public ArmouryController(IArmouryService armouryService)
         {
-            _armouryService = armouryService;
+            ArmouryService = armouryService;
         }
         /// <summary>
         /// This will get all the names of the armour. This does not return the ID's (used by the webpage to display items)
@@ -27,7 +27,7 @@ namespace Monster_Builder_Web_API.Controllers
         [HttpGet("GetArmours")]
         public Dictionary<string, List<string>> GetArmours()
         {
-            return _armouryService.GetArmourNames();
+            return ArmouryService.GetArmourNames();
         }
     }
 }

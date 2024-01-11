@@ -35,7 +35,7 @@ namespace Monster_Builder_Web_API.Models
         /// <summary>
         /// This is a list of Action that should be added to any creature using this item.
         /// </summary>
-        protected List<CreatureAction> actions { get; set; }= new List<CreatureAction>();
+        protected List<CreatureAction> actions { get; set; }= [];
         /// <summary>
         /// This is a toggle as to wether the item requires an attunement slot to gain affects.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Monster_Builder_Web_API.Models
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentNullException("Name must not be empty");
+                    throw new ArgumentNullException(nameof(value), "Name must not be empty");
                 name = value;
             }
         }

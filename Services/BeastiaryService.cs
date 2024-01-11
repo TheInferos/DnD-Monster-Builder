@@ -15,7 +15,7 @@ namespace Monster_Builder_Web_API.Services
         /// </summary>
         public BeastiaryService()
         {
-            monsters = new Dictionary<string, Monster>();
+            monsters = [];
             LoadBaseMonsters();
         }
 
@@ -39,7 +39,10 @@ namespace Monster_Builder_Web_API.Services
             {
                 PropertyNameCaseInsensitive = true
             };
+            //TODO Review if this is the best scenario
+#pragma warning disable CS8601 // Possible null reference assignment.
             monsters = JsonSerializer.Deserialize<Dictionary<string, Monster>>(jsonData, options);
+#pragma warning restore CS8601 // Possible null reference assignment.
         }
         //TODO look into IDisposable 
         private void SaveMonsters(string filePath)

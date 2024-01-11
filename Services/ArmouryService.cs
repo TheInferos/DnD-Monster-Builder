@@ -10,8 +10,8 @@ namespace Monster_Builder_Web_API.Services
     /// </summary>
     public class ArmouryService : IArmouryService
     {
-        private ArmourRepository ArmourStore;
-        private WeaponRepository WeaponStore;
+        private readonly ArmourRepository ArmourStore;
+        private readonly WeaponRepository WeaponStore;
         /// <summary>
         /// This is the Contructor which loads the repositories.
         /// </summary>
@@ -54,10 +54,15 @@ namespace Monster_Builder_Web_API.Services
                 foreach (var armour in ArmourStore.Armours)
                 {
                     var armorTypeString = Enum.GetName(typeof(ArmourType), armour.Value.Type);
+                //TODO review Suppresions and decide best way forward.
+#pragma warning disable CS8604 // Possible null reference argument.
+#pragma warning disable CA1854 // Prefer the 'IDictionary.TryGetValue(TKey, out TValue)' method
                     if (!armorObject.ContainsKey(armorTypeString))
                     {
-                        armorObject[armorTypeString] = new List<string>();
+                        armorObject[armorTypeString] = [];
                     }
+#pragma warning restore CA1854 // Prefer the 'IDictionary.TryGetValue(TKey, out TValue)' method
+#pragma warning restore CS8604 // Possible null reference argument.
                     armorObject[armorTypeString].Add(armour.Key);
                 }
             return armorObject;
