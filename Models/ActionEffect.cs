@@ -14,7 +14,8 @@ namespace Monster_Builder_Web_API.Models
         public string Description { get { return description; }
             set
             {
-                if (string.IsNullOrWhiteSpace(value))
+                //TODO fix this value check after null value removal
+                //if (string.IsNullOrWhiteSpace(value))
                     //throw new ArgumentNullException("Description must not be empty");
                 description = value;
             }
