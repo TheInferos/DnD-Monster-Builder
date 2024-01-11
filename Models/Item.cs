@@ -90,7 +90,7 @@ namespace Monster_Builder_Web_API.Models
         /// <summary>
         /// This is the key that is used to access the armour in the future
         /// </summary>
-        public string ID { get => id; }
+        public string ID { get => id; init => id = value; }
         /// <summary>
         /// This is palceholder constructor for an item.
         /// TODO: Implement the minimal required items
