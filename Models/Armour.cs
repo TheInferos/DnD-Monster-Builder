@@ -98,10 +98,6 @@ namespace Monster_Builder_Web_API.Models
         [JsonConstructor]
         public Armour()
         {
-            id = ID;
-            actions = [];
-            type = TypeOfItem;
-
         }
         /// <summary>
         /// TODO Remove

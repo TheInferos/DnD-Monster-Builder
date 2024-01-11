@@ -41,11 +41,11 @@ namespace Monster_Builder_Web_API.Models
         /// <summary>
         /// This is a list of actions  that the monster has indcluding ones imported from weapons and armour
         /// </summary>
-        public List<CreatureAction> CreatureActions { get; set; } = new List<CreatureAction>();
+        public List<CreatureAction> CreatureActions { get; set; } = [];
         /// <summary>
         /// This is a list of weapons that the monster has.
         /// </summary>
-        public List<Weapon> Weapons { get; set; } = new List<Weapon> { };
+        public List<Weapon> Weapons { get; set; } = [];
         /// <summary>
         /// This is the armour that the monster has equipt. There can only be one.
         /// TODO: add item list for holding. That way more armours can be held even if not used
@@ -112,8 +112,8 @@ namespace Monster_Builder_Web_API.Models
         /// <param name="weapon">This is the weapon to add to the monster</param>
         public void AddWeapon(Weapon weapon)
         {
-            Weapons.Add(weapon);
-            CreatureActions.Concat(weapon.GetItemActions());
+            Weapons.Add(weapon); 
+            CreatureActions.AddRange(weapon.GetItemActions());
         }
 
         /// <summary>

@@ -35,7 +35,7 @@ namespace Monster_Builder_Web_API.Models
         /// <summary>
         /// This is a list of Action that should be added to any creature using this item.
         /// </summary>
-        protected List<CreatureAction> actions { get; set; }= [];
+        protected List<CreatureAction> actions { get; set; } = [];
         /// <summary>
         /// This is a toggle as to wether the item requires an attunement slot to gain affects.
         /// </summary>
@@ -86,11 +86,16 @@ namespace Monster_Builder_Web_API.Models
         public ItemType TypeOfItem
         {
             get => type;
+            init => type = value;
         }
         /// <summary>
         /// This is the key that is used to access the armour in the future
         /// </summary>
         public string ID { get => id; init => id = value; }
+        /// <summary>
+        /// This is a list of Action that should be added to any creature using this item.
+        /// </summary>
+        public List<CreatureAction> Actions { get => actions; init => actions = value; }
         /// <summary>
         /// This is palceholder constructor for an item.
         /// TODO: Implement the minimal required items

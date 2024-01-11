@@ -27,7 +27,7 @@ namespace Monster_Builder_Web_API.Repositories
                     return copiedWeapons;
                 }
             }
-        private string filePath;
+        private readonly string filePath;
         /// <summary>
         /// This is the standard constructor for the classs where the default filepath is hardcoded and then weapons are loaded in 
         /// TODO: Move the filepath to be  brought in from settings.
@@ -43,11 +43,11 @@ namespace Monster_Builder_Web_API.Repositories
         {
             string jsonData = File.ReadAllText(filePath);
             var weapons = JsonSerializer.Deserialize<Dictionary<string, Weapon>>(jsonData);
-
             if (weapons == null || weapons.Count == 0)
             {
                 throw new Exception($"No armours found in file {filePath}");
             }
+            RunFunctionsOnAllWeapons(weapons);
             WriteWeapons();
             return weapons;
         }
@@ -74,6 +74,16 @@ namespace Monster_Builder_Web_API.Repositories
                 };
                 File.WriteAllText(filePath, JsonSerializer.Serialize(weapons, options));
             }
+        }
+        /// <summary>
+        /// This is a temporary function to update stored weapons with new functionality 
+        /// </summary>
+        public void RunFunctionsOnAllWeapons(Dictionary<string, Weapon> weapons)
+        {
+            //foreach (var weapon in weapons)
+            //{
+            //    weapon.Value.AddAction();
+            //}
         }
         /// <summary>
         /// This will update the weapon in the Repository if it wasn't passed by refernece and then write all weapons to for storage

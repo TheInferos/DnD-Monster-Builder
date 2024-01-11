@@ -8,7 +8,8 @@
     "Cost": 0,
     "Weight": 0,
     "TypeOfItem": 0,
-    "ID": "cf4314db-6666-4246-928a-e2e38adc434c"
+    "ID": "cf4314db-6666-4246-928a-e2e38adc434c",
+    "Actions": []
   },
   "Padded": {
     "AC": 11,
@@ -19,7 +20,8 @@
     "Cost": 500,
     "Weight": 8,
     "TypeOfItem": 0,
-    "ID": "80c58fb5-091b-48f4-b059-c28f6b330987"
+    "ID": "80c58fb5-091b-48f4-b059-c28f6b330987",
+    "Actions": []
   },
   "Leather": {
     "AC": 11,
@@ -30,7 +32,8 @@
     "Cost": 1000,
     "Weight": 10,
     "TypeOfItem": 0,
-    "ID": "b1037788-7673-474c-95a3-1c3a6adfee55"
+    "ID": "b1037788-7673-474c-95a3-1c3a6adfee55",
+    "Actions": []
   },
   "Studded Leather": {
     "AC": 12,
@@ -41,7 +44,8 @@
     "Cost": 4500,
     "Weight": 13,
     "TypeOfItem": 0,
-    "ID": "b380937e-833e-4942-a617-ec5fed9b4875"
+    "ID": "b380937e-833e-4942-a617-ec5fed9b4875",
+    "Actions": []
   },
   "Hide": {
     "AC": 12,
@@ -52,7 +56,8 @@
     "Cost": 1000,
     "Weight": 12,
     "TypeOfItem": 0,
-    "ID": "8c51cde4-9ba6-4e9d-b9db-e08e350c1101"
+    "ID": "8c51cde4-9ba6-4e9d-b9db-e08e350c1101",
+    "Actions": []
   },
   "Chain Shirt": {
     "AC": 13,
@@ -63,7 +68,8 @@
     "Cost": 5000,
     "Weight": 20,
     "TypeOfItem": 0,
-    "ID": "e9ded094-adc1-45f0-b2b0-9c12be018d17"
+    "ID": "e9ded094-adc1-45f0-b2b0-9c12be018d17",
+    "Actions": []
   },
   "Scale Mail": {
     "AC": 14,
@@ -74,7 +80,8 @@
     "Cost": 5000,
     "Weight": 45,
     "TypeOfItem": 0,
-    "ID": "97d2842f-0b6a-4806-a7e7-991250a5dd39"
+    "ID": "97d2842f-0b6a-4806-a7e7-991250a5dd39",
+    "Actions": []
   },
   "Breastplate": {
     "AC": 14,
@@ -85,7 +92,8 @@
     "Cost": 4000,
     "Weight": 20,
     "TypeOfItem": 0,
-    "ID": "5cd5dc1e-e937-4593-af7d-54e764dbf244"
+    "ID": "5cd5dc1e-e937-4593-af7d-54e764dbf244",
+    "Actions": []
   },
   "Half Plate": {
     "AC": 15,
@@ -96,7 +104,8 @@
     "Cost": 7500,
     "Weight": 40,
     "TypeOfItem": 0,
-    "ID": "51641a5d-2728-4e88-a464-b2d6f17c5b35"
+    "ID": "51641a5d-2728-4e88-a464-b2d6f17c5b35",
+    "Actions": []
   },
   "Ring Mail": {
     "AC": 14,
@@ -107,7 +116,8 @@
     "Cost": 3000,
     "Weight": 40,
     "TypeOfItem": 0,
-    "ID": "3f183d2c-1d7a-402c-b0c8-7a8842439d13"
+    "ID": "3f183d2c-1d7a-402c-b0c8-7a8842439d13",
+    "Actions": []
   },
   "Chain Mail": {
     "AC": 16,
@@ -118,6 +128,7 @@
     "Cost": 7500,
     "Weight": 55,
     "TypeOfItem": 0,
-    "ID": "a76cb9f4-dda3-45df-b5fd-ff018d8a9bd0"
+    "ID": "a76cb9f4-dda3-45df-b5fd-ff018d8a9bd0",
+    "Actions": []
   }
 }
