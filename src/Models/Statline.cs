@@ -1,6 +1,6 @@
-using Monster_Builder_Web_API.src.Models.DTOs;
+using Monster_Builder_Web_API.Models.DTOs;
 
-namespace Monster_Builder_Web_API.src.Models
+namespace Monster_Builder_Web_API.Models
 {
     /// <summary>
     /// This is the 5e Statline. This also includes key details such as AC, Health, Hit Die

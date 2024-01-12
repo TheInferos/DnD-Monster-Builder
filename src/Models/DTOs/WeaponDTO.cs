@@ -1,4 +1,4 @@
-﻿namespace Monster_Builder_Web_API.src.Models.DTOs
+﻿namespace Monster_Builder_Web_API.Models.DTOs
 {
     /// <summary>
     /// This is the Data Transfer Object of Weapons where all values are manually set

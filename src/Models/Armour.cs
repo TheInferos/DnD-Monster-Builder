@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
-using Monster_Builder_Web_API.src.Models.DTOs;
-using Monster_Builder_Web_API.src.Models.ENUM;
+using Monster_Builder_Web_API.Models.DTOs;
+using Monster_Builder_Web_API.Models.ENUM;
 
-namespace Monster_Builder_Web_API.src.Models
+namespace Monster_Builder_Web_API.Models
 {
     /// <summary>
     /// This is the base for a class for armours to be stated and used

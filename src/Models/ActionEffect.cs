@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Monster_Builder_Web_API.src.Models
+namespace Monster_Builder_Web_API.Models
 {
     /// <summary>
     /// This class is used to desdcribe the action and how it opperates

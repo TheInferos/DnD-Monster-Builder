@@ -1,4 +1,4 @@
-﻿namespace Monster_Builder_Web_API.src.Models.ENUM
+﻿namespace Monster_Builder_Web_API.Models.ENUM
 {
     /// <summary>
     /// When Creating an item it will have a type. This type will help show what type of item it is and therefore what functions

@@ -1,4 +1,4 @@
-﻿namespace Monster_Builder_Web_API.src.Models.DTOs
+﻿namespace Monster_Builder_Web_API.Models.DTOs
 {
     /// <summary>
     /// This is a Data Object containing the core stats of a monster in 5e

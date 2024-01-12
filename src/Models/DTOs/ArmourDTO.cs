@@ -1,5 +1,5 @@
-﻿using Monster_Builder_Web_API.src.Models.ENUM;
-namespace Monster_Builder_Web_API.src.Models.DTOs;
+﻿using Monster_Builder_Web_API.Models.ENUM;
+namespace Monster_Builder_Web_API.Models.DTOs;
 
 /// <summary>
 /// This is a simple class for passing data about the Armour. 

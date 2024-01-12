@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
-using Monster_Builder_Web_API.src.Models;
-using Monster_Builder_Web_API.src.Services;
-using Monster_Builder_Web_API.src.Models.DTOs;
+using Monster_Builder_Web_API.Models;
+using Monster_Builder_Web_API.Services;
+using Monster_Builder_Web_API.Models.DTOs;
 
-namespace Monster_Builder_Web_API.src.Controllers
+namespace Monster_Builder_Web_API.Controllers
 {
     /// <summary>
     /// This is the Monster Controller this handles creating a new monster and 

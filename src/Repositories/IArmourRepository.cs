@@ -1,6 +1,6 @@
-﻿using Monster_Builder_Web_API.src.Models;
+﻿using Monster_Builder_Web_API.Models;
 
-namespace Monster_Builder_Web_API.src.Repositories
+namespace Monster_Builder_Web_API.Repositories
 {
     /// <summary>
     /// This is the repository Interface it defines the setup of the repositiories ready for unit testing

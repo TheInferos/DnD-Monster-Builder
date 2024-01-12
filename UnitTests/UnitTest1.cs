@@ -1,4 +1,4 @@
-using Monster_Builder_Web_API.src.Models;
+using Monster_Builder_Web_API.Models;
 
 namespace UnitTests
 {
@@ -10,7 +10,7 @@ namespace UnitTests
         {
             // Arrange
             string expectedName = "Longsword";
-            Weapon weapon = new Weapon();
+            Weapon weapon = new ();
 
             // Act
             weapon.Name = expectedName;

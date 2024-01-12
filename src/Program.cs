@@ -1,6 +1,6 @@
 using System.Reflection;
-using Monster_Builder_Web_API.src.Repositories;
-using Monster_Builder_Web_API.src.Services;
+using Monster_Builder_Web_API.Repositories;
+using Monster_Builder_Web_API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

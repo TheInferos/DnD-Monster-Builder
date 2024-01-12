@@ -1,6 +1,6 @@
-﻿using Monster_Builder_Web_API.src.Models;
+﻿using Monster_Builder_Web_API.Models;
 
-namespace Monster_Builder_Web_API.src.Services
+namespace Monster_Builder_Web_API.Services
 {
     /// <summary>
     /// This service should handle all monsters

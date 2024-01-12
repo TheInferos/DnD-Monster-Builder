@@ -1,10 +1,10 @@
 ﻿using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc.Formatters;
-using Monster_Builder_Web_API.src.Models.DTOs;
-using Monster_Builder_Web_API.src.Models.ENUM;
+using Monster_Builder_Web_API.Models.DTOs;
+using Monster_Builder_Web_API.Models.ENUM;
 
 
-namespace Monster_Builder_Web_API.src.Models
+namespace Monster_Builder_Web_API.Models
 
 {
     /// <summary>

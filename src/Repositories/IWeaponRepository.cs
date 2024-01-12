@@ -1,6 +1,6 @@
-﻿using Monster_Builder_Web_API.src.Models;
+﻿using Monster_Builder_Web_API.Models;
 
-namespace Monster_Builder_Web_API.src.Repositories
+namespace Monster_Builder_Web_API.Repositories
 {
     /// <summary>
     /// This Interface covers a Repository of Weapons (subclass of Items)

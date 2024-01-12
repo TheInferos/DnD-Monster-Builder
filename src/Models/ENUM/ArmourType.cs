@@ -1,4 +1,4 @@
-﻿namespace Monster_Builder_Web_API.src.Models.ENUM
+﻿namespace Monster_Builder_Web_API.Models.ENUM
 {
     /// <summary>
     /// This is the type of Armour which will help derive how AC is calculated

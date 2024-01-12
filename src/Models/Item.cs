@@ -1,6 +1,6 @@
-﻿using Monster_Builder_Web_API.src.Models.ENUM;
+﻿using Monster_Builder_Web_API.Models.ENUM;
 
-namespace Monster_Builder_Web_API.src.Models
+namespace Monster_Builder_Web_API.Models
 {
     /// <summary>
     /// This class is the parent class for all items, contianing core information that can be inherited across all items

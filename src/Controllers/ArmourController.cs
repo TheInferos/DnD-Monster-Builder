@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Monster_Builder_Web_API.src.Models;
-using Monster_Builder_Web_API.src.Models.DTOs;
-using Monster_Builder_Web_API.src.Services;
+using Monster_Builder_Web_API.Models;
+using Monster_Builder_Web_API.Models.DTOs;
+using Monster_Builder_Web_API.Services;
 
 namespace Monster_Builder_Web_API.src.Controllers
 {

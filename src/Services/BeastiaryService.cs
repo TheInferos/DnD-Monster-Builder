@@ -1,8 +1,8 @@
 ﻿using System.Text.Json;
-using Monster_Builder_Web_API.src.Models;
+using Monster_Builder_Web_API.Models;
 
 
-namespace Monster_Builder_Web_API.src.Services
+namespace Monster_Builder_Web_API.Services
 {
     /// <summary>
     /// This is the Beastiary Service which handles adding monsters to the beastiary and loading Monsters from stroage

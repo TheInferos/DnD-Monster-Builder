@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Monster_Builder_Web_API.src.Services;
+using Monster_Builder_Web_API.Services;
 
 
-namespace Monster_Builder_Web_API.src.Controllers
+namespace Monster_Builder_Web_API.Controllers
 {
     /// <summary>
     /// This is the controller for all Weapons and Armours.

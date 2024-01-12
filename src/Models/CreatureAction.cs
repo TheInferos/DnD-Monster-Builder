@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
-using Monster_Builder_Web_API.src.Models.ENUM;
+using Monster_Builder_Web_API.Models.ENUM;
 
-namespace Monster_Builder_Web_API.src.Models
+namespace Monster_Builder_Web_API.Models
 {
     /// <summary>
     /// This is where an action that can be used by a creature is stored.

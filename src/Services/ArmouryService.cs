@@ -1,8 +1,8 @@
-﻿using Monster_Builder_Web_API.src.Models;
-using Monster_Builder_Web_API.src.Models.ENUM;
-using Monster_Builder_Web_API.src.Repositories;
+﻿using Monster_Builder_Web_API.Models;
+using Monster_Builder_Web_API.Models.ENUM;
+using Monster_Builder_Web_API.Repositories;
 
-namespace Monster_Builder_Web_API.src.Services
+namespace Monster_Builder_Web_API.Services
 {
     /// <summary>
     /// This is the Armoury Service which handels Weapons and Armours jointly. 
