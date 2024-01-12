@@ -35,7 +35,7 @@ namespace Monster_Builder_Web_API.src.Repositories
         /// </summary>
         public WeaponRepository()
         {
-            filePath = "src/Data/Weapons.json";
+            filePath = "Data/Weapons.json";
             weapons = GetWeaponsFromFile();
             WriteWeapons();
         }

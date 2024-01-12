@@ -29,7 +29,7 @@ namespace Monster_Builder_Web_API.src.Services
         }
         private void LoadBaseMonsters()
         {
-            LoadMonstersFromFile("src/Data/Monsters.json");
+            LoadMonstersFromFile("Data/Monsters.json");
         }
 
         private void LoadMonstersFromFile(string filePath)
