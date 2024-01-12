@@ -27,7 +27,7 @@ namespace Monster_Builder_Web_API.Repositories
                     copiedArmours.Add(pair.Key, pair.Value);
                 }
                 return copiedArmours;
-            } 
+            }
         }
         private string filePath { get; set; }
         /// <summary>

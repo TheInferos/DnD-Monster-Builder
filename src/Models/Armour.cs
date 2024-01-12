@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 using Monster_Builder_Web_API.Models.DTOs;
-using Monster_Builder_Web_API.Models.Enum;
+using Monster_Builder_Web_API.Models.ENUM;
 
 namespace Monster_Builder_Web_API.Models
 {
@@ -9,7 +9,7 @@ namespace Monster_Builder_Web_API.Models
     /// This is the base for a class for armours to be stated and used
     /// The core information is contained within the armour.
     /// </summary>
-    public class Armour :Item
+    public class Armour : Item
     {
         private int ac = 0;
         private int strength = 0;
@@ -24,7 +24,7 @@ namespace Monster_Builder_Web_API.Models
             }
             set
             {
-                ArgumentOutOfRangeException.ThrowIfNegativeOrZero((int)value);
+                ArgumentOutOfRangeException.ThrowIfNegativeOrZero(value);
                 ac = value;
             }
         }
@@ -63,7 +63,7 @@ namespace Monster_Builder_Web_API.Models
         /// <param name="_strength"></param>
         /// <param name="_stealth"></param>
         /// <param name="_type"></param>
-        public Armour(string _name, int _ac, int _cost, int _weight, int _strength, bool _stealth, ArmourType _type) 
+        public Armour(string _name, int _ac, int _cost, int _weight, int _strength, bool _stealth, ArmourType _type)
         {
             id = Guid.NewGuid().ToString();
             type = ItemType.Armour;
@@ -122,7 +122,7 @@ namespace Monster_Builder_Web_API.Models
         public override string ToString()
         {
             string message = "";
-             message += $@"
+            message += $@"
                     Armour: {Name}
                     AC: {AC}
                     Type: {Type}
@@ -139,7 +139,7 @@ namespace Monster_Builder_Web_API.Models
             List<Exception> validationErrors = [];
             if (string.IsNullOrWhiteSpace(name))
                 validationErrors.Add(new ArgumentNullException(nameof(name), "Name cannot be null"));
-            if (ac < 10) 
+            if (ac < 10)
                 validationErrors.Add(new ArgumentOutOfRangeException(nameof(ac), "Ac must be an integer above 10"));
             if (cost < 0)
                 validationErrors.Add(new ArgumentOutOfRangeException(nameof(cost), "Cost must be an integer above 0"));
@@ -150,5 +150,5 @@ namespace Monster_Builder_Web_API.Models
                 throw new ValidationException(string.Join("; ", validationErrors));
         }
     }
-    
+
 }

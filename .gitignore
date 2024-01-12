@@ -9,3 +9,8 @@
 /Monster Builder Web API.http
 /GlobalSuppressions.cs
 /Data
+/src/.vs
+/src/bin/Debug/net8.0
+/src/obj
+/UnitTests/bin/Debug/net8.0
+/UnitTests/obj

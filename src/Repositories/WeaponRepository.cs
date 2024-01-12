@@ -16,17 +16,18 @@ namespace Monster_Builder_Web_API.Repositories
         /// of the dictionary so that the dictionary itself cannot be ammended 
         /// but the weapons within it can be
         /// </summary>
-        public Dictionary<string, Weapon> Weapons {
-                get
+        public Dictionary<string, Weapon> Weapons
+        {
+            get
             {
-                    var copiedWeapons = new Dictionary<string, Weapon>();
-                    foreach (var pair in weapons)
-                    {
-                        copiedWeapons.Add(pair.Key, pair.Value);
-                    }
-                    return copiedWeapons;
+                var copiedWeapons = new Dictionary<string, Weapon>();
+                foreach (var pair in weapons)
+                {
+                    copiedWeapons.Add(pair.Key, pair.Value);
                 }
+                return copiedWeapons;
             }
+        }
         private readonly string filePath;
         /// <summary>
         /// This is the standard constructor for the classs where the default filepath is hardcoded and then weapons are loaded in 
@@ -66,7 +67,7 @@ namespace Monster_Builder_Web_API.Repositories
         public void WriteWeapons()
         {
             //TODO: This function is called when weapons is null.
-            if(weapons != null)
+            if (weapons != null)
             {
                 var options = new JsonSerializerOptions
                 {

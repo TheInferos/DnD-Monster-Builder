@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
-using Monster_Builder_Web_API.Models.Enum;
-using Monster_Builder_Web_API.Models.DTOs;
 using Microsoft.AspNetCore.Mvc.Formatters;
+using Monster_Builder_Web_API.Models.DTOs;
+using Monster_Builder_Web_API.Models.ENUM;
 
 
 namespace Monster_Builder_Web_API.Models
@@ -27,7 +27,7 @@ namespace Monster_Builder_Web_API.Models
         /// (max expected is 30 but it can go higher)
         /// Change to Float to account for 1/2 and 1/4
         /// </summary>
-        public int CR { get; set; } =  1;
+        public int CR { get; set; } = 1;
         /// <summary>
         /// This is the monsters Size
         /// TODO: Switch to Enum
@@ -112,7 +112,7 @@ namespace Monster_Builder_Web_API.Models
         /// <param name="weapon">This is the weapon to add to the monster</param>
         public void AddWeapon(Weapon weapon)
         {
-            Weapons.Add(weapon); 
+            Weapons.Add(weapon);
             CreatureActions.AddRange(weapon.GetItemActions());
         }
 
@@ -145,7 +145,7 @@ namespace Monster_Builder_Web_API.Models
                 case ArmourType.Heavy:
                     break;
                 case ArmourType.Medium:
-                    int dexMod = (Stats.Dexterity / 2) - 5;
+                    int dexMod = Stats.Dexterity / 2 - 5;
                     if (dexMod > 2)
                     {
                         Stats.AC += 2;
@@ -159,7 +159,7 @@ namespace Monster_Builder_Web_API.Models
                 case ArmourType.Natural:
                 case ArmourType.Spell:
                 case ArmourType.Other:
-                    Stats.AC += (Stats.Dexterity / 2) - 5;
+                    Stats.AC += Stats.Dexterity / 2 - 5;
                     break;
                 default:
                     throw new NotImplementedException($"AC calculation for {Armour.Type} not implemented");

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using Monster_Builder_Web_API.Models.DTOs;
-using Monster_Builder_Web_API.Models.Enum;
+using Monster_Builder_Web_API.Models.ENUM;
 
 namespace Monster_Builder_Web_API.Models
 {
@@ -20,8 +20,9 @@ namespace Monster_Builder_Web_API.Models
         /// </summary>
         public List<string> Properties
         {
-            get => properties; 
-            init {
+            get => properties;
+            init
+            {
                 properties = value;
             }
         }
@@ -31,9 +32,10 @@ namespace Monster_Builder_Web_API.Models
         /// TODO:
         /// For now it is a string however this should be a class even if curerntly all it does is return the string
         /// </summary>
-        public string Damage {
+        public string Damage
+        {
             get { return damage; }
-            set 
+            set
             {
                 if (string.IsNullOrWhiteSpace(value))
                     throw new ArgumentNullException(nameof(value), "Damage must not be empty");
@@ -53,7 +55,7 @@ namespace Monster_Builder_Web_API.Models
         /// This is the full constructor for a weapon where all attributes are defined.
         /// </summary>
         /// <param name="_weapon"> This is the DTO object to make things easier to use</param>
-        public Weapon(WeaponDTO _weapon) 
+        public Weapon(WeaponDTO _weapon)
         {
             id = Guid.NewGuid().ToString();
             type = ItemType.Weapon;
@@ -82,7 +84,7 @@ namespace Monster_Builder_Web_API.Models
             Martial = false;
             Ranged = false;
             Cost = 0;
-            Weight =0;
+            Weight = 0;
             actions = [];
             AddAction();
         }
@@ -102,11 +104,11 @@ namespace Monster_Builder_Web_API.Models
 
             string ActionName = Name + " Attack";
             string ActionDescription = "An attack with a " + name;
-            ActionEffect effect = new (Damage);
+            ActionEffect effect = new(Damage);
             CreatureAction action = new(ActionName, ActionDescription, ActionType.Action, RechargeType.Round, effect);
             actions.Add(action);
         }
-        
+
         /// <summary>
         /// For debugging purposes this can return a simple pretty output.
         /// TODO: update with new properties when needed.

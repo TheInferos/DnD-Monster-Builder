@@ -1,5 +1,5 @@
 ﻿using System.Text.Json.Serialization;
-using Monster_Builder_Web_API.Models.Enum;
+using Monster_Builder_Web_API.Models.ENUM;
 
 namespace Monster_Builder_Web_API.Models
 {
@@ -20,7 +20,7 @@ namespace Monster_Builder_Web_API.Models
         /// <summary>
         /// This is what type of action that is required to use the action
         /// </summary>
-        public ActionType Type { get; set; } 
+        public ActionType Type { get; set; }
         /// <summary>
         /// This is for how often the Action will Recharge. Instant means no recharge. 
         /// </summary>
@@ -44,7 +44,7 @@ namespace Monster_Builder_Web_API.Models
         /// <param name="type">What type of action is required to use this action </param>
         /// <param name="recharge">How often can this action be used</param>
         /// <param name="effect">This is the detailed effect of the action</param>
-        public CreatureAction (string name, string description, ActionType type, RechargeType recharge, ActionEffect effect)
+        public CreatureAction(string name, string description, ActionType type, RechargeType recharge, ActionEffect effect)
         {
             Name = name;
             Description = description;
@@ -56,7 +56,8 @@ namespace Monster_Builder_Web_API.Models
         /// This is a basic constructor for JSONS to import into as needed
         /// </summary>
         [JsonConstructor]
-        public CreatureAction(){
+        public CreatureAction()
+        {
         }
     }
 }

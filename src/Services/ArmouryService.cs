@@ -1,5 +1,5 @@
-﻿using Monster_Builder_Web_API.Models.Enum;
-using Monster_Builder_Web_API.Models;
+﻿using Monster_Builder_Web_API.Models;
+using Monster_Builder_Web_API.Models.ENUM;
 using Monster_Builder_Web_API.Repositories;
 
 namespace Monster_Builder_Web_API.Services
@@ -51,20 +51,20 @@ namespace Monster_Builder_Web_API.Services
         public Dictionary<string, List<string>> GetArmourNames()
         {
             var armorObject = new Dictionary<string, List<string>> { };
-                foreach (var armour in ArmourStore.Armours)
-                {
-                    var armorTypeString = Enum.GetName(typeof(ArmourType), armour.Value.Type);
+            foreach (var armour in ArmourStore.Armours)
+            {
+                var armorTypeString = Enum.GetName(typeof(ArmourType), armour.Value.Type);
                 //TODO review Suppresions and decide best way forward.
 #pragma warning disable CS8604 // Possible null reference argument.
 #pragma warning disable CA1854 // Prefer the 'IDictionary.TryGetValue(TKey, out TValue)' method
-                    if (!armorObject.ContainsKey(armorTypeString))
-                    {
-                        armorObject[armorTypeString] = [];
-                    }
+                if (!armorObject.ContainsKey(armorTypeString))
+                {
+                    armorObject[armorTypeString] = [];
+                }
 #pragma warning restore CA1854 // Prefer the 'IDictionary.TryGetValue(TKey, out TValue)' method
 #pragma warning restore CS8604 // Possible null reference argument.
-                    armorObject[armorTypeString].Add(armour.Key);
-                }
+                armorObject[armorTypeString].Add(armour.Key);
+            }
             return armorObject;
         }
     }

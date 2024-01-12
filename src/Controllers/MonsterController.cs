@@ -20,7 +20,7 @@ namespace Monster_Builder_Web_API.Controllers
         /// </summary>
         /// <param name="beastiaryService">This is for the storage of Monsters</param>
         /// <param name="armouryService">This is for the storage of Items (Armour and Weapons)</param>
-        public MonsterController(IBeastiaryService beastiaryService, IArmouryService armouryService) 
+        public MonsterController(IBeastiaryService beastiaryService, IArmouryService armouryService)
         {
             BeastiaryService = beastiaryService;
             ArmouryService = armouryService;
@@ -41,7 +41,7 @@ namespace Monster_Builder_Web_API.Controllers
             {
                 return "{\"error\": \"Name and/ or challenge rating not provided\"}";
             }
-            Monster monster = new (formData.Name, formData.CR, formData.hd);
+            Monster monster = new(formData.Name, formData.CR, formData.hd);
             BeastiaryService.AddMonster(monster);
             return JsonSerializer.Serialize(monster);
         }
@@ -68,7 +68,7 @@ namespace Monster_Builder_Web_API.Controllers
         /// <param name="id"> This is the ID of the monster to switch the armour of</param>
         /// <returns></returns>
         [HttpPost("{id}/SwitchArmour")]
-        public ActionResult<string> ChangeArmour(string armourString,string id)
+        public ActionResult<string> ChangeArmour(string armourString, string id)
         {
             Monster monster = BeastiaryService.GetMonsterByID(id);
             Armour armour = ArmouryService.GetArmourByName(armourString);

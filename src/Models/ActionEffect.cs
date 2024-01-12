@@ -11,21 +11,23 @@ namespace Monster_Builder_Web_API.Models
         /// <summary>
         /// This is the public description of the action effect describing how it operates
         /// </summary>
-        public string Description { get { return description; }
+        public string Description
+        {
+            get { return description; }
             set
             {
                 //TODO fix this value check after null value removal
                 //if (string.IsNullOrWhiteSpace(value))
-                    //throw new ArgumentNullException("Description must not be empty");
+                //throw new ArgumentNullException("Description must not be empty");
                 description = value;
             }
-        } 
+        }
 
         /// <summary>
         /// This is a JSON constructor for the Action Effect to be used when importing from Repository
         /// </summary>
         [JsonConstructor]
-        public ActionEffect() 
+        public ActionEffect()
         {
         }
         /// <summary>

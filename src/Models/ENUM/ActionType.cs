@@ -1,4 +1,4 @@
-﻿namespace Monster_Builder_Web_API.Models.Enum
+﻿namespace Monster_Builder_Web_API.Models.ENUM
 {
     /// <summary>
     /// This is a Simple way of working out the differnt types:

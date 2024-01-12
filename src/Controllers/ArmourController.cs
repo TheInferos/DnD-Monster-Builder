@@ -3,14 +3,14 @@ using Monster_Builder_Web_API.Models;
 using Monster_Builder_Web_API.Models.DTOs;
 using Monster_Builder_Web_API.Services;
 
-namespace Monster_Builder_Web_API.Controllers
+namespace Monster_Builder_Web_API.src.Controllers
 {
     /// <summary>
     /// This is the API Controller for Armour. 
     /// This makes use of the armouryService for saved armours and will be imported
     /// </summary>
     [Route("api/[controller]")]
-        public class ArmourController: ControllerBase
+    public class ArmourController : ControllerBase
     {
         private ArmouryService ArmouryService { get; init; } = new ArmouryService();
         /// <summary>
@@ -43,7 +43,7 @@ namespace Monster_Builder_Web_API.Controllers
         [HttpPost("MakeArmour")]
         public ActionResult<string> MakeArmour([FromBody] ArmourDTO formData)
         {
-            Armour armour = new (formData.Name, formData.AC, formData.Cost, formData.Weight, formData.Strength, formData.Stealth, formData.Type);
+            Armour armour = new(formData.Name, formData.AC, formData.Cost, formData.Weight, formData.Strength, formData.Stealth, formData.Type);
             return armour.ID;
         }
 

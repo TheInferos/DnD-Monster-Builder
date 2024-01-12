@@ -2,7 +2,7 @@
 using Monster_Builder_Web_API.Models;
 using Monster_Builder_Web_API.Services;
 
-namespace Monster_Builder_Web_API.Controllers
+namespace Monster_Builder_Web_API.src.Controllers
 {
     /// <summary>
     /// This is the Beastiary Controller Setup. The aim of this is to ammend the Beastiary.
@@ -12,7 +12,7 @@ namespace Monster_Builder_Web_API.Controllers
     [Route("api/[controller]")]
     public class BeastiaryController : ControllerBase
     {
-       private IBeastiaryService _beastiaryService { get; init; }
+        private IBeastiaryService _beastiaryService { get; init; }
 
         /// <summary>
         /// This is the constructor for the Beastiary Controller

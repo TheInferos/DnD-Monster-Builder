@@ -11,7 +11,7 @@ namespace Monster_Builder_Web_API.Models
         /// <summary>
         /// This is the Creatures Strenth typically between 1 and 20, although can be higher than 20 cannot be lower than 0 
         /// </summary>
-        public int Strength { get;  set; }
+        public int Strength { get; set; }
         /// <summary>
         /// This is the Creatures Dexterity typically between 1 and 20, although can be higher than 20 cannot be lower than 0 
         /// </summary>
@@ -83,7 +83,7 @@ namespace Monster_Builder_Web_API.Models
             {
                 { hd, cr }
             };
-             CalculateHeath();
+            CalculateHeath();
         }
         /// <summary>
         /// This is the full constructor for a statline taking in the DTO
