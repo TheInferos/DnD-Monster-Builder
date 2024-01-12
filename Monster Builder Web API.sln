@@ -6,9 +6,8 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monster Builder Web API", "Monster Builder Web API.csproj", "{581998A5-574A-47D5-9215-F046FF1FE2F3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{58C70FB6-C4B3-4370-81C8-329FD966807F}"
-	ProjectSection(SolutionItems) = preProject
-		index.html = index.html
-	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Tests", "Unit Tests", "{24CBFF22-B026-40F8-AC89-C4F15DED590F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
